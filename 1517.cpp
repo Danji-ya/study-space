@@ -11,19 +11,19 @@ void swapCnt(int l,int r){
 	swapCnt(mid+1,r);
 	int i=l;
 	int j=mid+1;
-	int temp=l;
+	int index=l;
 
 	while(i<=mid && j<=r){
 		if(arr[i]>arr[j]){
-			copyArr[temp++]=arr[j++];
+			copyArr[index++]=arr[j++];
 		}
-		else copyArr[temp++]=arr[i++];
+		else copyArr[index++]=arr[i++];
 	}
 	while(i<=mid){
-		copyArr[temp++]=arr[i++];
+		copyArr[index++]=arr[i++];
 	}
 	while(j<=r){
-		copyArr[temp++]=arr[j++];
+		copyArr[index++]=arr[j++];
 	}
 	for(int a=l;a<=r;a++){
 		arr[a]=copyArr[a];
