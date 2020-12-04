@@ -3,6 +3,13 @@ import axios from 'axios';
 const API_DEFAULT = "http://localhost:5000/";
 const instance = axios.create({ baseURL: API_DEFAULT });
 
+//메인 page 목록들
+export async function getMainList() {
+    const result = await instance.get('/');
+    return result.data
+}
+
+
 //휴게소 노선
 export async function getRouteNmList() {
     const result = await instance.get('/food/getRouteNmList');
@@ -24,6 +31,7 @@ export async function getFoodList(routeNm, restNm) {
 
 
 export default {
+    getMainList,
     getRouteNmList,
     getStdRestNmList,
     getFoodList

@@ -3,7 +3,6 @@ import React from 'react'
 
 const MyInfo = () => {
 
-
     return (
         <div id="myInfo">
             <p>License : 0000-Seoul-0000 I Address : Seoul, Korea</p>
@@ -12,5 +11,4 @@ const MyInfo = () => {
         </div>
     )
 }
-
 export default MyInfo;

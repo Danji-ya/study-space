@@ -2,7 +2,6 @@ import React from 'react';
 import requests from "../lib/requests";
 import SelectList from "./SelectList";
 import { Fragment } from "react";
-import FoodList from "./FoodList";
 
 
 class RequestForm extends React.Component {
@@ -10,13 +9,12 @@ class RequestForm extends React.Component {
     constructor(props){
         super(props)
         this.state = {
+            disabled: false, //send 중복 방지
             routeNm: null,
             stdRestNm: null,
             routeNms: [],
-            stdRestNms: [],
-            foodList: []
+            stdRestNms: []
         }
-
         this.onChangeRouteNm = this.onChangeRouteNm.bind(this)
         this.onChangeRestNm = this.onChangeRestNm.bind(this)
         this.submit = this.submit.bind(this)
@@ -45,6 +43,7 @@ class RequestForm extends React.Component {
         restNmList= restNmList.map(obj => ( {
             value: obj["stdRestNm"], label: obj["stdRestNm"] }))
 
+        //유니크한 휴게소명 선택
         const unique_restNm = restNmList.reduce((prev,now) => {
             if(!prev.some(obj => obj["label"] === now["label"])){
                 prev.push(now);
@@ -59,13 +58,13 @@ class RequestForm extends React.Component {
         this.setState({stdRestNm: e.target.value});
     }
 
-
-    //Form 제출 시
+    //Form 제출 시 부모에게 props 전달
     async submit(e){
+        this.setState( {disabled: true});
         e.preventDefault();
-
         const result = await requests.getFoodList( this.state.routeNm, this.state.stdRestNm);
-        this.setState({foodList: result});
+        this.props.onSubmit(result);
+        this.setState( {disabled: false});
     }
 
 
@@ -89,18 +88,8 @@ class RequestForm extends React.Component {
                             <SelectList value={list.value} key={index}/>
                         )}
                     </select>
-
-                    <button onClick={this.submit}>Send</button>
+                    <button onClick={this.submit} disabled={this.state.disabled}>Send</button>
                 </form>
-                <ul>
-                    {this.state.foodList.map( (list,index) =>
-                        <FoodList
-                            key = {index}
-                            foodNm = {list.foodNm}
-                            foodCost = {list.foodCost}
-                        />
-                    )}
-                </ul>
             </Fragment>
         );
     }
