@@ -1,20 +1,31 @@
-import React, { Component } from 'react';
+import React, {useState} from 'react';
 import { Fragment } from "react";
+import RequestForm from "../Components/RequestForm";
+import CreateReview from "../Components/CreateReview";
+import "./ReviewCreate.css";
 
 
-class ReviewCreate extends Component {
 
-    render() {
-        return (
-            <Fragment>
-                <div id="welcome">
-                </div>
-                <p>리뷰 작성할 공간</p>
+function ReviewCreate() {
 
-            </Fragment>
+    const [foods, setFoods] = useState(0);
+    const [disable, setDisable] =useState(true);
 
-        )}
 
+    function onSearchSubmit(list) {
+        setFoods(list);
+        setDisable(false);
+    }
+
+
+
+
+    return (
+        <Fragment>
+            <RequestForm onSubmit={onSearchSubmit}/>
+            {disable ? "Not" : <CreateReview foodList={foods} />}
+        </Fragment>
+        )
 
 }
 

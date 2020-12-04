@@ -1,6 +1,6 @@
 import React from "react";
 
-const SelectList = ({ value }) => {
+const OptionList = ({ value }) => {
 
 
     return (
@@ -8,4 +8,4 @@ const SelectList = ({ value }) => {
     );
 };
 
-export default SelectList;
+export default OptionList;

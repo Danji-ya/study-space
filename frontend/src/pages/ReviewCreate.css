@@ -1,0 +1,59 @@
+.foodList  {
+    margin-top: 5em;
+    text-align: left;
+
+}
+.foodList select {
+
+
+    width: 760px;
+    height: 40px;
+    margin: 2em 0 3em 0;
+    padding: 10px 42px 10px 10px;
+    background-color: #f8f8f8;
+    color: #444;
+    border: 1px solid #aaa;
+    border-radius: 1em;
+    cursor: pointer;
+    outline: none;
+}
+
+#reviewForm {
+
+    margin-top: 5em;
+    margin-bottom: 5em;
+    background: #ffa45b;
+    text-align: center;
+    border-radius: 2em;
+    width: 800px;
+    height: 700px;
+}
+#reviewForm .review-text {
+    display: block;
+    margin: 0 auto;
+    font-size: 15px;
+    width: 750px;
+    height:400px
+
+}
+#reviewForm button {
+
+    display: block;
+    margin: 5em auto;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+
+/* star color 색상은 200ms마다 */
+.star {
+    color: red;
+    cursor: pointer;
+    transition: color 500ms;
+}
+
+.star-position {
+    text-align: center;
+}

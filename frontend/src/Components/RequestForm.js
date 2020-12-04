@@ -1,6 +1,6 @@
 import React from 'react';
 import requests from "../lib/requests";
-import SelectList from "./SelectList";
+import OptionList from "./OptionList";
 import { Fragment } from "react";
 
 
@@ -77,7 +77,7 @@ class RequestForm extends React.Component {
                     <select onChange={this.onChangeRouteNm}>
                         <option key="default-empty" hidden></option>
                         {this.state.routeNms.map( (list, index) =>
-                            <SelectList value={list.value} key={index}/>
+                            <OptionList value={list.value} key={index}/>
                         )}
                     </select>
 
@@ -85,7 +85,7 @@ class RequestForm extends React.Component {
                     <select onChange={this.onChangeRestNm}>
                         <option key="default-empty" hidden></option>
                         {this.state.stdRestNms.map( (list, index) =>
-                            <SelectList value={list.value} key={index}/>
+                            <OptionList value={list.value} key={index}/>
                         )}
                     </select>
                     <button onClick={this.submit} disabled={this.state.disabled}>Send</button>
