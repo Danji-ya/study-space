@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReviewStar from "../Components/ReviewStar";
 import { Fragment } from "react";
+import './MainPage.css'
 
 
 class MainPage extends Component {

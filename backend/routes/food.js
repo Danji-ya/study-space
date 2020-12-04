@@ -30,31 +30,23 @@ router.get('/getStdRestNmList/:routeNm', function(req, res, next) {
 });
 
 
-
-
-
-
-
-
-
-
 //해당 휴게소의 음식 리스트
-router.get('/getFoodList', function(req, res, next) {
-    Food.find({stdRestNm:"서울만남(부산)휴게소"}).then((food)=>{
-        res.render("index", {foodList: food});
+router.get('/getFoodList/:routeNm/:restNm', function(req, res, next) {
+    const {routeNm, restNm} = req.params;
+
+    Food.find({ routeNm: routeNm, stdRestNm: restNm}).then((food)=>{
+        res.json(food);
     }).catch((err)=>{
-        console.log(err);
+        res.json(err);
     });
 });
 
-//모든 음식 정보 가져오기.
-router.get('/read', function(req, res, next) {
-    Food.find({stdRestNm:"서울만남(부산)휴게소"}).then((food)=>{
-        res.render("index", {foodList: food});
-    }).catch((err)=>{
-        console.log(err);
-    });
-});
+
+
+
+
+
+
 
 
 

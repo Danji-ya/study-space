@@ -10,10 +10,7 @@ class RestMenu extends Component {
     render() {
         return (
             <Fragment>
-                <div id="welcome">
-                </div>
                 <RequestForm />
-
             </Fragment>
 
         )}

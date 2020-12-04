@@ -1,6 +1,6 @@
 import React from "react";
 
-const TestForm = ({ value }) => {
+const SelectList = ({ value }) => {
 
 
 
@@ -9,4 +9,4 @@ const TestForm = ({ value }) => {
     );
 };
 
-export default TestForm;
+export default SelectList;

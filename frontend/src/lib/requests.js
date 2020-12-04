@@ -17,14 +17,14 @@ export async function getStdRestNmList(routeNm) {
 
 
 //해당 휴게소의 음식 리스트 얻기
-export async function getFoodList() {
-    const result = await instance.get('/food/getFoodList');
+export async function getFoodList(routeNm, restNm) {
+    const result = await instance.get('/food/getFoodList/' + routeNm +'/'+ restNm);
     return result.data
 }
 
 
-
 export default {
     getRouteNmList,
-    getStdRestNmList
+    getStdRestNmList,
+    getFoodList
 }

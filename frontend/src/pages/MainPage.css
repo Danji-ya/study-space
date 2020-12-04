@@ -1,0 +1,42 @@
+
+.restList  {
+    margin-top: 5em;
+    text-align: left;
+
+}
+.restList select {
+
+    width:800px;
+    height:40px;
+    display: inline-block;
+    margin: 1em 0 3em 0;
+    padding: 10px 42px 10px 10px;
+    background-color: #f8f8f8;
+    color: #444;
+    border: 1px solid #aaa;
+    border-radius: 1em;
+    cursor: pointer;
+    outline: none;
+}
+
+.restList button {
+
+    background-color: #333333;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.restList button:hover {
+
+    background-color: #6c6c6c;
+
+}
+
+
