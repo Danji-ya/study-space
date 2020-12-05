@@ -21,6 +21,7 @@
 
 .restList button {
 
+    float: right;
     background-color: #333333;
     border: none;
     color: white;
@@ -34,13 +35,55 @@
 .restList button:hover {
     box-shadow: 0 3px 6px black;
 }
+.restMenu-frame {
+    text-align: center;
+    border-top: 4px solid rgba(0,0,0,0.1);
+    padding-top: 5em;
+    margin: 5em auto 0 auto;
+    width: 800px;
+    height: 1000px;
+}
+
+.restMenu-link {
+
+    margin-left: 3.1em;
+    margin-right: 3.1em;
+    margin-bottom: 5em;
+    float: left;
+    text-decoration: none;
+    color: black;
+}
+.restMenu-link:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.restMenu-img {
+    border-radius: 0.5em;
+    width: 300px;
+    height: 300px;
+}
+.restMenu-img:hover {
+    -webkit-filter: opacity(60%);
+
+}
+.restMenu-text {
+    margin: 0 auto 0 auto;
+
+}
 
 #Not-found {
     margin-top: 3em;
-    border-top: 4px solid rgba(0,0,0,0.1);
     width: 800px;
     height: 800px;
     background-color: white;
 }
 
+#Not-found-review {
+    margin-top: 5em;
+    width: 800px;
+    height: 800px;
+    background-color: white;
+    border-top: 4px solid rgba(0,0,0,0.1);
+}
 

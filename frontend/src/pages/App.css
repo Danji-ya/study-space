@@ -190,6 +190,7 @@ ul.content-ul .content-title b {
 
 /* bottom myInfo */
 #myInfo {
+  clear: both;
   padding: 3em 0em;
   border-top: 5px solid rgba(0,0,0,0.1);
 }

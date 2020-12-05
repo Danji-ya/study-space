@@ -61,6 +61,12 @@ input[type="radio"] {
     display: none;
 }
 
+.food-detail-img {
+    border-radius: 0.5em;
+    width: 500px;
+    height: 400px;
+}
+
 
 /* star color 색상은 200ms마다 */
 .star {

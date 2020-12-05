@@ -22,12 +22,14 @@ function RestMenu( {match} ) {
         <Fragment>
             <div className="h1-top"/> <h1> {'당신의 소중한 한끼를 위한'}<br/>{'휴게소 메뉴'} </h1>
             <RequestForm onSubmit={onSearchSubmit}/>
+            <div className="restMenu-frame">
             <Router>
                 <Route exact path={match.path}
                        render={(props) => <FoodList {...props} foods={foods} />} />
                 <Route path={`${match.path}/:id`}
                        render={(props) => <FoodDetail {...props} foods={foods} />} />
             </Router>
+            </div>
         </Fragment>
     )
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Fragment } from "react";
+
 
 
 const FoodDetail = ({ foods, match, history }) => {
@@ -7,17 +7,17 @@ const FoodDetail = ({ foods, match, history }) => {
     const food = foods[match.params.id]
 
     return (
-        <Fragment>
+        <div className="food-detail">
+            <img className="food-detail-img" src={window.location.origin+'/'+food.url} alt=""/>
             <h2>Food Detail</h2>
-            <p>이름</p>
+
             <p>{food.foodNm}</p>
             <p>가격</p>
             <p>{food.foodCost}</p>
             <p>평균 점수</p>
             <p>{food.ratingAvg}</p>
             <button onClick={() => history.goBack()}>Back</button>
-
-        </Fragment>
+        </div>
     );
 };
 export default FoodDetail;
