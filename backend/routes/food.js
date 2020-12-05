@@ -4,7 +4,7 @@ var router = express.Router();
 const Food = require('../models/food');
 
 
-//중복없이 노선 리스트
+//find distinct routeNm list
 router.get('/getRouteNmList', function(req, res, next) {
 
     Food.find().distinct('routeNm')
@@ -16,7 +16,7 @@ router.get('/getRouteNmList', function(req, res, next) {
         });
 });
 
-//휴게소 리스트
+//find rest list
 router.get('/getStdRestNmList/:routeNm', function(req, res, next) {
     const {routeNm} = req.params;
 
@@ -30,7 +30,7 @@ router.get('/getStdRestNmList/:routeNm', function(req, res, next) {
 });
 
 
-//해당 휴게소의 음식 리스트
+//find food list
 router.get('/getFoodList/:routeNm/:restNm', function(req, res, next) {
     const {routeNm, restNm} = req.params;
 
@@ -44,49 +44,38 @@ router.get('/getFoodList/:routeNm/:restNm', function(req, res, next) {
 
 
 
-
-
-
-
-
-
-
 //create Review
-router.post('/createReview', function(req, res, next) {
+router.post('/createReview/:routeNm/:restNm', function(req, res, next) {
+    const {routeNm, restNm} = req.params;
+    const {foodNm, reviewText, rating} = req.body.foodReview;
+    let newRatingAvg =0;
 
-    /*example*/
-    var rating1=3;
-    var review1="주메뉴로 먹기엔 살짝 아쉬운 감이 없지않아 있네요";
-    var newRatingAvg=0;
-
-
-    function makeReview (exRest,exFood) {
+    function makeReview (routeName, restName, foodName) {
         return Food.findOne({
-            stdRestNm: exRest,
-            foodNm: exFood
+            routeNm: routeName,
+            stdRestNm: restName,
+            foodNm: foodName
         }).then(food => {
-            newRatingAvg= ( food["ratingAvg"] * food["reviewList"].length + rating1 )  /   (food["reviewList"].length + 1)
+
+            newRatingAvg=  ((food["ratingAvg"] * food["reviewList"].length + parseInt(rating))/(food["reviewList"].length + 1));
             newRatingAvg = newRatingAvg.toFixed(1)
-            return Food.updateOne({ stdRestNm: exRest, foodNm:exFood },
+            return Food.updateOne({ routeNm: routeName, stdRestNm: restName, foodNm: foodName },
                 {
                     ratingAvg: newRatingAvg,
                     $push: {
                         reviewList: {
-                            "rating": rating1,
-                            "text": review1
+                            "text": reviewText,
+                            "rating": rating
                         }
                     }})
         })
     }
 
-
-    makeReview("서울만남(부산)휴게소","생선까스").then( result => {
-        res.render('testMain.html' );
+    makeReview(routeNm, restNm, foodNm).then( result => {
+        res.json(result);
     }).catch(err => {
-        res.send(err);
+        res.json(err);
     });
-
-
 });
 
 

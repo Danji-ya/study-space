@@ -1,17 +1,13 @@
-.foodList  {
-    margin-top: 5em;
-    text-align: left;
-
+.foodList h3 {
+    padding-top: 2em;
 }
+
 .foodList select {
-
-
-    width: 760px;
+    width: 600px;
     height: 40px;
-    margin: 2em 0 3em 0;
+    margin: 0em 0 3em 0;
     padding: 10px 42px 10px 10px;
-    background-color: #f8f8f8;
-    color: #444;
+    background-color: white;
     border: 1px solid #aaa;
     border-radius: 1em;
     cursor: pointer;
@@ -22,12 +18,13 @@
 
     margin-top: 5em;
     margin-bottom: 5em;
-    background: #ffa45b;
     text-align: center;
     border-radius: 2em;
+    background-color: #D8E6E7;
     width: 800px;
     height: 700px;
 }
+
 #reviewForm .review-text {
     display: block;
     margin: 0 auto;
@@ -36,10 +33,28 @@
     height:400px
 
 }
-#reviewForm button {
+#reviewForm .button-ok {
+    border-color: white;
+    padding: 10px 15px;
+    background-color: lightblue;
+    border-radius: 5px;
+    margin-top: 2em;
+    float: right;
+    cursor: pointer;
+}
 
-    display: block;
-    margin: 5em auto;
+#reviewForm .button-cancel {
+    border-color: white;
+    padding: 10px 15px;
+    background-color: lightblue;
+    border-radius: 5px;
+    margin-top: 2em;
+    float: left;
+    cursor: pointer;
+}
+
+#reviewForm button:hover {
+    box-shadow: 0 3px 6px black;
 }
 
 input[type="radio"] {
@@ -49,7 +64,6 @@ input[type="radio"] {
 
 /* star color 색상은 200ms마다 */
 .star {
-    color: red;
     cursor: pointer;
     transition: color 500ms;
 }

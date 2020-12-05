@@ -29,12 +29,11 @@ router.get('/', function(req, res, next) {
   let bestMenu, randomMenu, seasonMenus;
 
   //베스트 메뉴 선택 및 랜덤 음식 선택
-  Food.findOne({ratingAvg: { $gt: 0.1}}).sort( {ratingAvg: -1} ).limit(1)
+  Food.find({ratingAvg: { $gt: 0}}).sort( {ratingAvg: -1} ).limit(1)
       .then( result => {
 
-
-          result.foodNm= deleteNumberDot(result.foodNm);
-          bestMenu = result;
+          result[0].foodNm= deleteNumberDot(result[0].foodNm);
+          bestMenu = result[0];
 
         return Food.countDocuments();
       })

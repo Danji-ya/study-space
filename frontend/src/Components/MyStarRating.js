@@ -17,7 +17,7 @@ const MyStarRating = ({hadnleRating}) => {
                 return (
                     <label key={index} >
                         <input name="rating" type="radio" value={index+1} onClick={ handleChange }/>
-                        <FaStar className="star" color={ index+1 <= rating ? "#ffc107" : "#e4e5e9"} size={50}/>
+                        <FaStar className="star" color={ index+1 <= rating ? "#ffc107" : "#fefefe"} size={50}/>
                     </label>
                 )
             })}

@@ -32,16 +32,14 @@
 }
 
 .restList button:hover {
-
-    background-color: #6c6c6c;
-
+    box-shadow: 0 3px 6px black;
 }
 
-#Not-found-foodList {
-    margin-top: 2em;
-    border-top: 5px solid rgba(0,0,0,0.1);
+#Not-found {
+    margin-top: 3em;
+    border-top: 4px solid rgba(0,0,0,0.1);
     width: 800px;
-    height: 1000px;
+    height: 800px;
     background-color: white;
 }
 

@@ -13,6 +13,8 @@ const FoodDetail = ({ foods, match, history }) => {
             <p>{food.foodNm}</p>
             <p>가격</p>
             <p>{food.foodCost}</p>
+            <p>평균 점수</p>
+            <p>{food.ratingAvg}</p>
             <button onClick={() => history.goBack()}>Back</button>
 
         </Fragment>

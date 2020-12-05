@@ -20,6 +20,7 @@ function RestMenu( {match} ) {
     //Form형식 및 음식 리스트 및 상세정보
     return (
         <Fragment>
+            <div className="h1-top"/> <h1> {'당신의 소중한 한끼를 위한'}<br/>{'휴게소 메뉴'} </h1>
             <RequestForm onSubmit={onSearchSubmit}/>
             <Router>
                 <Route exact path={match.path}

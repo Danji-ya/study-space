@@ -5,7 +5,7 @@ const FoodList = ( {foods, match} ) => {
 
     if (foods ===0){
         return (
-            <div id="Not-found-foodList"></div>
+            <div id="Not-found"></div>
         )
     }
 

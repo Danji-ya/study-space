@@ -29,10 +29,17 @@ export async function getFoodList(routeNm, restNm) {
     return result.data
 }
 
+//리뷰 작성
+export async function postReview(routeNm, restNm, foodReview) {
+    const result = await instance.post('/food/createReview/' + routeNm +'/'+ restNm, {foodReview});
+    return result.data
+}
+
 
 export default {
     getMainList,
     getRouteNmList,
     getStdRestNmList,
-    getFoodList
+    getFoodList,
+    postReview
 }
