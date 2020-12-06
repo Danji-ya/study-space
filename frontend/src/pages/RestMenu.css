@@ -2,6 +2,9 @@
 .restList  {
     margin-top: 5em;
     text-align: left;
+    padding-bottom: 8em;
+    margin-bottom: 5em;
+    border-bottom: 4px solid rgba(0,0,0,0.1);
 
 }
 .restList select {
@@ -19,6 +22,7 @@
     outline: none;
 }
 
+
 .restList button {
 
     float: right;
@@ -34,14 +38,6 @@
 
 .restList button:hover {
     box-shadow: 0 3px 6px black;
-}
-.restMenu-frame {
-    text-align: center;
-    border-top: 4px solid rgba(0,0,0,0.1);
-    padding-top: 5em;
-    margin: 5em auto 0 auto;
-    width: 800px;
-    height: 1000px;
 }
 
 .restMenu-link {
@@ -73,17 +69,54 @@
 }
 
 #Not-found {
-    margin-top: 3em;
+    width: 800px;
+    height: 800px;
+
+}
+
+#Not-found-review {
     width: 800px;
     height: 800px;
     background-color: white;
 }
 
-#Not-found-review {
+
+#detail-form {
     margin-top: 5em;
-    width: 800px;
-    height: 800px;
-    background-color: white;
-    border-top: 4px solid rgba(0,0,0,0.1);
+    margin-bottom: 5em;
 }
+
+.food-detail-img {
+    border-radius: 0.5em;
+    width: 500px;
+    height: 400px;
+}
+
+
+.review-Rating {
+
+    width: 20px;
+    height: 20px;
+
+}
+.review-list{
+    overflow: hidden;
+
+}
+
+.review-list li {
+    padding: 1em;
+    text-align: left;
+    height: 100px;
+    border-bottom: 3px solid rgba(0,0,0,0.1);
+    margin-bottom: 2em;
+    margin-top: 50px;
+}
+
+.user-icon {
+    float: left;
+    margin-right: 5em;
+}
+
+
 

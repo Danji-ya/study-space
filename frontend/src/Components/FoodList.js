@@ -1,9 +1,9 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { Link } from "react-router-dom"
 
-const FoodList = ( {foods, match} ) => {
+const FoodList = ( {foods, match } ) => {
 
-    if (foods ===0){
+    if (foods === 0){
         return (
             <div id="Not-found"></div>
         )
@@ -14,6 +14,8 @@ const FoodList = ( {foods, match} ) => {
     }
 
     return (
+        <Fragment>
+        <h2> {`${foods[0].stdRestNm} 메뉴`} </h2>
         <ul>
             {foods.map( (list, index) =>
                 <li key={index}>
@@ -28,6 +30,7 @@ const FoodList = ( {foods, match} ) => {
                 </li>
             )}
         </ul>
+        </Fragment>
     );
 };
 export default FoodList;

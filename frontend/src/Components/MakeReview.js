@@ -18,11 +18,9 @@ class MakeReview extends React.Component {
         }
     }
 
-
     //각 input에 대한 값 저장.
     handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value});
+        this.setState({ [e.target.name]: e.target.value});
     }
 
 
@@ -81,7 +79,7 @@ class MakeReview extends React.Component {
                 <button className="button-cancel" onClick={(e)=> {
                     e.preventDefault();
                     this.props.onSubmit()} }>취소</button>
-                <button className="button-ok" N onClick={this.submit} disabled={this.state.disabled}>완료</button>
+                <button className="button-ok" onClick={this.submit} disabled={this.state.disabled}>완료</button>
             </form>
             </div>
         );

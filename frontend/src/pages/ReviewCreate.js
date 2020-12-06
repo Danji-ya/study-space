@@ -22,12 +22,11 @@ function ReviewCreate({history}) {
     }
 
 
-
-
+    //send 시 음식 목록이 보내지기 때문에 RequestForm hidden
     return (
         <Fragment>
             <div className="h1-top"/><h1> {`고객님의 생생한 리뷰를 작성해주세요`} </h1>
-            <RequestForm onSubmit={onSearchSubmit}/>
+            {disable && <RequestForm onSubmit={onSearchSubmit}/> }
             {disable ? <div id="Not-found-review"></div> : <MakeReview foodList={foods} onSubmit={onReviewSubmit} />}
         </Fragment>
         )

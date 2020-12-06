@@ -6,7 +6,7 @@ const ReviewStar = ({number}) => {
 
     const starList =[];
     for (let i = 0; i < Math.round(number) ; i++) {
-        starList.push(<img className="review-Rating" src="images/star.svg" key={i} alt="profile"/> );
+        starList.push(<img className="review-Rating" src={window.location.origin+"/images/star.svg"} key={i} alt="profile"/> );
     }
 
     return <Fragment> {starList} </Fragment>
