@@ -10,18 +10,22 @@ const FoodDetail = ({ foods, match, history }) => {
     return (
         <div id="detail-form">
             <img className="food-detail-img" src={window.location.origin+'/'+food.url} alt=""/>
-            <h2>Food Detail</h2>
+            <h2>상세 정보</h2>
 
             <p>{food.foodNm}</p>
             <p>가격: {food.foodCost}</p>
-            <p>리뷰 평균점수: {food.ratingAvg}</p>
-            <ul className="review-list">Reviews
 
-                {food.reviewList.map((list, index) =>
-                    <ReviewList review={list} key={index}/>
-                )}
-            </ul>
-            <button onClick={() => history.goBack()}>Back</button>
+            <button onClick={() => history.goBack()}>뒤로 가기</button>
+            <div className="review-list">
+                <h2>리뷰 <span>{food.reviewList.length}개</span></h2>
+
+                <ul>
+                    {food.reviewList.map((list, index) =>
+                        <ReviewList review={list} key={index}/>
+                    )}
+                </ul>
+
+            </div>
         </div>
     );
 };

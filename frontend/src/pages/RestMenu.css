@@ -85,6 +85,19 @@
     margin-top: 5em;
     margin-bottom: 5em;
 }
+#detail-form button {
+
+    border-color: white;
+    padding: 10px 15px;
+    background: #333333;
+    color: white;
+    border-radius: 5px;
+    margin-top: 2em;
+    cursor: pointer;
+}
+#detail-form button:hover {
+    box-shadow: 0 3px 6px black;
+}
 
 .food-detail-img {
     border-radius: 0.5em;
@@ -101,13 +114,19 @@
 }
 .review-list{
     overflow: hidden;
+    text-align: left;
+
+}
+
+.review-list h2 {
+    padding-left: 0.5em;
 
 }
 
 .review-list li {
-    padding: 1em;
-    text-align: left;
-    height: 100px;
+    padding-bottom: 3em;
+    padding-left: 1em;
+    height: auto;
     border-bottom: 3px solid rgba(0,0,0,0.1);
     margin-bottom: 2em;
     margin-top: 50px;
@@ -115,6 +134,7 @@
 
 .user-icon {
     float: left;
+    padding-bottom: inherit;
     margin-right: 5em;
 }
 

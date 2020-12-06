@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import ReviewStar from "./ReviewStar";
 import { FaUserAlt } from 'react-icons/fa';
 
@@ -11,6 +11,7 @@ const ReviewList = ({ review }) => {
             <ReviewStar  number={review.rating} />
             <div>{review.text}</div>
         </li>
+
     );
 };
 
