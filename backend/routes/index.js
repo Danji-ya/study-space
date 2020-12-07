@@ -11,7 +11,7 @@ require('moment-timezone');
 
 
 //----처음 시작 시 api에서 데이터 가져온 후 DB에 저장하는 미들웨어-------
-//router.get('/',requestFoodApi);
+router.get('/',requestFoodApi);
 //--------------------------------------------------------------
 
 
