@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 const myKey = require('./dbUrl');
+const autoIncrement = require("mongoose-auto-increment");
 
 module.exports = () => {
 
-    const connection = mongoose.connect(myKey.privateDbKey, {
+    mongoose.connect(myKey.privateDbKey, {
+        //dbName: " test",
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useCreateIndex: true,
@@ -11,4 +13,5 @@ module.exports = () => {
     }).then(() => console.log('Successfully connected to mongodb!'))
         .catch(e => console.error(e))
 
+    autoIncrement.initialize(mongoose.connection);
 };

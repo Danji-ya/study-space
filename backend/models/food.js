@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 
-const Schema = mongoose.Schema;
 
 const foodSchema = new mongoose.Schema({
     routeNm: {
@@ -42,8 +41,6 @@ const foodSchema = new mongoose.Schema({
 });
 
 //사용할 model export
-
-autoIncrement.initialize(mongoose.connection);
 foodSchema.plugin(autoIncrement.plugin, {
     model: 'food',
     startAt: 1,

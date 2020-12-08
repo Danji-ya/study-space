@@ -136,12 +136,15 @@ ul.content-ul .content-title b {
   background-color: #333 ;
 }
 
+
+
+
 /* menu page 내의 바*/
 #menu li {
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-#menu li a, #menu li span {
+#menu li .a {
   display: block;
   padding: 2em 1.5em;
   text-align: center;
@@ -151,7 +154,7 @@ ul.content-ul .content-title b {
   color:  white;
 }
 
-#menu li a:hover {
+#menu li .a:hover {
   background-color: #111;
 }
 
@@ -162,27 +165,31 @@ ul.content-ul .content-title b {
   overflow: hidden;
   float: right;
   width: 800px;
-  padding: 3em 50px 5em 50px;
+  padding: 0em 50px 5em 50px;
   background-color: white;
   text-align: center;
 }
 
-
-
-#main #welcome  p {
-  padding-top: 0.5em;
-  text-align: center;
-  font-size: 5em;
-  color: white;
-
+#main .loginbar {
+  text-align: right;
+  margin-bottom: 2em;
 }
+
+#main .loginbar button {
+  border-color: white;
+  color:white;
+  padding: 0.5em;
+  background: #333333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
 #main #welcome {
-  background-image: url("http://localhost:3000/images/mainImg.jpg");
-  background-size: 800px 300px;
-  border-radius: 0.5em;
-  background-repeat: no-repeat;
-  height: 300px;
   width: 800px;
+  height: 300px;
+  border-radius: 0.5em;
 }
 
 /* center content */

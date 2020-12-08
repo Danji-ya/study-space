@@ -5,15 +5,16 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 
-var indexRouter = require('./routes/index');
-
-var foodRouter = require('./routes/food');
 
 
 //-----------------DB start------------------------
 const db = require('./db/db.js');
 db(); // db execution
 //-------------------------------------------------
+
+var indexRouter = require('./routes/index');
+var foodRouter = require('./routes/food');
+var userRouter = require('./routes/user');
 
 
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/food', foodRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

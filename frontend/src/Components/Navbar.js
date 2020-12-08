@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 
 const Navbar = () => {
@@ -8,10 +9,10 @@ const Navbar = () => {
         <div id="navbar">
             <div id="menu">
                 <ul>
-                    <li><a href="/" title="">메인</a></li>
-                    <li><a href="/RestMenu" title="">휴게소 메뉴</a></li>
-                    <li><a href="/ReviewCreate" title="">리뷰 작성</a></li>
-                    <li><a href="mailto:erang15@ajou.ac.kr" title="">지원</a></li>
+                    <li><Link className="a" to="/">메인</Link></li>
+                    <li><Link className="a" to="/RestMenu">휴게소 메뉴</Link></li>
+                    <li><Link className="a" to="/ReviewCreate">리뷰 작성</Link></li>
+                    <li><Link className="a" to="mailto:erang15@ajou.ac.kr">지원</Link></li>
                 </ul>
             </div>
         </div>

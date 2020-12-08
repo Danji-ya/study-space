@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React from "react";
 import ReviewStar from "./ReviewStar";
 import { FaUserAlt } from 'react-icons/fa';
 
