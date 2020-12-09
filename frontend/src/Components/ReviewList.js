@@ -8,13 +8,12 @@ const ReviewList = ({ review }) => {
     return (
         <li>
             <FaUserAlt className="user-icon" size={50} />
-            <ReviewStar  number={review.rating} />
-            <div>
-                작성자: {review.email}<br/>
-                {review.text}
+            <div className="review-list-text">
+                <ReviewStar  number={review.rating} /><br/>
+                    작성자: {review.email}<br/>
+                    {review.text}
             </div>
         </li>
-
     );
 };
 

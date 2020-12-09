@@ -57,7 +57,7 @@
 .restMenu-img {
     border-radius: 0.5em;
     width: 300px;
-    height: 300px;
+    height: 250px;
 }
 .restMenu-img:hover {
     -webkit-filter: opacity(60%);
@@ -115,7 +115,6 @@
 .review-list{
     overflow: hidden;
     text-align: left;
-
 }
 
 .review-list h2 {
@@ -123,6 +122,26 @@
 
 }
 
+
+
+.user-icon {
+    margin-top: 0.2em;
+    width: 10%;
+    float: left;
+    clear:both;
+}
+.review-list-text {
+    margin-bottom: 3em;
+    float: right;
+    width: 85%;
+    padding-bottom: 3em;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+
+
+
+/*
 .review-list li {
     padding-bottom: 3em;
     padding-left: 1em;
@@ -133,10 +152,17 @@
 }
 
 .user-icon {
+    width: 10%;
     float: left;
-    padding-bottom: inherit;
     margin-right: 5em;
+    clear:both;
 }
+.review-list-text {
+    float: right;
+    width: 90%;
+    height: inherit;
+}
+ */
 
 
 
