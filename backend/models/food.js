@@ -33,7 +33,7 @@ const foodSchema = new mongoose.Schema({
         trim : true,
         required: true,
     },
-    reviewList: [{ rating: Number, text: String}],
+    reviewList: [{ email: String, rating: Number, text: String}],
     ratingAvg: {
         type: Number,
         trim : true,

@@ -1,6 +1,7 @@
 import React from 'react';
 import requests from "../lib/requests";
 import SelectList from "./SelectList";
+import swal from "sweetalert";
 
 
 class RequestForm extends React.Component {
@@ -36,11 +37,19 @@ class RequestForm extends React.Component {
 
     //Form 제출 시 부모에게 props 전달
     async submit(e){
-        this.setState( {disabled: true});
         e.preventDefault();
-        const result = await requests.getFoodList( this.state.routeNm, this.state.stdRestNm);
-        this.setState( {disabled: false});
-        this.props.onSubmit(result);
+        this.setState({disabled: true});
+
+        if( this.state.routeNm && this.state.stdRestNm ) {
+
+            const result = await requests.getFoodList(this.state.routeNm, this.state.stdRestNm);
+            this.setState({disabled: false});
+            this.props.onSubmit(result);
+        }
+        else {
+            swal("노선을 선택해주세요", "", "error");
+            this.setState({disabled: false});
+        }
     }
 
 

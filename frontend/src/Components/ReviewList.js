@@ -9,7 +9,10 @@ const ReviewList = ({ review }) => {
         <li>
             <FaUserAlt className="user-icon" size={50} />
             <ReviewStar  number={review.rating} />
-            <div>{review.text}</div>
+            <div>
+                작성자: {review.email}<br/>
+                {review.text}
+            </div>
         </li>
 
     );

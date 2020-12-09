@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import requests from "../lib/requests";
 import swal from 'sweetalert';
+import "./Sign.css"
 
 
 
@@ -23,7 +24,12 @@ const SignUp = ({history}) => {
             let result = await requests.postSignUp(user);
 
             if (result.message === "Success") {
-                alert("회원가입 완료")
+                swal({
+                    title: "회원가입 완료",
+                    text: "",
+                    icon: "success",
+                    button: "확인",
+                })
                 history.goBack()
             } else {
                 swal(result.message, "", "error");
@@ -37,11 +43,10 @@ const SignUp = ({history}) => {
         }
     }
 
-
-
     return (
-        <form>
-            <h2>회원가입</h2>
+        <form className="signForm">
+            <div className="h1-top"/> <h1> 회원가입 </h1>
+            <label className="label-top"></label>
             <input
                 value={email}
                 onChange={({ target: { value } }) => setEmail(value)}

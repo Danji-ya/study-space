@@ -33,6 +33,7 @@ class MakeReview extends React.Component {
         if( this.state.foodNm && this.state.reviewText && (this.state.rating !==0) ){
             //객체로 전달
             let foodReview = {
+                email: this.props.user.email,
                 foodNm: this.state.foodNm,
                 reviewText: this.state.reviewText,
                 rating: this.state.rating

@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState} from 'react';
 import { Redirect } from "react-router-dom"
 import requests from "../lib/requests";
 import swal from "sweetalert";
+import "./Sign.css"
 
 
-const SignIn = ( { authenticated, location, history, logIn} ) => {
+const SignIn = ( { authenticated, location, logIn} ) => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -36,7 +37,7 @@ const SignIn = ( { authenticated, location, history, logIn} ) => {
                     icon: "success",
                     button: "확인",
                 })
-
+                user.password="********";
                 //authenticated true로 변경
                 logIn(user)
             }
@@ -53,16 +54,15 @@ const SignIn = ( { authenticated, location, history, logIn} ) => {
 
 
     return (
-        <form>
-            <h2>로그인</h2>
-            <label>Email</label>
+        <form className="signForm">
+            <div className="h1-top"/> <h1> 로그인 </h1>
+            <label className="label-top"></label>
             <input
                 value={email}
                 onChange={({ target: { value } }) => setEmail(value)}
                 type="text"
                 placeholder="email"
             />
-            <label>Password</label>
             <input
                 value={password}
                 onChange={({ target: { value } }) => setPassword(value)}

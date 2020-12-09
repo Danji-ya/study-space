@@ -52,6 +52,7 @@ class SelectList extends React.Component {
         return (
             <Fragment>
                 <h3>노선 목록</h3>
+
                 <select name="routeNm" onChange={this.onChangeRouteNm}>
                     <option key="default-empty" hidden></option>
                     {this.props.routeNms.map((list, index) =>

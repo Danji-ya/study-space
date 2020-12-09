@@ -47,7 +47,7 @@ router.get('/getFoodList/:routeNm/:restNm', function(req, res, next) {
 //create Review
 router.post('/createReview/:routeNm/:restNm', function(req, res, next) {
     const {routeNm, restNm} = req.params;
-    const {foodNm, reviewText, rating} = req.body.foodReview;
+    const {foodNm, reviewText, rating, email} = req.body.foodReview;
     let newRatingAvg =0;
 
     function makeReview (routeName, restName, foodName) {
@@ -64,6 +64,7 @@ router.post('/createReview/:routeNm/:restNm', function(req, res, next) {
                     ratingAvg: newRatingAvg,
                     $push: {
                         reviewList: {
+                            "email": email,
                             "text": reviewText,
                             "rating": rating
                         }

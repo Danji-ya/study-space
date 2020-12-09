@@ -10,6 +10,7 @@ import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 
 import SignOut from "../Components/SignOut";
+import PermissionRoute from "./PermissionRoute";
 
 
 
@@ -30,7 +31,7 @@ function App() {
   return (
       <Router>
         <div id="page" className="container">
-          <Navbar />
+          <Navbar authenticated={authenticated} />
           <div id="main">
             <div className="loginbar">
               { authenticated ? (<SignOut user={user} logOut={logOut} />) : (
@@ -42,7 +43,12 @@ function App() {
             <Switch>
               <Route exact path="/" component={MainPage} />
               <Route path="/RestMenu" component={RestMenu} />
-              <Route path="/ReviewCreate" component={ReviewCreate} />
+              <PermissionRoute
+                  path="/ReviewCreate"
+                  authenticated={authenticated}
+                  render={props => (
+                      <ReviewCreate {...props} user={user}  />)}
+              />
               <Route path="/signUp" component={SignUp} />
               <Route
                   path="/signIn"

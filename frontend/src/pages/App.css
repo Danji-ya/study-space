@@ -7,6 +7,8 @@
   src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
 }
 
+
+
 .h1-top {
   border-top: 2px solid rgba(0,0,0,.1);
   width: 530px;
@@ -182,8 +184,17 @@ ul.content-ul .content-title b {
   background: #333333;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 1em;
 }
 
+#main .loginbar button:hover {
+  box-shadow: 0 2px 4px black;
+}
+
+#main .loginbar p {
+  display: inline-block;
+  margin-right: 0.2em;
+}
 
 
 #main #welcome {

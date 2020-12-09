@@ -6,7 +6,7 @@ import "./ReviewCreate.css";
 
 
 
-function ReviewCreate({history}) {
+function ReviewCreate({user}) {
 
     const [foods, setFoods] = useState(0);
     const [disable, setDisable] =useState(true);
@@ -27,7 +27,7 @@ function ReviewCreate({history}) {
         <Fragment>
             <div className="h1-top"/><h1> {`고객님의 생생한 리뷰를 작성해주세요`} </h1>
             {disable && <RequestForm onSubmit={onSearchSubmit}/> }
-            {disable ? <div id="Not-found-review"></div> : <MakeReview foodList={foods} onSubmit={onReviewSubmit} />}
+            {disable ? <div id="Not-found-review"></div> : <MakeReview user={user} foodList={foods} onSubmit={onReviewSubmit} />}
         </Fragment>
         )
 
