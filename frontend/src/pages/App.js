@@ -42,7 +42,8 @@ function App() {
             </div>
             <Switch>
               <Route exact path="/" component={MainPage} />
-              <Route path="/RestMenu" component={RestMenu} />
+              <Route path="/RestMenu"
+                     render ={ props => <RestMenu {...props} user={user} />} />
               <PermissionRoute
                   path="/ReviewCreate"
                   authenticated={authenticated}

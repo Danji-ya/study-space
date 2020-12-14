@@ -41,6 +41,18 @@ router.get('/getFoodList/:routeNm/:restNm', function(req, res, next) {
     });
 });
 
+//find food
+router.get('/getFoodDetail/:restNm/:foodNm', function(req, res, next) {
+    const {restNm, foodNm} = req.params;
+
+    Food.findOne({ stdRestNm: restNm, foodNm: foodNm}).then((food)=>{
+        food.ratingAvg = food.ratingAvg.toFixed(1)
+        res.json(food);
+    }).catch((err)=>{
+        res.json(err);
+    });
+});
+
 
 
 
@@ -58,7 +70,6 @@ router.post('/createReview/:routeNm/:restNm', function(req, res, next) {
         }).then(food => {
 
             newRatingAvg=  ((food["ratingAvg"] * food["reviewList"].length + parseInt(rating))/(food["reviewList"].length + 1));
-            newRatingAvg = newRatingAvg.toFixed(1)
             return Food.updateOne({ routeNm: routeName, stdRestNm: restName, foodNm: foodName },
                 {
                     ratingAvg: newRatingAvg,
@@ -77,6 +88,44 @@ router.post('/createReview/:routeNm/:restNm', function(req, res, next) {
     }).catch(err => {
         res.json(err);
     });
+});
+
+//delete Review
+router.delete('/delReview', function(req, res, next) {
+    const {stdRestNm, foodNm, email, comment} = req.body.comment;
+    let newRatingAvg =0;
+
+    Food.findOne({
+            stdRestNm: stdRestNm,
+            foodNm: foodNm,
+        }).then( food => {
+
+            let result =food.reviewList.filter( list => {
+                return list.email === email && list.text === comment
+            })
+
+            if(food["reviewList"].length == 1) {
+                newRatingAvg = 0
+            }else {
+                newRatingAvg = (food["ratingAvg"] * food["reviewList"].length - result[0].rating) / (food["reviewList"].length-1)
+            }
+
+
+            Food.updateOne({ stdRestNm: stdRestNm, foodNm: foodNm },
+            {
+                ratingAvg: newRatingAvg,
+                $pull: {
+                    reviewList: {
+                        "email": email,
+                        "text": comment,
+                        "rating": result[0].rating
+                    }
+                }
+            }).then( result => {
+                console.log(result)
+                res.json({ message: "Success" })
+            })
+        })
 });
 
 

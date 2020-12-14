@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 const FoodList = ( {foods, match } ) => {
 
+
     if (foods === 0){
         return (
             <div id="Not-found"></div>
@@ -20,7 +21,7 @@ const FoodList = ( {foods, match } ) => {
             {foods.map( (list, index) =>
                 <li key={index}>
                     <Link onClick={changePosition} className="restMenu-link" to={{
-                        pathname: `${match.url}/${index}`,
+                        pathname: `${match.url}/${list.stdRestNm}/${list.foodNm}`,
                         state : {
                             foods: foods
                         }

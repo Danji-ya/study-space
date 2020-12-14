@@ -7,7 +7,7 @@ import FoodDetail from "../Components/FoodDetail";
 import './RestMenu.css'
 
 
-function RestMenu( {match} ) {
+function RestMenu( {match, user} ) {
 
     const [foods, setFoods] = useState(0);
 
@@ -29,8 +29,8 @@ function RestMenu( {match} ) {
                                <FoodList {...props} foods={foods} />
                            </Fragment>
                        } />
-                <Route path={`${match.path}/:id`}
-                       render={(props) => <FoodDetail {...props} foods={foods} />} />
+                <Route path={`${match.path}/:stdRestNm/:foodNm`}
+                       render={(props) => <FoodDetail {...props}  user={user} foods={foods} />} />
             </Router>
         </Fragment>
     )

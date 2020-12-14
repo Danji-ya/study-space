@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_DEFAULT = "http://localhost:5000/";
+const API_DEFAULT = "http://158.247.198.131:5000/";
 const instance = axios.create({ baseURL: API_DEFAULT });
 
 
@@ -41,6 +41,18 @@ export async function getFoodList(routeNm, restNm) {
     return result.data
 }
 
+//음식 정보
+export async function getFoodDetail(restNm, foodNm) {
+    const result = await instance.get('/food/getFoodDetail/' + restNm +'/'+ foodNm);
+    return result.data
+}
+//리뷰 삭제
+export async function delReview(comment) {
+    const result = await instance.delete('/food/delReview',{data: {comment}});
+    return result.data
+}
+
+
 //리뷰 작성
 export async function postReview(routeNm, restNm, foodReview) {
     const result = await instance.post('/food/createReview/' + routeNm +'/'+ restNm, {foodReview});
@@ -55,5 +67,7 @@ export default {
     getRouteNmList,
     getStdRestNmList,
     getFoodList,
-    postReview
+    getFoodDetail,
+    postReview,
+    delReview
 }

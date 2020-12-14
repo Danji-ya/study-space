@@ -20,14 +20,14 @@ class RequestForm extends React.Component {
     }
 
 
-     componentDidMount() {
+    componentDidMount() {
         let myList = []
-         requests.getRouteNmList().then(result => {
-             myList = result.map(obj => ({
-                 value: obj, label: obj
-             }))
-             this.setState({routeNms: myList});
-         });
+        requests.getRouteNmList().then(result => {
+            myList = result.map(obj => ({
+                value: obj, label: obj
+            }))
+            this.setState({routeNms: myList});
+        });
     }
 
 

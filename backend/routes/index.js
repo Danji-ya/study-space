@@ -32,7 +32,8 @@ router.get('/', function(req, res, next) {
   Food.find({ratingAvg: { $gt: 0}}).sort( {ratingAvg: -1} ).limit(1)
       .then( result => {
 
-          result[0].foodNm= deleteNumberDot(result[0].foodNm);
+          result[0].foodNm= deleteNumberDot(result[0].foodNm)
+          result[0].ratingAvg = result[0].ratingAvg.toFixed(1)
           bestMenu = result[0];
 
         return Food.countDocuments();
@@ -77,8 +78,6 @@ router.get('/', function(req, res, next) {
       .catch( err => {
         res.json(err);
       })
-
-
 });
 
 
