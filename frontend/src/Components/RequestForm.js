@@ -39,9 +39,6 @@ class RequestForm extends React.Component {
 
     //Form 제출 시 부모에게 props 전달
     async submit(e){
-        console.log(this.state.routeNm)
-        console.log(this.state.stdRestNm)
-
         e.preventDefault();
         this.setState({disabled: true});
 
@@ -49,7 +46,6 @@ class RequestForm extends React.Component {
 
             const result = await requests.getFoodList(this.state.routeNm, this.state.stdRestNm);
             this.setState({disabled: false});
-            this.setState({routeNm: null, stdRestNm: null})
             this.props.onSubmit(result);
         }
         else {
