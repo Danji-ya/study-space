@@ -8,8 +8,8 @@ class SelectList extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            routeNm: "",
-            stdRestNm: "",
+            routeNm: null,
+            stdRestNm: null,
             stdRestNms: [],
         }
         this.onChangeRouteNm = this.onChangeRouteNm.bind(this)
@@ -19,7 +19,8 @@ class SelectList extends React.Component {
 
     //노선명 저장 및 해당 노선의 휴게소목록 얻기
     async onChangeRouteNm(e) {
-        this.setState({stdRestNm: ""});
+        this.setState({stdRestNm: null});
+        this.setState({stdRestNms: []});
         this.setState({ [e.target.name]: e.target.value});
 
 

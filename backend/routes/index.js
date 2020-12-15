@@ -47,6 +47,7 @@ router.get('/', function(req, res, next) {
       .then( result => {
 
           result.foodNm= deleteNumberDot(result.foodNm);
+          result.ratingAvg = result.ratingAvg.toFixed(1)
           randomMenu = result;
 
         //현재 시간 이용하여 계절음식 리스트 얻어오기.
@@ -70,9 +71,9 @@ router.get('/', function(req, res, next) {
           let random = Math.floor(Math.random() * (result.length-1));
 
           result[random].foodNm= deleteNumberDot(result[random].foodNm);
+          result[random].ratingAvg = result[random].ratingAvg.toFixed(1)
           seasonMenus= result[random];
           res.json({ bestMenu: bestMenu, randomMenu: randomMenu, seasonMenu: seasonMenus });
-
         }
       })
       .catch( err => {
