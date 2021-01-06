@@ -27,7 +27,7 @@ for step in range(501):
         print("step= %d  W= %f   b= %f" % (step, sess.run(W), sess.run(b)))
     sess.run(train, feed_dict={X: [1, 2, 3, 4], Y: [2, 4, 6, 8]})
 
-print("-------------------------------")g
+print("-------------------------------")
 print(sess.run(hypothesis, feed_dict={X: [5]}))
 
 
