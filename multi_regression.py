@@ -11,16 +11,18 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 # .batch(10) : 한 번에 10개씩 묶어서 사용
 
 # 메모리의 한계와 속도 저하 때문에 데이터를 나누는 batch size
-iterator = tf.data.TextLineDataset("dataDirectory/data-01-test-score.csv") \
+dataset = tf.data.TextLineDataset(["dataDirectory/data-01-test-score.csv", "dataDirectory/data-01-test-score2.csv"]) \
     .repeat() \
-    .batch(10)\
-    .make_initializable_iterator()
+    .batch(20)\
+
+iterator = dataset.make_initializable_iterator()
 
 
 # 데이터를 포함할 tensor
-dataset = iterator.get_next()
+batch = iterator.get_next()
 
-lines = tf.decode_csv(dataset, record_defaults=[[0.], [0.], [0.], [0.]])
+
+lines = tf.decode_csv(batch, record_defaults=[[0.], [0.], [0.], [0.]])
 
 # size of batch
 train_x_batch = tf.stack(lines[0:-1], axis=1)  # (?, 3)
