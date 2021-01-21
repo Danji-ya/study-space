@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const myKey = require('./dbUrl');
+const myKey = require('./sercretUrl');
 const autoIncrement = require("mongoose-auto-increment");
 
 module.exports = () => {

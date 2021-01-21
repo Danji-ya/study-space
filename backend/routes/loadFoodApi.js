@@ -3,13 +3,14 @@ var router = express.Router();
 var request = require('request');
 
 const Food = require('../models/food');
-
+const myKey = require("../db/secretUrl")
 
 var requestFoodApi = (page)  => {
     return new Promise( function(resolve, reject) {
+        
 
         var url = 'http://data.ex.co.kr/exopenapi/restinfo/restBestfoodList';
-        var queryParams = '?' + encodeURIComponent('ServiceKey') + '=QrEhR8UQBNs8lGAosaLK3EMV55TY6u5n8%2FIcwwiwRYbRNXVfb3NV9tgLQkCp2VhZsQZ3XcjUUkMI2t856Mu%2Fdw%3D%3D';
+        var queryParams = '?' + encodeURIComponent('ServiceKey') + myKey.serviceKey;
         queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('999');
         queryParams += '&' + encodeURIComponent('type') + '=' + encodeURIComponent('json');
         queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent(page);

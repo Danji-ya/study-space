@@ -17,14 +17,18 @@ class MainContent extends Component {
             <div id="content">
                 <ul className="content-ul">
                     <li>
-                        <p className="content-title">베스트 메뉴<b>01</b></p>
-                        <img className="food-img" src={this.state.bestMenu["url"]} alt="profile"/>
-                        <h3>{this.state.bestMenu["routeNm"]}</h3>
-                        <h3>{this.state.bestMenu["stdRestNm"]}</h3>
-                        <p className="content-top-p"> {this.state.bestMenu["foodNm"]}</p>
-                        <p>{this.state.bestMenu["foodCost"]}원</p>
-                        <p>{this.state.bestMenu["ratingAvg"] ? `평균평점:${this.state.bestMenu["ratingAvg"]} \u00A0\u00A0 (리뷰: ${this.state.bestMenu["reviewList"].length}개)`  : "첫 리뷰를 작성해주세요"}</p>
-                        <ReviewStar number={this.state.bestMenu["ratingAvg"]} />
+                        {this.state.bestMenu ?
+                            <>
+                                <p className="content-title">베스트 메뉴<b>01</b></p>
+                                <img className="food-img" src={this.state.bestMenu["url"]} alt="profile"/>
+                                <h3>{this.state.bestMenu["routeNm"]}</h3>
+                                <h3>{this.state.bestMenu["stdRestNm"]}</h3>
+                                <p className="content-top-p"> {this.state.bestMenu["foodNm"]}</p>
+                                <p>{this.state.bestMenu["foodCost"]}원</p>
+                                <p>{this.state.bestMenu["ratingAvg"] ? `평균평점:${this.state.bestMenu["ratingAvg"]} \u00A0\u00A0 (리뷰: ${this.state.bestMenu["reviewList"].length}개)`  : "첫 리뷰를 작성해주세요"}</p>
+                                <ReviewStar number={this.state.bestMenu["ratingAvg"]} />
+                            </>
+                        : null }
                     </li>
                     <li>
                         <p className="content-title">랜덤 메뉴<b>02</b></p>
