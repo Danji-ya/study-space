@@ -1,9 +1,8 @@
 # React Native UI clone
 
 
-React Native를 이용하여 배달 UI를 구현한 코드입니다.
----
-해당 결과물
+### React Native를 이용하여 배달 UI를 구현한 코드
+### 아래 사진은 해당 결과물입니다.
 
 <img src="/testImg/test1.jpg" width="300px" height="450px"  alt="img"></img><br/>
 <img src="/testImg/test2.jpg" width="300px" height="450px"  alt="img"></img><br/>
