@@ -1,3 +1,4 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React, {useState}from 'react';
 
 import {
@@ -13,12 +14,12 @@ import {
 
 import {COLORS, icons, images, SIZES, FONTS} from '../constants';
 
-const Home = () => {
+const Home = ({navigation}) => {
 
     // Dummy Datas
 
     const initialCurrentLocation = {
-        streetName: "Kuching",
+        streetName: "Yeouido",
         gps: {
             latitude: 1.5496614931250685,
             longitude: 110.36381866919922
@@ -172,7 +173,8 @@ const Home = () => {
                 {
                     menuId: 7,
                     name: "Mediterranean Chopped Salad ",
-                    photo: images.salad,
+                    photo: images.tomato_pasta,
+                    // photo: images.salad,
                     description: "Finely chopped lettuce, tomatoes, cucumbers",
                     calories: 100,
                     price: 10
@@ -358,7 +360,7 @@ const Home = () => {
     function renderHeader() {
         return (
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', height: 50}}>
-                          <TouchableOpacity
+                <TouchableOpacity
                     style={{
                         width: 50,                                   
                         justifyContent: 'center',
@@ -427,9 +429,9 @@ const Home = () => {
                 >
                     <View
                         style={{
-                            width: 35,
-                            height: 35,
-                            borderRadius: 25,
+                            width: 20,
+                            height: 15,
+                            borderRadius: 20,
                             alignItems: 'center',
                             justifyContent: 'center',
                             backgroundColor: (selectedCategory?.id === item.id) ? COLORS.white : COLORS.lightGray,
@@ -439,8 +441,8 @@ const Home = () => {
                             source={item.icon}
                             resizeMode= 'contain'
                             style= {{
-                                width: 30,
-                                height: 30
+                                width: 20,
+                                height: 20
                             }}
                         />
 
@@ -461,16 +463,13 @@ const Home = () => {
 
         return (
             <View style={{ padding: SIZES.padding * 2}}>
-                <Text style={{...FONTS.h1 }}>Main Categories</Text>
-                
-
                 <FlatList
                     data={categories}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={ item => `${item.id}`}
                     renderItem={renderItem}
-                    contentContainerStyle={{ paddingTop: SIZES.padding*2}}
+                    contentContainerStyle={{ paddingTop: SIZES.padding}}
                 />
 
                 
@@ -488,6 +487,11 @@ const Home = () => {
                 style={{
                     marginBottom: SIZES.padding *2,
                 }}
+                // 해당 item 클릭시 Restaurant.js로 넘어간다.
+                onPress={ () => navigation.navigate("Restaurant", {
+                    item,
+                    currentLocation
+                })}
             >
                 <View
                     style={{
@@ -499,7 +503,7 @@ const Home = () => {
                         resizeMode='cover'
                         style={{
                             width: '100%',
-                            height: 200,
+                            height: 150,
                             borderRadius: SIZES.radius
                         }}
                     />
@@ -507,7 +511,7 @@ const Home = () => {
                         style={{
                             position: 'absolute',
                             bottom: 0,
-                            height: 50,
+                            height: 30,
                             width: SIZES.width * 0.3,
                             backgroundColor: COLORS.white,
                             borderTopRightRadius: SIZES.radius,
@@ -532,6 +536,7 @@ const Home = () => {
                         alignItems: 'center'
                     }}
                 >
+                    {/* star icon */}
                     <Image
                         source={icons.star}
                         style={{
@@ -543,12 +548,14 @@ const Home = () => {
                     />
                     <Text style={{...FONTS.body3}}>{item.rating}</Text>
 
+                   
                     <View
                         style={{
                             flexDirection: 'row',
                             marginLeft: 10
                         }}
                     >
+                            {/* category TextList  */}
                             {item.categories.map((categoryId)=>{
 
                                 return (
@@ -566,8 +573,26 @@ const Home = () => {
 
                             })}
 
-                    </View>
+                            {
+                                [1, 2, 3].map( price => {
 
+                                    return (            
+                                        <Text
+                                            key={price}
+                                            style={{
+                                                ...FONTS.body3,
+                                                color: (price <= item.priceRating) ? COLORS.black : COLORS.darkgray
+                                            }}
+                                        >$</Text>
+                                    )
+                                    
+
+                                })
+                            }
+
+                            
+
+                    </View>
                 </View>
             </TouchableOpacity>
         )
