@@ -430,6 +430,11 @@ const Restaurant = ({route, navigation}) => {
                                 alignItems: 'center',
                                 borderRadius: SIZES.radius
                             }}
+                                                    // 해당 item 클릭시 Restaurant.js로 넘어간다.
+                            onPress={ () => navigation.navigate("OrderDelivery", {
+                                restaurant: restaurant,
+                                currentLocation: currentLocation
+                            })}  
                         >
                             <Text style={{ color: COLORS.white, ...FONTS.h3}}>Order</Text>
 
