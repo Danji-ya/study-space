@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll('.calcalator-buttons > button');
 
 const operators = {
     '+': (value1, value2) => value1 + value2,
-    '-': (value1, value2) => value1 - value2,
+    '–': (value1, value2) => value1 - value2,
     x: (value1, value2) => value1 * value2,
     '÷': (value1, value2) => value1 / value2,
     '=': (value1 = null, value2) => value2,
