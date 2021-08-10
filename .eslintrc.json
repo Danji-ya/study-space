@@ -3,12 +3,13 @@
         "browser": true,
         "es2020": true
     },
-    "extends": ["eslint:recommended", "airbnb-base", "plugin:prettier/recommended"],
+    "extends": ["airbnb-base", "plugin:prettier/recommended"],
     "parserOptions": {
         "ecmaVersion": 11,
         "sourceType": "module"
     },
     "rules": { 
-        "no-unused-vars": "warn" 
+        "prettier/prettier": ["error"],
+        "no-unused-vars": "warn"
     }
 }
