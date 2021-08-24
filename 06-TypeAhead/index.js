@@ -31,25 +31,28 @@ const observer = (function(){
         restList = rest;
         let li = document.querySelector("li:last-child");
         const DATA_PER_PAGE = 10;
+        console.log(restList)
     
         // IntersectionObserver 생성
-        const io = new IntersectionObserver(entry => {
+        const io = new IntersectionObserver( (entries, observer) => {
 
-            // 타겟이 교차영역에 보일 시
-            if (entry[0].isIntersecting) {
+            entries.map(entry => {
+                // 타겟이 교차영역에 보일 시
+                if(entry.isIntersecting) {
 
-                // 타겟 감시 취소
-                io.unobserve(li);
-    
-                suggestions.innerHTML += restList.slice(0, DATA_PER_PAGE).join('')
-                restList.splice(0, DATA_PER_PAGE);
+                    // 타겟 감시 취소
+                    observer.unobserve(li);
+        
+                    suggestions.innerHTML += restList.slice(0, DATA_PER_PAGE).join('')
+                    restList.splice(0, DATA_PER_PAGE);
 
-                // 새로운 타겟 지정
-                if(restList.length !== 0){
-                    li = document.querySelector("li:last-child");
-                    io.observe(li);
+                    // 새로운 타겟 지정
+                    if(restList.length !== 0){
+                        li = document.querySelector("li:last-child");
+                        observer.observe(li);
+                    }
                 }
-            }
+            });
             }, {
                 //options
                 threshold: 0.5
@@ -57,7 +60,6 @@ const observer = (function(){
     
         // 타겟 지정
         if(restList.length !== 0) io.observe(li);
-
     }
 
     return {
@@ -101,6 +103,8 @@ function searchTohWord(targetWord, cities) {
 
         return displayList(result, regExp);
     }
+
+    suggestions.innerHTML = '';
 }
 
 searchInput.addEventListener("keyup", (e) => {
