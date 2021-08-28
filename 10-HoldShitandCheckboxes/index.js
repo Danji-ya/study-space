@@ -1,5 +1,4 @@
 const root = document.querySelector('#root');
-
 root.innerHTML = `
     <div class="item">
         <input type="checkbox">
@@ -40,19 +39,20 @@ root.innerHTML = `
 `;
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const checkboxs = document.querySelectorAll("input[type=checkbox]");
+window.addEventListener("DOMContentLoaded", () => {
+
+    const checkboxes = document.querySelectorAll("input[type=checkbox]");
 
     let lastCheckedItem = undefined;
     
-    [...checkboxs].map(checkbox => checkbox.addEventListener("click", e => {
+    [...checkboxes].map(checkbox => checkbox.addEventListener("click", e => {
         let isStart = false;
 
         if(e.shiftKey && e.target.checked) {
             
             if(!lastCheckedItem) return;
         
-            [...checkboxs].map(checkbox => {
+            [...checkboxes].map(checkbox => {
                 if(checkbox === lastCheckedItem || checkbox === e.target) {
                     isStart = !isStart;
                 }

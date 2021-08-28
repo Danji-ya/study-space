@@ -13,3 +13,4 @@
 | Fun With HTML5 Canvas      | [View Demo](https://Danji-ya.github.io/JS_javascript30/08-FunWithHTML5Canvas/)  |
 | Dev Tools Domination      | null  |
 | Hold Shit and Checkboxes      | [View Demo](https://Danji-ya.github.io/JS_javascript30/10-HoldShitandCheckboxes/)  |
+| Custom Video Player     | [View Demo](https://Danji-ya.github.io/JS_javascript30/11-CustomVideoPlayer/)  |
