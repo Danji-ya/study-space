@@ -31,7 +31,7 @@
                 }
         
             },
-            erasing() {
+            erasing: function() {
                 if(charIdx > 0) {
                     if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
                     typedTextSpan.textContent = textArr[textArrIdx].substring(0, charIdx-1);
