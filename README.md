@@ -15,3 +15,4 @@
 | Hold Shit and Checkboxes      | [View Demo](https://Danji-ya.github.io/JS_javascript30/10-HoldShitandCheckboxes/)  |
 | Custom Video Player     | [View Demo](https://Danji-ya.github.io/JS_javascript30/11-CustomVideoPlayer/)  |
 | KeySequence Detection    | [View Demo](https://Danji-ya.github.io/JS_javascript30/12-KeySequenceDetection/)  |
+| slide In On Scroll    | [View Demo](https://Danji-ya.github.io/JS_javascript30/13-slideInOnScroll/)  |
