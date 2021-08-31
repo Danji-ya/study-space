@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Open Dev tools</p>
+    <script>
+        // start with strings, numbers and booleans
+        const a = 5;
+        let b = a;
+
+        console.log('before b =', b);
+        b = 10;
+        console.log('after a =', a);
+        console.log('after b =', b);
+        console.log('----------원시 타입은 위와 동일하게 동작한다.----------');
+
+        // Let's say we have an array
+        const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+        // and we want to make a copy of it.
+        const tempPlayers1 = players;
+
+        // You might think we can just do something like this:
+
+        // however what happens when we update that array?
+        tempPlayers1[0] = 'temp1';
+        console.log('players = ', players);
+        console.log('tempPlayers1 = ', tempPlayers1);
+
+        // now here is the problem!
+
+        // oh no - we have edited the original array too!
+
+        // Why? It's because that is an array reference, not an array copy. They both point to the same array!
+
+        // So, how do we fix this? We take a copy instead!
+
+        // one way
+        const tempPlayers2 = players.slice();
+        tempPlayers2[0] = 'temp2';
+        console.log('players = ', players);
+        console.log('tempPlayers2 = ', tempPlayers2);
+
+        // or create a new array and concat the old one in
+        const tempPlayers3 = [].concat(players);
+        tempPlayers3[0] = 'temp3';
+        console.log('players = ', players);
+        console.log('tempPlayers3 = ', tempPlayers3);
+
+        // or use the new ES6 Spread
+        const tempPlayers4 = [...players];
+        tempPlayers4[0] = 'temp4';
+        console.log('players = ', players);
+        console.log('tempPlayers4 = ', tempPlayers4);
+        console.log('-----------------------------------------------------');
+
+        // now when we update it, the original one isn't changed
+
+        // The same thing goes for objects, let's say we have a person object
+
+        // with Objects
+        const person = {
+            name: 'Wes Bos',
+            age: 80
+        };
+
+        // and think we make a copy:
+
+        const tempPerson1 = person;
+        tempPerson1.name = 'temp Person';
+        console.log('person = ', person);
+        console.log('tempPerson = ', tempPerson1);
+
+        // how do we take a copy instead?
+        
+        const tempPerson2 =  Object.assign({}, person, {name: 'temp2'});
+        console.log('person = ', person);
+        console.log('tempPerson2 = ', tempPerson2);
+
+        // We will hopefully soon see the object ...spread
+        const tempPerson3 =  {...person};
+        tempPerson3.name = 'temp3';
+        console.log('person = ', person);
+        console.log('tempPerson3 = ', tempPerson3);
+
+        // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+        const wes = {
+            name: 'wes',
+            age: '90',
+            social:{
+                twitter: 'a',
+                facebook: 'b'
+            }
+        };
+
+        const tempObj = Object.assign({}, wes);
+        tempObj.social.twitter = '1LevelDeep';
+
+        console.log('wes = ', wes);
+        console.log('tempObj = ', tempObj);
+        console.log('--------this is only 1 level deep---------');
+
+        const isObject = (val) => typeof val === 'object';
+
+        const deepCopyObject = (obj) => {
+            if(obj === null || !isObject(obj)) return obj;
+
+            let clone = {};
+            for(let key in obj){
+                clone[key] = deepCopyObject(obj[key]);
+            }
+
+            return clone;
+        }
+
+        const tempObj2 = deepCopyObject(wes);
+        tempObj2.social.twitter = 'deepCopy';
+
+        console.log(wes.social.twitter === tempObj.social.twitter);
+        console.log(wes.social.twitter === tempObj2.social.twitter);
+    </script>
+</body>
+</html>
