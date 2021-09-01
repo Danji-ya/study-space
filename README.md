@@ -17,3 +17,4 @@
 | KeySequence Detection    | [View Demo](https://Danji-ya.github.io/JS_javascript30/12-KeySequenceDetection/)  |
 | slide In On Scroll    | [View Demo](https://Danji-ya.github.io/JS_javascript30/13-slideInOnScroll/)  |
 | Javascript References VS Copying    | null |
+| Local Storage   | [View Demo](https://Danji-ya.github.io/JS_javascript30/15-LocalStorage/)  |
