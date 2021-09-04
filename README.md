@@ -20,3 +20,4 @@
 | Local Storage   | [View Demo](https://Danji-ya.github.io/JS_javascript30/15-LocalStorage/)  |
 | Mouse Move Shadow   | [View Demo](https://Danji-ya.github.io/JS_javascript30/16-MouseMoveShadow/)  |
 | Sort Without Articles   | [View Demo](https://Danji-ya.github.io/JS_javascript30/17-SortWithoutArticles/)  |
+| Adding Up Times with Reduce   | [View Demo](https://Danji-ya.github.io/JS_javascript30/18-AddingUpTimeswithReduce/)  |
