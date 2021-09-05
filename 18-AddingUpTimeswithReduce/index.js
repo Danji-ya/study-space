@@ -2,8 +2,8 @@
     const videoList = document.querySelectorAll(".videos li");
     const time = document.querySelector('.time');
     const totalSecond = [...videoList]
-                            .map(video => video.dataset.time.split(":"))
-                            .reduce((acc, cur) => acc += parseInt(cur[0]) * 60 + parseInt(cur[1]), 0);
+                            .map(video => video.dataset.time.split(":").map(parseFloat))
+                            .reduce((acc, cur) => acc += cur[0] * 60 + cur[1], 0);
     
     const hours = Math.floor(totalSecond / 3600);
     const mins = Math.floor(totalSecond % 3600 / 60);
