@@ -1,0 +1,18 @@
+body {
+    background: #ffc600;
+    display: flex;
+    justify-content: center;
+}
+
+.words {
+    min-width: 500px;
+    background: white;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+
+    border-radius: 5px;
+    padding: 1rem 2rem 1rem 5rem;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#d9eaf3), color-stop(4%, #fff)) 0 4px;
+    background-size: 100% 3rem;
+    position: relative;
+    line-height: 3rem;
+}
