@@ -1,0 +1,197 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 150px;
+}
+
+/* header response */
+header.sticky {
+    background: white;
+    color: black;
+}
+
+header.sticky .sticky-pink{
+    fill: rgb(255, 56, 92);
+}
+
+header.sticky .sticky-black {
+    color: black;
+    fill: black;
+}
+/* -------------- */
+
+.header-col {
+    flex: 1 1 33%;
+}
+
+.header-col .airbnbIcon {
+    fill: white;
+}
+
+.header-col ul {
+    display: flex;
+    justify-content: center;
+}
+
+.header-col ul li {
+    list-style: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 20px;
+}
+
+.header-col ul li:hover {
+    opacity: 0.5;
+}
+
+.header-col ul li:first-child span {
+    padding: 10px 0;
+    border-bottom: 1px solid white;
+}
+
+.header-col ul li:hover {
+    cursor: pointer;
+}
+
+.header-col ul li:hover span, .header-col ul li:hover a {
+    padding: 10px 0;
+    border-bottom: 1px solid white;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.header-nav-left {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.header-nav-left a {
+    margin: 0 15px;
+}
+
+.header-nav-left button {
+    display: flex;
+    background: none;
+    border: none;
+    fill: white;
+}
+
+.header-nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 77px;
+    height: 42px;
+}
+
+.header-nav-right button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    padding: 5px 5px 5px 12px;
+
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.icon-list {
+    margin-left: 3px;
+}
+
+.icon-user-circle {
+    fill: gray;
+    width: 28.69px;
+    height: 28.69px;
+}
+
+/* query form */
+.query-form {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    width: 800px;
+    height: 70px;
+    transform: translateX(-50%);
+
+    border-radius: 50px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.query-col {
+    flex-grow: 1;
+}
+
+.query-location {
+    padding: 10px 24px;
+}
+
+.query-location input {
+    border: none;
+
+}
+.query-date {
+    display: flex;
+    align-items: center;
+}
+.query-date-start, .query-date-end {
+    flex-grow: 1;
+    padding: 10px 24px;
+}
+
+.query-submit {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px 24px;
+    justify-content: space-between;
+}
+
+.query-submit-btn {
+    border-radius: 100%;
+    padding: 18px;
+    background: #FF385C;
+    border-style: none;
+}
+
+.query-divide {
+    height: 30px;
+    width: 10px;
+    border-left: 1px solid #ebebeb;
+}
+
+.query-title {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 0 5px 0;
+}
+
+.query-input {
+    color: gray;
+    font-size: 16px;
+    letter-spacing: 1px;
+}

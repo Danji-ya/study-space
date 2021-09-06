@@ -1,0 +1,46 @@
+.background-img {
+    background-image: url("https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=960");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 890px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-text-wrap {
+    width: 600px;
+    height: 500px;
+    /* background: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 0 80px 0;
+}
+
+.background-text-wrap .text {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.background-text-wrap button {
+    padding: 15px 50px;
+    border-radius: 30px;
+    border-style: none;
+    border-width: 0;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.background-text-wrap button span {
+
+    background: linear-gradient(90deg, #6F019C 0%, #C6017E 135.12%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 18px;
+}
