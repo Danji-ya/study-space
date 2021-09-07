@@ -23,3 +23,4 @@
 | Adding Up Times with Reduce   | [View Demo](https://Danji-ya.github.io/JS_javascript30/18-AddingUpTimeswithReduce/)  |
 | Webcam Fun   | [View Demo](https://Danji-ya.github.io/JS_javascript30/19-WebcamFun/)  |
 | Speech Detection   | [View Demo](https://Danji-ya.github.io/JS_javascript30/20-SpeechDetection/)  |
+| Geolocation   | [View Demo](https://Danji-ya.github.io/JS_javascript30/21-Geolocation/)  |
