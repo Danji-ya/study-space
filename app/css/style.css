@@ -1,6 +1,7 @@
 @import "./reset.css";
 @import "./header.css";
 @import "./main.css";
+@import "./footer.css";
 
 * {
     box-sizing: border-box;

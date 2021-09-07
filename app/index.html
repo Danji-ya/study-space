@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="http://fonts.cdnfonts.com/css/airbnb-cereal-app" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <script src="./js/index.js" defer></script>
 </head>
 <body>
@@ -57,6 +58,19 @@
                 </div>
             </div>
         </div>
+        <div class="simple-query-form">
+            <div class='simple-query-btn-wrap'>
+                <button class='simple-query-form-btn'>
+                    <div class='text'>검색 시작하기</div>
+                    <div class="query-submit-btn">
+                        <svg viewBox="0 0 32 32" style="display: block; height: 12px; width: 12px; stroke: white; stroke-width: 4; overflow: visible;">
+                            <g fill="none"><path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path></g>
+                        </svg>
+                    </div>
+
+                </button>
+            </div>
+        </div>
         <div class="header-col header-nav">
             <div class="header-nav-left">
                 <a class="sticky-black" href="#">호스트 되기</a>
@@ -69,17 +83,17 @@
             <div class="header-nav-right">
                 <button>
                     <div class="icon-list">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g></svg>
+                        <svg viewBox="0 0 32 32" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;"><g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g></svg>
                     </div>
                     <div class="icon-user-circle">
-                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false"><path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path></svg>
+                        <svg viewBox="0 0 32 32"><path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path></svg>
                     </div>
                 </button>
             </div>
         </div>
     </header>
     <main>
-        <div class="background-img">
+        <article class="background-img">
             <div class="background-text-wrap">
                 <div class="text">어디든 상관없이 떠나고 싶을 때 에어비앤비가 도와드립니다!</div>
                 <div class="button-wrap">
@@ -88,9 +102,213 @@
                     </button>
                 </div>
             </div>
+        </article>
+        <article class="near-trip">
+                <h2>가까운 여행지 둘러보기</h2>
+                <ul class="near-trip-list">
+                    <li>
+                        <img src="https://a0.muscache.com/im/pictures/71e23854-a3c7-491c-b715-6e86233a293f.jpg?im_q=medq&im_w=240">
+                        <div class="near-trip-item">
+                            <div class="near-trip-title">서울</div>
+                            <div class="near-trip-subtitle">차로 15분 거리</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://a0.muscache.com/im/pictures/be4d3ba5-08d7-4afe-95a7-f2da6453886a.jpg?im_q=medq&im_w=240">
+                        <div class="near-trip-item">
+                            <div class="near-trip-title">부산</div>
+                            <div class="near-trip-subtitle">차로 5.5시간 거리</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://a0.muscache.com/im/pictures/7253e011-7c22-48fd-b75d-d0da35372397.jpg?im_q=medq&im_w=240">
+                        <div class="near-trip-item">
+                            <div class="near-trip-title">양양군</div>
+                            <div class="near-trip-subtitle">차로 2.5시간 거리</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://a0.muscache.com/im/pictures/52e8083e-2de2-446d-a860-534eab250541.jpg?im_q=medq&im_w=240">
+                        <div class="near-trip-item">
+                            <div class="near-trip-title">속초시</div>
+                            <div class="near-trip-subtitle">차로 3시간 거리</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://a0.muscache.com/im/pictures/20e74de0-0eb8-4fca-afb8-b111875acdf5.jpg?im_q=medq&im_w=240">
+                        <div class="near-trip-item">
+                            <div class="near-trip-title">제주도(Jeju)</div>
+                            <div class="near-trip-subtitle">차로 7시간 거리</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://a0.muscache.com/im/pictures/20356d40-a45f-4680-a9d0-5bb0a3836e4d.jpg?im_q=medq&im_w=240">
+                        <div class="near-trip-item">
+                            <div class="near-trip-title">대구</div>
+                            <div class="near-trip-subtitle">차로 4시간 거리</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://a0.muscache.com/im/pictures/e639b7ab-aee3-48ee-9743-216684a51319.jpg?im_q=medq&im_w=240">
+                        <div class="near-trip-item">
+                            <div class="near-trip-title">완주군</div>
+                            <div class="near-trip-subtitle">차로 3시간 거리</div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://a0.muscache.com/im/pictures/ca3737ef-0faf-46ba-b055-b4a2d99e2cea.jpg?im_q=medq&im_w=240">
+                        <div class="near-trip-item">
+                            <div class="near-trip-title">전주시</div>
+                            <div class="near-trip-subtitle">차로 3시간 거리</div>
+                        </div>
+                    </li>
+                </ul>
+        </article>
+        <article class="anywhere-trip">
+            <h2>어디에서나, 여행은 살아보는 거야!</h2>
+            <ul class="anywhere-trip-list">
+                <li>
+                    <img src="https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480">
+                    <div class="anywhere-trip-subtitle">자연생활을 만낄할 수 있는 숙소</div>
+                </li>
+                <li>
+                    <img src="https://a0.muscache.com/im/pictures/36f53e61-db8d-403c-9122-5b761c0e4264.jpg?im_w=480">
+                    <div class="anywhere-trip-subtitle">독특한 공간</div>
+                </li>
+                <li>
+                    <img src="https://a0.muscache.com/im/pictures/7d82ca14-56e5-4465-8218-dcfa7d69b6ac.jpg?im_w=480">
+                    <div class="anywhere-trip-subtitle">집 전체</div>
+                </li>
+                <li>
+                    <img src="https://a0.muscache.com/im/pictures/10a638e1-6aff-4313-8033-1275cec83987.jpg?im_w=480">
+                    <div class="anywhere-trip-subtitle">반려동물 동반가능</div>
+                </li>
+            </ul>
+        </article>
+        <article class="hosting-start">
+            <div class="hosting-start-background">
+                <div class="hosting-start-text-wrap">
+                    <h2>호스팅 시작하기</h2>
+                    <div class="hosting-start-subtitle">
+                        <span>숙소를 공유하여 부수입을 올리고<br>
+                            새로운 가능성을 만나세요.</span>
+                    </div>
+                    <div class="hosting-start-btn-wrap">
+                        <p>자세히 알아보기</p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+        <article class="special-trip">
+            <h2>특별한 즐길 거리를 찾아보세요</h2>
+            <ul class="special-trip-list">
+                <li>
+                    <img src="https://a0.muscache.com/im/pictures/ad109d56-2421-40cd-98e6-e114160dc85b.jpg?im_w=480">
+                    <div class="special-trip-item">
+                        <div class="special-trip-title">체험</div>
+                        <div class="special-trip-subtitle">가까운 곳에서 즐길 수 있는 잊지 못할 체험을 찾아보세요.</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://a0.muscache.com/im/pictures/0ce799cb-7553-4369-be9e-d0011e0ef636.jpg?im_w=480">
+                    <div class="special-trip-item">
+                        <div class="special-trip-title">온라인 체험</div>
+                        <div class="special-trip-subtitle">호스트와 실시간으로 소통하면서 액티비티를 즐겨보세요.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="special-trip-img-wrap">
+                        <p>👍</p>
+                        <img src="https://a0.muscache.com/im/pictures/f51f70fb-93b7-4974-86e8-1195b64f1353.jpg?im_w=480">
+                    </div>
+                    <div class="special-trip-item">
+                        <div class="special-trip-title">올림픽.패럴림픽 출전 선수</div>
+                        <div class="special-trip-subtitle">운동선수가 호스팅하는 온라인 액티비티를 즐겨보세요.</div>
+                    </div>
+                </li>
+            </ul>
+        </article>
+    </main>
+    <footer>
+        <div class="footer-sections">
+            <section>
+                <h3>소개</h3>
+                <ul>
+                    <li>에어비앤비 이용 방법</li>
+                    <li>뉴스룸</li>
+                    <li>에어비앤비 2021</li>
+                    <li>투자자 정보</li>
+                    <li>에어비앤비 플러스</li>
+                    <li>에어비앤비 Luxe</li>
+                    <li>호텔투나잇</li>
+                    <li>에어비앤비 비즈니스 프로그램</li>
+                    <li>호스트 분들이 있기에 가능합니다</li>
+                    <li>채용정보</li>
+                    <li>창립자 편지</li>
+                </ul>
+            </section>
+            <section>
+                <h3>커뮤니티</h3>
+                <ul>
+                    <li>다양성 및 소속감</li>
+                    <li>접근성</li>
+                    <li>에어비앤비 어소시에이트</li>
+                    <li>아프간 난민 호스팅하기</li>
+                    <li>게스트 추천</li>
+                    <li>Airbnb.org</li>
+                </ul>
+            </section>
+            <section>
+                <h3>호스팅하기</h3>
+                <ul>
+                    <li>숙소 호스팅</li>
+                    <li>온라인 체험 호스팅하기</li>
+                    <li>체험 호스팅하기</li>
+                    <li>책임감 있는 호스팅</li>
+                    <li>자료 센터</li>
+                    <li>커뮤니티 센터</li>
+                </ul>
+            </section>
+            <section>
+                <h3>에어비앤비 지원</h3>
+                <ul>
+                    <li>에어비앤비의 코로나19 대응 방안</li>
+                    <li>도움말 센터</li>
+                    <li>예약 취소 옵션</li>
+                    <li>에어비앤비 이웃 민원 지원</li>
+                    <li>신뢰와 안전</li>
+                </ul>
+            </section>
 
         </div>
-    </main>
-    <footer></footer>
+        <div class="company-description">
+            <div class="Inc">
+                © 2021 Jiseong, Inc.<span>·</span><a href="#">개인정보 처리방침</a><span>·</span><a href="#">이용약관</a><span>·</span><a href="#">사이트맵</a><span>·</span><a href="#">한국의 변경된 환불 정책</a><span>·</span><a href="#">회사 세부정보</a>
+            </div>
+            <div class="icons">
+                <div class="icons-left">
+                    <div>
+                        <button class="btn-wrap">
+                            <i class="fas fa-globe"></i>
+                            <div>한국어 (KR)</div>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="btn-wrap">
+                            <i class="fas fa-won-sign"></i>
+                            <div>KRW</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="icons-right">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
 </body>
 </html>

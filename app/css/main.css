@@ -12,7 +12,6 @@
 .background-text-wrap {
     width: 600px;
     height: 500px;
-    /* background: blue; */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -43,4 +42,192 @@
     -webkit-text-fill-color: transparent;
     font-weight: bold;
     font-size: 18px;
+}
+
+/* near-trip */
+
+.near-trip {
+    width: 100%;
+    padding: 10px 100px;
+}
+
+.near-trip h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 52px;
+    padding: 8px;
+}
+
+.near-trip-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 8px;
+    gap: 20px;
+}
+
+.near-trip-list li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+ 
+.near-trip-list img {
+    width: 68px;
+    height: 68px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
+.near-trip-title {
+    font-weight: 600;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+/* anywhere trip */
+.anywhere-trip {
+    width: 100%;
+    padding: 20px 100px;
+}
+
+.anywhere-trip h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 52px;
+    padding: 8px;
+}
+
+.anywhere-trip-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 8px;
+    gap: 20px;
+}
+.anywhere-trip-list img {
+    width: 100%;
+    margin-right: 15px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.anywhere-trip-subtitle {
+    font-weight: 700;
+    padding-bottom: 5px;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+
+/* hosting start */
+
+.hosting-start {
+    width: 100%;
+    padding: 30px 108px;
+}
+
+.hosting-start-background {
+    width: 100%;
+    height: 100%;
+    background-image: url("https://a0.muscache.com/im/pictures/2595054e-d1d9-4fde-8046-58d51fcb3164.jpg?im_w=1440");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    min-height: 400px;
+    position: relative;
+}
+
+.hosting-start-text-wrap {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.hosting-start-text-wrap h2 {
+    font-size: 40px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+.hosting-start-subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    padding-top:  15px;
+}
+
+.hosting-start-btn-wrap {
+    width: 130px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: white;
+    color: black;
+    padding: 10px 0;
+    margin-top: 15px;
+}
+
+/* special-trip */
+.special-trip {
+    width: 100%;
+    padding: 20px 100px;
+}
+
+.special-trip h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 52px;
+    padding: 8px;
+}
+
+.special-trip-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: 5px;
+    gap: 20px;
+    cursor: pointer;
+}
+
+
+.special-trip-img-wrap {
+    position: relative;
+}
+
+.special-trip-img-wrap p {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.special-trip-list img {
+    width: 100%;
+    margin-right: 15px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.special-trip-title {
+    font-weight: 700;
+    overflow: hidden;
+    letter-spacing: 1px;
+    padding-bottom: 8px;
+}
+
+.special-trip-subtitle {
+    font-size: 13px;
 }

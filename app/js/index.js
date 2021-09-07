@@ -3,13 +3,17 @@
     window.addEventListener('scroll', function(){
         const header = document.querySelector('header');
         const headerForm = document.querySelector('.header-form');
-        console.log(header)
+        const simpleForm = document.querySelector('.simple-query-form');
+
         if(window.scrollY > 0){
             header.classList.add('sticky');
-            headerForm.style.visibility = 'hidden';
+            headerForm.classList.add('sticky');
+            simpleForm.classList.add('sticky');
+
         } else {
             header.classList.remove('sticky');
-            headerForm.style.visibility = 'visible';
+            headerForm.classList.remove('sticky');
+            simpleForm.classList.remove('sticky');
         }
     });
 
