@@ -24,3 +24,4 @@
 | Webcam Fun   | [View Demo](https://Danji-ya.github.io/JS_javascript30/19-WebcamFun/)  |
 | Speech Detection   | [View Demo](https://Danji-ya.github.io/JS_javascript30/20-SpeechDetection/)  |
 | Geolocation   | [View Demo](https://Danji-ya.github.io/JS_javascript30/21-Geolocation/)  |
+| Follow Along Link   | [View Demo](https://Danji-ya.github.io/JS_javascript30/22-FollowAlongLink/)  |
