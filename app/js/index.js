@@ -1,5 +1,4 @@
 (function(){
-
     window.addEventListener('scroll', function(){
         const header = document.querySelector('header');
         const headerForm = document.querySelector('.header-form');
