@@ -1,17 +1,19 @@
+:root {
+    --gp-fixed-sidebar: 840px;
+}
+
 main {
-    display: flex;
-    /* temp */
     width: 100%;
     height: 100%;
     margin-top: 80px;
+    position: relative;
 }
 
 .accommodation-list-wrap {
-    flex: 1;
     color: black;
     padding: 0 24px;
     min-width: 0;
-    max-width: 840px;
+    max-width: var(--gp-fixed-sidebar);
 }
 
 .search-result-subtitle {
@@ -51,27 +53,102 @@ main {
 
 /* list- item */
 
-.list-item {
-    display: flex;
+.list-item-cotainer {
     padding: 25px 0;
-    
     border-bottom: 1px solid #DDDDDD;
 }
 
-.list-item:last-child {
-    border: none;
+.list-item {
+    display: flex;
+}
+
+.list-item:hover{
+    cursor: pointer;
 }
 
 .list-item .img-slider-container {
     flex: 0 0 auto;
     width: 300px;
     height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.list-item .img-slider-container .img-slider-row {
+    display: flex;
+    /* 나중에 컴포넌트로 만들면서 이미지 갯수에 따라 지정 */
+    width: 300%;
+    height: 100%;
+    margin-left: 0%;
+    transition: margin 0.5s;
+}
+
+.list-item .img-slider-container .img-slider-col {
+    width: 100%;
+    height: 100%;
 }
 
 .list-item img {
+    object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+}
+
+.list-item .img-slider-container:hover a {
+    opacity: 1;
+}
+
+.list-item .img-slider-container .prev, .list-item .img-slider-container .next {
+    position: absolute;
+    background: white;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+}
+
+.list-item .img-slider-container .prev {
+    top: 50%;
+    left: 8px;
+    visibility: hidden;
+}
+
+.list-item .img-slider-container .next {
+    top: 50%;
+    right: 8px;
+}
+
+.list-item .dot-wrap {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    text-align: center;
+}
+
+.list-item .dot-wrap .dot {
+    cursor: pointer;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background: #bbb;
+    border-radius: 6px;
+    margin: 0 2px;
+
+    transition: background 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    transform: scale(0.788);
+}
+
+.list-item .dot-wrap .dot.active {
+    background: white;
+    transform: scale(1);
 }
 
 .list-item .text-wrap {
@@ -184,13 +261,80 @@ main {
     text-decoration: underline;
 }
 
+.accommodation-list-wrap .pages {
+    margin: 32px;
+    /* background: red; */
+}
 
 
+.pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+}
 
+.pages .help-text {
+    padding-top: 30px;
+    
+    font-weight: 400;
+    color: rgb(113, 113, 113);
+}
 
+.pages .pagination-wrap .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.pagination-wrap .page-list {
+    padding: 20px;
+    display: flex;
+}
+
+.pagination-wrap .page {
+
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    padding: 10px;
+    margin: 0 6px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-wrap .page.active {
+    background: black;
+    color: white;
+}
+
+.pagination-wrap .inactive:hover {
+    background: #ebebeb;
+    cursor: pointer;
+}
+
+.pagination-wrap a {
+    cursor: pointer;
+}
 
 .accommodation-map-wrap {
-    flex: 1.2;
-    background: blue;
+    position: fixed;
+    right: 0;
+    top: 80px;
+    width: calc(100% - var(--gp-fixed-sidebar));
+    height: calc(100vh - 80px);
+    background: red;
+
+    /* height: 500px;
+    width: 500px;
+    background: red; */
+}
+
+.accommodation-map-wrap .map{
+    width: 100%;
+    height: 100%;
 }
