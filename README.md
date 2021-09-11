@@ -27,3 +27,4 @@
 | Follow Along Link   | [View Demo](https://Danji-ya.github.io/JS_javascript30/22-FollowAlongLink/)  |
 | Speech Synthesis   | [View Demo](https://Danji-ya.github.io/JS_javascript30/23-SpeechSynthesis/)  |
 | Sticky Nav   | [View Demo](https://Danji-ya.github.io/JS_javascript30/24-StickyNav/)  |
+| Event Capture, Propagation, Bubbling And Once | [View Demo](https://Danji-ya.github.io/JS_javascript30/25-EventCapture,Propagation,BubblingAndOnce/)  |
