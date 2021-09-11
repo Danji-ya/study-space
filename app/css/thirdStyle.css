@@ -2,6 +2,8 @@
 @import "./header.css";
 @import "./third/header.css";
 @import "./third/main.css";
+@import "./footer.css";
+@import "./third/footer.css";
 
 * {
     box-sizing: border-box;
