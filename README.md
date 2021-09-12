@@ -28,3 +28,4 @@
 | Speech Synthesis   | [View Demo](https://Danji-ya.github.io/JS_javascript30/23-SpeechSynthesis/)  |
 | Sticky Nav   | [View Demo](https://Danji-ya.github.io/JS_javascript30/24-StickyNav/)  |
 | Event Capture, Propagation, Bubbling And Once | [View Demo](https://Danji-ya.github.io/JS_javascript30/25-EventCapture,Propagation,BubblingAndOnce/)  |
+| Stripe Follow Along Nav | [View Demo](https://Danji-ya.github.io/JS_javascript30/26-StripeFollowAlongNav/)  |
