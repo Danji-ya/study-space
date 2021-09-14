@@ -30,3 +30,4 @@
 | Event Capture, Propagation, Bubbling And Once | [View Demo](https://Danji-ya.github.io/JS_javascript30/25-EventCapture,Propagation,BubblingAndOnce/)  |
 | Stripe Follow Along Nav | [View Demo](https://Danji-ya.github.io/JS_javascript30/26-StripeFollowAlongNav/)  |
 | Click And Drag | [View Demo](https://Danji-ya.github.io/JS_javascript30/27-ClickAndDrag/)  |
+| Video Speed Controller | [View Demo](https://Danji-ya.github.io/JS_javascript30/28-VideoSpeedController/)  |
