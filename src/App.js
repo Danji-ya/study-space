@@ -1,15 +1,26 @@
 /** @jsxImportSource @emotion/react */
 import { Global } from '@emotion/react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import reset from './assets/css/reset';
+import AccomodationList from './pages/AccomodationList';
+import Main from './pages/Main';
 
 function App() {
-  const testEslint = 5;
-
   return (
-    <div>
+    <Router>
       <Global styles={reset} />
-      <p>testEmotion</p>
-    </div>
+      <Switch>
+        <Route exact path={['/', '/main']}>
+          <Main />
+        </Route>
+        <Route path="/accommodationList">
+          <AccomodationList />
+        </Route>
+        {/* <Route path="*">
+          <NotFound />
+        </Route> */}
+      </Switch>
+    </Router>
   );
 }
 
