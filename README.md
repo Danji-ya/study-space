@@ -32,3 +32,4 @@
 | Click And Drag | [View Demo](https://Danji-ya.github.io/JS_javascript30/27-ClickAndDrag/)  |
 | Video Speed Controller | [View Demo](https://Danji-ya.github.io/JS_javascript30/28-VideoSpeedController/)  |
 | Countdown Timer | [View Demo](https://Danji-ya.github.io/JS_javascript30/29-CountdownTimer/)  |
+| Whack A Mole | [View Demo](https://Danji-ya.github.io/JS_javascript30/30-WhackAMole/)  |
