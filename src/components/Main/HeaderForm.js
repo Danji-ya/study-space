@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import React from 'react';
 import { headerCol, headerForm } from '../../assets/css/common/headerStyle';
-import SearchForm from './SearchForm';
+import SearchFromContainer from '../../containers/Main/SearchFormContainer';
 
 function HeaderForm({ isScroll, isHeaderClick }) {
   return (
@@ -18,7 +18,7 @@ function HeaderForm({ isScroll, isHeaderClick }) {
           <a href="#">온라인 체험</a>
         </li>
       </ul>
-      <SearchForm isScroll={isScroll} />
+      <SearchFromContainer isScroll={isScroll} />
     </div>
   );
 }

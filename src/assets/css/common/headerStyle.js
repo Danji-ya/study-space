@@ -41,11 +41,10 @@ const simpleForm = props => css`
     }
   }
 
-  animation-name: ${props.isScroll ? 'showEffect' : 'hideEffect'};
+  animation-name: ${!props.isScroll || props.isHeaderClick ? 'hideEffect' : 'showEffect'};
   animation-timing-function: ease-in;
-  animation-duration: 2.3s;
+  animation-duration: 0.05s;
   animation-fill-mode: forwards;
-
   @keyframes showEffect {
     from {
       visibility: hidden;
@@ -71,8 +70,23 @@ const serachFormDivide = props => css`
   border-left: 1px solid #ebebeb;
 `;
 
+const searchFormColLast = props => css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    border-radius: 100%;
+    padding: 15px;
+    background: #ff385c;
+    border-style: none;
+  }
+`;
+
 const searchFormCol = props => css`
   padding: 20px 0 20px 15px;
+  position: relative;
+  flex: 1;
 
   input {
     border: none;
@@ -80,27 +94,10 @@ const searchFormCol = props => css`
     margin: 0;
   }
 
-  :nth-of-type(2n + 1) {
-    flex: 1;
+  :hover {
+    cursor: pointer;
+    border-radius: 15px;
   }
-
-  :last-child {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    button {
-      border-radius: 100%;
-      padding: 15px;
-      background: #ff385c;
-      border-style: none;
-    }
-  }
-
-  // :hover {
-  //   background-color: rgba(155, 155, 155, 0.4);
-  //   border-radius: 15px;
-  // }
 `;
 
 const searchForm = props => css`
@@ -116,7 +113,7 @@ const searchForm = props => css`
   justify-content: space-between;
   padding: 0 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  // overflow: hidden;
 
   h5 {
     color: black;
@@ -238,9 +235,7 @@ const headerForm = props => css`
   animation-duration: 0.2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  ${console.log(props.isHeaderClick)}
-  animation-name: ${props.isScroll ? 'slideUp' : 'slideDown'};
-
+  animation-name: ${!props.isScroll || props.isHeaderClick ? 'slideDown' : 'slideUp'};
   justify-content: center;
 
   ul {
@@ -299,12 +294,15 @@ const headerContainer = props => css`
   padding: 20px 150px;
   z-index: 100;
   background: ${props.isScroll ? 'white' : 'none'};
+
+  box-shadow: ${props.isScroll && '0px 2px 4px rgba(0,0,0,0.3)'};
   height: 100px;
 `;
 
 export {
   simpleForm,
   serachFormDivide,
+  searchFormColLast,
   searchFormCol,
   searchForm,
   userIconWrap,
