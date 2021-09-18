@@ -6,12 +6,9 @@ const calendarPopupContainer = props => css`
   position: absolute;
   top: 80px;
   left: 0;
-  background: green;
-  border-radius: 15px;
+  background: white;
+  border-radius: 20px;
   width: 800px;
-  height: 300px;
-
-  text-align: center;
 `;
 
 const locationPopupContainer = props => css`

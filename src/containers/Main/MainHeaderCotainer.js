@@ -8,12 +8,7 @@ function MainHeaderCotainer() {
   function throttle(callback, wait = 300) {
     let timer;
 
-    // return function () {
-    //   if (timer) clearTimeout(timer);
-    //   timer = setTimeout(callback, wait);
-    // };
-
-    return function () {
+    return () => {
       if (!timer) {
         timer = setTimeout(() => {
           timer = null;

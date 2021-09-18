@@ -2,11 +2,12 @@
 import { css } from '@emotion/react';
 import React from 'react';
 import { calendarPopupContainer } from '../../assets/css/main/popupStyle';
+import CalendarContainer from '../../containers/Main/CalendarContainer';
 
 function CalendarPopup({ popupState }) {
   return (
     <div css={calendarPopupContainer({ popupState })}>
-      <h5>calendarPopup</h5>
+      <CalendarContainer />
     </div>
   );
 }

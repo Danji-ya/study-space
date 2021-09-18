@@ -40,7 +40,7 @@ function SearchForm({ isScroll }) {
     <div css={searchForm} ref={refSearchForm}>
       <div name="location" css={searchFormCol} onClick={changePopupType}>
         <h5>위치</h5>
-        <input type="text" className="query-input" placeholder="어디로 여행가세요?" />
+        <input name="location" type="text" autoComplete="off" placeholder="어디로 여행가세요?" />
       </div>
       <LocationPopup popupState={popupType === 'location'} />
       <div css={serachFormDivide}></div>

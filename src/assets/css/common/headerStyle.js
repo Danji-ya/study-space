@@ -112,7 +112,7 @@ const searchForm = props => css`
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   // overflow: hidden;
 
   h5 {
