@@ -36,17 +36,11 @@ function CalendarContainer() {
 
     const arr = Array.from(new Array(lastDate), (x, i) => {
       const day = i + 1;
-
-      if (isBeforeDay(year, month, day)) {
-        return {
-          day,
-          beforeDay: true,
-        };
-      }
+      // 추후에 체크인, 체크아웃관련 로직은 이 안에다
 
       return {
         day,
-        beforeDay: false,
+        beforeDay: isBeforeDay(year, month, day),
       };
     });
     arr.unshift(...new Array(firstDay));

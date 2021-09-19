@@ -1,0 +1,84 @@
+{ 
+  "nearTripList": [
+    {
+      "img": "https://a0.muscache.com/im/pictures/71e23854-a3c7-491c-b715-6e86233a293f.jpg?im_q=medq&im_w=240",
+      "title": "서울",
+      "subtitle": "차로 15분 거리"
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/be4d3ba5-08d7-4afe-95a7-f2da6453886a.jpg?im_q=medq&im_w=240",
+      "title": "부산",
+      "subtitle": "차로 5.5시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/7253e011-7c22-48fd-b75d-d0da35372397.jpg?im_q=medq&im_w=240",
+      "title": "양양군",
+      "subtitle": "차로 2.5시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/52e8083e-2de2-446d-a860-534eab250541.jpg?im_q=medq&im_w=240",
+      "title": "속초시",
+      "subtitle": "차로 3시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/20e74de0-0eb8-4fca-afb8-b111875acdf5.jpg?im_q=medq&im_w=240",
+      "title": "제주도(Jeju)",
+      "subtitle": "차로 7시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/20356d40-a45f-4680-a9d0-5bb0a3836e4d.jpg?im_q=medq&im_w=240",
+      "title": "대구",
+      "subtitle": "차로 4시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/e639b7ab-aee3-48ee-9743-216684a51319.jpg?im_q=medq&im_w=240",
+      "title": "완주군",
+      "subtitle": "차로 3시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/ca3737ef-0faf-46ba-b055-b4a2d99e2cea.jpg?im_q=medq&im_w=240",
+      "title": "전주시",
+      "subtitle": "차로 3시간 거리"
+    }
+  ],
+  "anywhereTripList": [
+    {
+      "img": "https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480",
+      "subtitle": "자연생활을 만낄할 수 있는 숙소"
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/36f53e61-db8d-403c-9122-5b761c0e4264.jpg?im_w=480",
+      "subtitle": "독특한 공간"
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/7d82ca14-56e5-4465-8218-dcfa7d69b6ac.jpg?im_w=480",
+      "subtitle": "집 전체"
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/10a638e1-6aff-4313-8033-1275cec83987.jpg?im_w=480",
+      "subtitle": "반려동물 동반가능"
+    }
+  ],
+  "specialTripList": [
+    {
+      "img": "https://a0.muscache.com/im/pictures/ad109d56-2421-40cd-98e6-e114160dc85b.jpg?im_w=480",
+      "title": "체험",
+      "subtitle": "가까운 곳에서 즐길 수 있는 잊지 못할 체험을 찾아보세요."
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/0ce799cb-7553-4369-be9e-d0011e0ef636.jpg?im_w=480",
+      "title": "온라인 체험",
+      "subtitle": "호스트와 실시간으로 소통하면서 액티비티를 즐겨보세요."
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/f51f70fb-93b7-4974-86e8-1195b64f1353.jpg?im_w=480",
+      "title": "올림픽.패럴림픽 출전 선수",
+      "subtitle": "운동선수가 호스팅하는 온라인 액티비티를 즐겨보세요.",
+      "recommand": "true"
+    }
+  ]
+
+
+}
+
+
