@@ -25,16 +25,15 @@ const locationPopupContainer = props => css`
 `;
 
 const guestPopupContainer = props => css`
-  display: ${props.popupState ? 'block' : 'none'};
+  display: ${props.popupState ? 'flex' : 'none'};
   position: absolute;
   top: 80px;
   right: 0;
-  background: blue;
+  background: white;
   border-radius: 15px;
-  width: 400px;
-  height: 300px;
-
-  text-align: center;
+  width: 350px;
+  justify-content: center;
+  padding: 20px 30px;
 `;
 
 export { calendarPopupContainer, locationPopupContainer, guestPopupContainer };

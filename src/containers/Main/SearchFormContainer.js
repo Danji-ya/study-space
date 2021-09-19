@@ -17,7 +17,24 @@ function SearchForm({ isScroll }) {
 
   const [popupType, setPopupType] = useState(undefined);
 
+  const [guestNum, setGuestNum] = useState({ adult: 0, child: 0, infant: 0 });
   const refSearchForm = useRef();
+
+  function changeGuestNum(type, grouptype) {
+    if (type === '+') {
+      setGuestNum(prevState => ({
+        ...prevState,
+        [grouptype]: guestNum.grouptype + 1,
+      }));
+
+      console.log(guestNum);
+    } else {
+      setGuestNum(prevState => ({
+        ...prevState,
+        [grouptype]: guestNum.grouptype - 1,
+      }));
+    }
+  }
 
   function changePopupType(e) {
     const type = e.currentTarget.getAttribute('name');
