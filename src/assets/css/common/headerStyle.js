@@ -74,12 +74,17 @@ const searchFormColLast = props => css`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
 
-  button {
-    border-radius: 100%;
-    padding: 15px;
-    background: #ff385c;
-    border-style: none;
+const searchFormColLastBtn = props => css`
+  border-radius: 100%;
+  padding: 15px;
+  background: #ff385c;
+  border-style: none;
+
+  :hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, #e61e4d 0%, #e31c5f 50%, #d70466);
   }
 `;
 
@@ -102,7 +107,7 @@ const searchFormCol = props => css`
 
 const searchForm = props => css`
   position: absolute;
-  top: 90px;
+  top: 60px;
   left: calc(50% - 400px);
   width: 800px;
   height: 70px;
@@ -150,8 +155,10 @@ const headerNav = props => css`
     border: 0;
     background: transparent;
     cursor: pointer;
-    margin: 0 5px;
     padding: 10px;
+    :not(:last-child) {
+      margin: 0 5px;
+    }
   }
 
   button:hover {
@@ -221,6 +228,10 @@ const airbnbIcon = props => css`
   fill: ${props.isScroll ? 'red' : 'white'};
   width: 102px;
   height: 32px;
+
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 const headerCol = props => css`
@@ -239,6 +250,10 @@ const headerForm = props => css`
   justify-content: center;
 
   ul {
+    ${props.isAccomodationList &&
+    css`
+      color: black;
+    `}
     display: flex;
     justify-content: center;
 
@@ -303,6 +318,7 @@ export {
   simpleForm,
   serachFormDivide,
   searchFormColLast,
+  searchFormColLastBtn,
   searchFormCol,
   searchForm,
   userIconWrap,

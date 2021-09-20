@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React from 'react';
-import Footer from '../components/Common/Footer';
+import Footer from '../components/common/Footer';
 import MainArticle from '../components/Main/MainArticle';
 import MainHeaderCotainer from '../containers/Main/MainHeaderCotainer';
 

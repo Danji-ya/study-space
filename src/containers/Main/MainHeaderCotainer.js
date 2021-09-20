@@ -35,11 +35,7 @@ function MainHeaderCotainer() {
     };
   }, []);
 
-  return (
-    <>
-      <Header isScroll={isScroll} isHeaderClick={isHeaderClick} headerClick={headerClick} />
-    </>
-  );
+  return <Header isScroll={isScroll} isHeaderClick={isHeaderClick} headerClick={headerClick} />;
 }
 
 export default MainHeaderCotainer;

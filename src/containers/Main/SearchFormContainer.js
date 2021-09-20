@@ -1,18 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import {
   searchForm,
   searchFormCol,
   searchFormColLast,
+  searchFormColLastBtn,
   serachFormDivide,
 } from '../../assets/css/common/headerStyle';
-import SearchIcon from '../../components/Common/SearchIcon';
+import SearchIcon from '../../components/common/SearchIcon';
 import CalendarPopup from '../../components/Main/CalendarPopup';
 import GuestPopup from '../../components/Main/GuestPopup';
 import LocationPopup from '../../components/Main/LocationPopup';
 
-function SearchForm({ isScroll }) {
+function SearchFormContainer({ isScroll }) {
   // 날짜, 위치, 인원 관련
 
   const [popupType, setPopupType] = useState(undefined);
@@ -77,13 +79,15 @@ function SearchForm({ isScroll }) {
           <h5>인원</h5>
           <p>게스트 추가</p>
         </div>
-        <button>
-          <SearchIcon />
-        </button>
+        <Link to="/accommodationList">
+          <button css={searchFormColLastBtn}>
+            <SearchIcon />
+          </button>
+        </Link>
       </div>
       <GuestPopup popupState={popupType === 'guest'} />
     </div>
   );
 }
 
-export default SearchForm;
+export default SearchFormContainer;

@@ -9,6 +9,7 @@ const calendarPopupContainer = props => css`
   background: white;
   border-radius: 20px;
   width: 800px;
+  box-shadow: 0px 0px 1px 1px rgba(165, 165, 165, 0.5);
 `;
 
 const locationPopupContainer = props => css`
@@ -20,6 +21,7 @@ const locationPopupContainer = props => css`
   border-radius: 15px;
   width: 400px;
   height: 300px;
+  box-shadow: 0px 0px 1px 1px rgba(165, 165, 165, 0.5);
 
   text-align: center;
 `;
@@ -34,6 +36,7 @@ const guestPopupContainer = props => css`
   width: 350px;
   justify-content: center;
   padding: 20px 30px;
+  box-shadow: 0px 0px 1px 1px rgba(165, 165, 165, 0.5);
 `;
 
 export { calendarPopupContainer, locationPopupContainer, guestPopupContainer };

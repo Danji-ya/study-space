@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import React from 'react';
 import { headerCol, simpleForm } from '../../assets/css/common/headerStyle';
-import SearchIcon from '../Common/SearchIcon';
+import SearchIcon from '../common/SearchIcon';
 
 function SimpleForm({ isScroll, isHeaderClick, headerClick }) {
   return (

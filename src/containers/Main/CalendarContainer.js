@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Calendar from '../../components/Common/Calendar';
+import Calendar from '../../components/common/Calendar';
 
 function CalendarContainer() {
   const [moveMonth, setMoveMonth] = useState(0);

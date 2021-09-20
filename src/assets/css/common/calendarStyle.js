@@ -43,7 +43,7 @@ const header = props => css`
     width: 45px;
     color: rgb(113, 113, 113);
     font-size: 12px;
-    font-weigth: 600;
+    font-weight: 600;
     line-height: 16px;
   }
 `;
@@ -63,7 +63,7 @@ const dateBtn = props => css`
   font-weight: 500;
   border-radius: 50%;
 
-  ${props.date?.beforeDay
+  ${props.date?.beforeDay || !props.date?.day
     ? css`
         color: rgba(72, 72, 72, 0.5);
 
