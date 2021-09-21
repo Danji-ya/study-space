@@ -9,8 +9,6 @@ function AccomodationList() {
       <AccomodationListHeaderContainer />
       <AccomdationListMainContainer />
       <Footer />
-      <Footer />
-      <Footer />
     </>
   );
 }
