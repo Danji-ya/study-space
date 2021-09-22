@@ -8,19 +8,18 @@ function AccomdationListMainContainer() {
   // 필터에 따른 값 변화
   // Filtered List 관련 함수
   const [accomodationList, setAccomodationList] = useState([]);
-  const [filteredAccomodationList, setFilteredAccomodationList] = useState(accomodationList);
+  const [search, setSearch] = useState('');
+  const [filteredAccomodationList, setFilteredAccomodationList] = useState([]);
 
-  // 숙소 리스트 관련은
-  //  Main 내에서 전체 데이터 받아서 페이지 네이션과 리스트로 나눈 컴포넌트로 데이터 전달만
-
-  // 리스트 컴포넌트에서 다시 슬라이더 컨테이너 컴포넌트
+  // 페이지네이션 관련
+  const [currentPage, setCurrentPage] = useState(1);
+  const [listPerPage, setPerPage] = useState(5);
 
   useEffect(() => {
     async function getData() {
       try {
         const response = await axiosInstance.get('dummy/data.json');
         setAccomodationList(prev => [...prev, ...response.data.accomodationList]);
-        // accomodationList([...response.data.accomodationList]);
       } catch (e) {
         console.log(e);
       }
@@ -29,7 +28,25 @@ function AccomdationListMainContainer() {
     getData();
   }, []);
 
-  return <AccomdationListMain accomodationList={accomodationList} />;
+  useEffect(() => {
+    setFilteredAccomodationList(
+      accomodationList.filter(accomodation =>
+        accomodation.title.toLowerCase().includes(search.toLowerCase()),
+      ),
+    );
+  }, [search, accomodationList]);
+
+  const idxOfLastList = currentPage * listPerPage;
+  const idxOfFirstList = idxOfLastList - listPerPage;
+  const currentAccomodationList = filteredAccomodationList.slice(idxOfFirstList, idxOfLastList);
+
+  return (
+    <AccomdationListMain
+      accomodationList={currentAccomodationList}
+      totalAccomodationList={filteredAccomodationList}
+      listPerPage={listPerPage}
+    />
+  );
 }
 
 export default AccomdationListMainContainer;

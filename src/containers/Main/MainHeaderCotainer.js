@@ -5,7 +5,7 @@ function MainHeaderCotainer() {
   const [isScroll, setIsScroll] = useState(window.scrollY > 50);
   const [isHeaderClick, setIsHeaderClick] = useState(false);
 
-  function throttle(callback, wait = 300) {
+  function myThrottle(callback, wait = 300) {
     let timer;
 
     return () => {
@@ -29,9 +29,11 @@ function MainHeaderCotainer() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', throttle(onScroll));
+    const throttle = myThrottle(onScroll, 300);
+
+    window.addEventListener('scroll', throttle);
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('scroll', throttle);
     };
   }, []);
 

@@ -8,7 +8,7 @@ function AccomodationListHeaderContainer() {
   useEffect(() => {
     window.addEventListener('scroll', throttle(handleScroll));
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', throttle(handleScroll));
     };
   }, []);
 
