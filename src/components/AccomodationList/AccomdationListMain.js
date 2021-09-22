@@ -15,15 +15,26 @@ width: 100%;
 height: 100%;
 `;
 
-function AccomdationListMain({ accomodationList, totalAccomodationList, listPerPage }) {
+function AccomdationListMain({
+  accomodationList,
+  totalAccomodationList,
+  listPerPage,
+  idxOfFirstList,
+  changePage,
+  currentPage,
+}) {
   return (
     <main css={mainContainer}>
       <article css={listContainer}>
-        <ListHeader />
+        <ListHeader totalAccomodationList={totalAccomodationList} />
         <ListMain accomodationList={accomodationList} />
         <PaginationContainer
+          accomodationList={accomodationList}
+          idxOfFirstList={idxOfFirstList}
           totalAccomodationList={totalAccomodationList}
           listPerPage={listPerPage}
+          changePage={changePage}
+          currentPage={currentPage}
         />
       </article>
       <article

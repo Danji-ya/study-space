@@ -40,11 +40,19 @@ function AccomdationListMainContainer() {
   const idxOfFirstList = idxOfLastList - listPerPage;
   const currentAccomodationList = filteredAccomodationList.slice(idxOfFirstList, idxOfLastList);
 
+  const changePage = pageNum => {
+    setCurrentPage(pageNum);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <AccomdationListMain
       accomodationList={currentAccomodationList}
       totalAccomodationList={filteredAccomodationList}
+      idxOfFirstList={idxOfFirstList}
       listPerPage={listPerPage}
+      changePage={changePage}
+      currentPage={currentPage}
     />
   );
 }
