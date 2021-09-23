@@ -7,6 +7,7 @@ import {
   descriptionContainer,
 } from '../../assets/css/detail/mainDescriptionStyle';
 import AmenityDescription from './AmenityDescription';
+import CalendarDescription from './CalendarDescription';
 import FeeBox from './FeeBox';
 import HostDescription from './HostDescription';
 import ProsDescription from './ProsDescription';
@@ -18,9 +19,8 @@ function MainDescription() {
         <HostDescription />
         <ProsDescription />
         <AmenityDescription />
-        <ProsDescription />
-        <ProsDescription />
-        <ProsDescription />
+        <CalendarDescription />
+        {/* <ProsDescription /> */}
       </div>
       <div css={descRightContainer}>
         <FeeBox />

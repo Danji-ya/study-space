@@ -56,7 +56,7 @@ const saveIcon = props => css`
 `;
 
 const imgContainer = props => css`
-  padding: 25px 0;
+  padding: 2vh 0 0 0;
   position: relative;
 `;
 

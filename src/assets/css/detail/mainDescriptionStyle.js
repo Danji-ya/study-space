@@ -5,7 +5,7 @@ const descriptionContainer = props => css`
   display: flex;
   position: relative;
   width: 100%;
-  padding: 2.5vh 0;
+  padding: 4vh 0;
 `;
 
 const descLeftContainer = props => css`

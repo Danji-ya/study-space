@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 
 const prosDescContainer = props => css`
-  padding: 2.5vh 0;
+  padding: 4vh 0;
   border-bottom: 1px solid #dddddd;
 `;
 
