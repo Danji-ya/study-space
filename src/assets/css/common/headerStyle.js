@@ -250,7 +250,7 @@ const headerForm = props => css`
   justify-content: center;
 
   ul {
-    ${props.isAccomodationList &&
+    ${!props.isMainHeader &&
     css`
       color: black;
     `}

@@ -7,7 +7,7 @@ import Logo from '../common/Logo';
 import HeaderForm from '../Main/HeaderForm';
 import SimpleSearchForm from './SimpleSearchForm';
 
-function Header({ searchResult, isSearchFormClick, handleSearchForm, isAccomodationList }) {
+function Header({ searchResult, isSearchFormClick, handleSearchForm }) {
   return (
     <header css={headerContainer({ isSearchFormClick })}>
       <Logo isScroll="undefined" />
@@ -16,7 +16,7 @@ function Header({ searchResult, isSearchFormClick, handleSearchForm, isAccomodat
         isSearchFormClick={isSearchFormClick}
         handleSearchForm={handleSearchForm}
       />
-      <HeaderForm isScroll={!isSearchFormClick} isAccomodationList={isAccomodationList} />
+      <HeaderForm isScroll={!isSearchFormClick} />
       <HeaderNav isScroll="undefined" />
     </header>
   );

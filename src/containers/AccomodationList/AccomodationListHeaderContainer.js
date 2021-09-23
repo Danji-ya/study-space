@@ -6,9 +6,11 @@ function AccomodationListHeaderContainer() {
   const [isSearchFormClick, setIsSearchFormClick] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('scroll', throttle(handleScroll));
+    const throttle = myThrottle(handleScroll);
+
+    window.addEventListener('scroll', throttle);
     return () => {
-      window.removeEventListener('scroll', throttle(handleScroll));
+      window.removeEventListener('scroll', throttle);
     };
   }, []);
 
@@ -16,7 +18,7 @@ function AccomodationListHeaderContainer() {
     setIsSearchFormClick(false);
   }
 
-  function throttle(callback, wait = 300) {
+  function myThrottle(callback, wait = 300) {
     let timer;
 
     return () => {
@@ -56,7 +58,6 @@ function AccomodationListHeaderContainer() {
       searchResult={searchResult}
       isSearchFormClick={isSearchFormClick}
       handleSearchForm={handleSearchForm}
-      isAccomodationList={true}
     />
   );
 }

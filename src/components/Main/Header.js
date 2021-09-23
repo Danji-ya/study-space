@@ -11,7 +11,7 @@ function Header({ isScroll, isHeaderClick, headerClick }) {
   return (
     <header css={headerContainer({ isScroll })}>
       <Logo isScroll={isScroll} />
-      <HeaderForm isScroll={isScroll} isHeaderClick={isHeaderClick} />
+      <HeaderForm isScroll={isScroll} isHeaderClick={isHeaderClick} isMainHeader={true} />
       <SimpleForm isScroll={isScroll} isHeaderClick={isHeaderClick} headerClick={headerClick} />
       <HeaderNav isScroll={isScroll} />
     </header>
