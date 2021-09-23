@@ -38,7 +38,6 @@ function AccomdationListMain({
         />
       </article>
       <article
-        className="accommodation-map-wrap"
         css={css`
           flex: 1;
         `}

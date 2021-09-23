@@ -6,6 +6,7 @@ import {
   descRightContainer,
   descriptionContainer,
 } from '../../assets/css/detail/mainDescriptionStyle';
+import AmenityDescription from './AmenityDescription';
 import FeeBox from './FeeBox';
 import HostDescription from './HostDescription';
 import ProsDescription from './ProsDescription';
@@ -16,7 +17,7 @@ function MainDescription() {
       <div css={descLeftContainer}>
         <HostDescription />
         <ProsDescription />
-        <ProsDescription />
+        <AmenityDescription />
         <ProsDescription />
         <ProsDescription />
         <ProsDescription />

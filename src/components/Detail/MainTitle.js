@@ -21,10 +21,10 @@ function MainTitle() {
       <div css={titleContainer}>
         <h1>⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】</h1>
       </div>
-      <div css={subtitleContainer} class="subtitle">
+      <div css={subtitleContainer}>
         <div css={subtitleWrap}>
           <Review item={{ reviewAve: 5.4, reviewTotal: 166 }} />
-          <span class="position"> · Huam-dong, Yongsan-gu, 서울, 한국</span>
+          <span> · Huam-dong, Yongsan-gu, 서울, 한국</span>
         </div>
         <div css={linkWrap}>
           <div css={shareIcon}>
@@ -92,7 +92,7 @@ function MainTitle() {
             <circle cx="15.5" cy="15.5" r="1.5"></circle>
           </svg>
 
-          <div class="text">
+          <div>
             <span>사진 모두 보기</span>
           </div>
         </div>

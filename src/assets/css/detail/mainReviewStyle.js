@@ -65,11 +65,10 @@ const userImg = props => css`
 
 const ell = props => css`
   overflow: hidden;
-  text-overflow: ellipsis;
-  /* word-wrap: break-word; */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  white-space: pre-line;
 `;
 
 export { reviewContainer, title, reviewList, reviewItem, userProfile, userImg, ell };
