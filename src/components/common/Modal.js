@@ -4,13 +4,26 @@ import React, { forwardRef, useEffect, useState } from 'react';
 import { closeBtn, modalBackground, modalContainer } from '../../assets/css/common/modalStyle';
 
 const Modal = forwardRef(({ modalState, onClose, children, width, height }, ref) => {
-  const [isSlideDown, setIsSlideDown] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  if (!modalState) return null;
+  useEffect(() => {
+    let timer;
+    if (modalState) {
+      setIsOpen(true);
+    } else {
+      timer = setTimeout(() => setIsOpen(false), 500);
+    }
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [modalState]);
+
+  if (!isOpen) return null;
 
   return (
     <div css={modalBackground}>
-      <div ref={ref} css={modalContainer({ width, height, isSlideDown })}>
+      <div ref={ref} css={modalContainer({ width, height, modalState })}>
         <a onClick={onClose} css={closeBtn}>
           &#10094;
         </a>

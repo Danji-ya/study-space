@@ -3,7 +3,7 @@ import { css, keyframes } from '@emotion/react';
 
 const slideUp = keyframes`
   0% {
-    transform: translateY(100%);
+    transform: translateY(120%);
   }
   100% {
     transform: none;
@@ -15,7 +15,7 @@ const slideDown = keyframes`
     transform: none;
   }
   100% {
-    transform: translateY(100%);
+    transform: translateY(120%);
   }
 `;
 
@@ -44,7 +44,7 @@ const modalContainer = props => css`
   animation-fill-mode: forwards;
   position: relative;
 
-  ${props.isSlideDown &&
+  ${!props.modalState &&
   css`
     animation-name: ${slideDown};
   `}
