@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 
 const reviewContainer = props => css`
-  padding: 40px 0;
+  padding: 7vh 0;
   border-top: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
 `;
