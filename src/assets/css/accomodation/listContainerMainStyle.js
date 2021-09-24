@@ -14,15 +14,19 @@ const listMainItemContainer = props => css`
   }
 `;
 
-const sideTextContainer = props => css`
-  flex: 1;
+const sideTextContainerLink = props => css`
   margin-left: 16px;
+  flex: 1;
+  overflow: hidden;
+`;
+
+const sideTextContainer = props => css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  white-space: nowrap;
-  overflow: hidden;
+  /* white-space: nowrap;
+  overflow: hidden; */
 `;
 
 const sideTextTop = props => css``;
@@ -150,6 +154,7 @@ const totalPrice = props => css`
 export {
   listMainPaddingContainer,
   listMainItemContainer,
+  sideTextContainerLink,
   sideTextContainer,
   sideTextTop,
   sideTextBottom,

@@ -14,7 +14,7 @@ import {
   feature,
   option,
   sideTextBottom,
-  reviewWrap,
+  sideTextContainerLink,
   priceWrap,
   eachPrice,
   totalPrice,
@@ -27,7 +27,7 @@ function ListMainItem({ item }) {
     <div css={listMainPaddingContainer}>
       <div css={listMainItemContainer}>
         <CarouselContainer imgList={item.imgList} />
-        <Link to={`/detail/${item.id}?${'adults='}&${'children='}`}>
+        <Link css={sideTextContainerLink} to={`/detail/${item.id}?${'adults='}&${'children='}`}>
           <div css={sideTextContainer}>
             <div css={sideTextTop}>
               <div css={title}>
