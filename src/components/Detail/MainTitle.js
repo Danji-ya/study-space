@@ -13,6 +13,7 @@ import {
   subtitleWrap,
   titleContainer,
 } from '../../assets/css/detail/mainTitleStyle';
+import DetailImageModalCotainer from '../../containers/Detail/DetailImageModalCotainer';
 import Review from '../common/Review';
 
 function MainTitle() {
@@ -79,23 +80,7 @@ function MainTitle() {
             />
           </div>
         </div>
-        <div css={imgBtnWrap}>
-          <svg>
-            <circle cx="1.5" cy="1.5" r="1.5"></circle>
-            <circle cx="1.5" cy="8.5" r="1.5"></circle>
-            <circle cx="8.5" cy="1.5" r="1.5"></circle>
-            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-            <circle cx="15.5" cy="1.5" r="1.5"></circle>
-            <circle cx="15.5" cy="8.5" r="1.5"></circle>
-            <circle cx="1.5" cy="15.5" r="1.5"></circle>
-            <circle cx="8.5" cy="15.5" r="1.5"></circle>
-            <circle cx="15.5" cy="15.5" r="1.5"></circle>
-          </svg>
-
-          <div>
-            <span>사진 모두 보기</span>
-          </div>
-        </div>
+        <DetailImageModalCotainer />
       </div>
     </section>
   );
