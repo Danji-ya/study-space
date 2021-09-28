@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React from 'react';
-import { headerCol, headerForm } from '../../assets/css/common/headerStyle';
+import { headerForm } from '../../assets/css/common/headerStyle';
 import SearchFormContainer from '../../containers/Main/SearchFormContainer';
 
 function HeaderForm({ isScroll, isHeaderClick, isMainHeader }) {
   return (
-    <div css={[headerCol({ isScroll }), headerForm({ isScroll, isHeaderClick, isMainHeader })]}>
+    <div css={[headerForm({ isScroll, isHeaderClick, isMainHeader })]}>
       <ul>
         <li>
           <span>숙소</span>

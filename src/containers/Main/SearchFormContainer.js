@@ -8,7 +8,7 @@ import {
   searchFormColLast,
   searchFormColLastBtn,
   serachFormDivide,
-} from '../../assets/css/common/headerStyle';
+} from '../../assets/css/common/searchFormStyle';
 import SearchIcon from '../../components/common/SearchIcon';
 import CalendarPopup from '../../components/Main/CalendarPopup';
 import GuestPopup from '../../components/Main/GuestPopup';
@@ -40,7 +40,6 @@ function SearchFormContainer({ isScroll }) {
 
   function changePopupType(e) {
     const type = e.currentTarget.getAttribute('name');
-
     setPopupType(type);
   }
 
@@ -56,33 +55,31 @@ function SearchFormContainer({ isScroll }) {
   }, []);
 
   return (
-    <div css={searchForm} ref={refSearchForm}>
+    <div css={searchForm({ popupType })} ref={refSearchForm}>
       <div name="location" css={searchFormCol} onClick={changePopupType}>
         <h5>위치</h5>
         <input name="location" type="text" autoComplete="off" placeholder="어디로 여행가세요?" />
       </div>
       <LocationPopup popupState={popupType === 'location'} />
       <div css={serachFormDivide}></div>
-      <div name="calendar" css={searchFormCol} onClick={changePopupType}>
+      <div name="checkIn" css={searchFormCol} onClick={changePopupType}>
         <h5>체크인</h5>
         <p>날짜 입력</p>
       </div>
       <div css={serachFormDivide}></div>
-      <div name="calendar" css={searchFormCol} onClick={changePopupType}>
+      <div name="checkOut" css={searchFormCol} onClick={changePopupType}>
         <h5>체크아웃</h5>
         <p>날짜 입력</p>
       </div>
-      <CalendarPopup popupState={popupType === 'calendar'} />
+      <CalendarPopup popupState={popupType === 'checkIn' || popupType === 'checkOut'} />
       <div css={serachFormDivide}></div>
       <div name="guest" css={[searchFormCol, searchFormColLast]} onClick={changePopupType}>
         <div>
           <h5>인원</h5>
           <p>게스트 추가</p>
         </div>
-        <Link to="/accommodationList">
-          <button css={searchFormColLastBtn}>
-            <SearchIcon />
-          </button>
+        <Link css={searchFormColLastBtn} to="/accommodationList">
+          <SearchIcon />
         </Link>
       </div>
       <GuestPopup popupState={popupType === 'guest'} />
