@@ -38,4 +38,4 @@ function SingleCalendar({ monthData }) {
   );
 }
 
-export default SingleCalendar;
+export default React.memo(SingleCalendar);

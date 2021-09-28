@@ -116,7 +116,7 @@ const headerForm = props => css`
   animation-name: ${!props.isScroll || props.isHeaderClick ? 'slideDown' : 'slideUp'};
   justify-content: center;
 
-  ul {
+  & > ul {
     ${!props.isMainHeader &&
     css`
       color: black;

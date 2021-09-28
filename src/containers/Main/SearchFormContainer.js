@@ -13,14 +13,28 @@ import SearchIcon from '../../components/common/SearchIcon';
 import CalendarPopup from '../../components/Main/CalendarPopup';
 import GuestPopup from '../../components/Main/GuestPopup';
 import LocationPopup from '../../components/Main/LocationPopup';
+import axiosInstance from '../../api-config';
 
 function SearchFormContainer({ isScroll }) {
-  // 날짜, 위치, 인원 관련
+  // 위치 관련
+  const [locationList, setLocationList] = useState([]);
+  const [matchLocationList, setMatchLocationList] = useState([]);
 
+  // 팝업 관련
   const [popupType, setPopupType] = useState(undefined);
-
+  // 인원 관련
   const [guestNum, setGuestNum] = useState({ adult: 0, child: 0, infant: 0 });
   const refSearchForm = useRef();
+
+  const handleChange = value => {
+    let result = [];
+    if (value.length > 0) {
+      const regExp = new RegExp(value, 'gi');
+      result = locationList.filter(location => location.match(regExp)).slice(0, 5);
+    }
+
+    return setMatchLocationList([...result]);
+  };
 
   function changeGuestNum(type, grouptype) {
     if (type === '+') {
@@ -49,6 +63,18 @@ function SearchFormContainer({ isScroll }) {
 
   useEffect(() => {
     window.addEventListener('click', resetType);
+
+    // temp locationData
+    async function getData() {
+      try {
+        const response = await axiosInstance.get('dummy/data.json');
+        setLocationList([...response.data.cities]);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getData();
+
     return () => {
       window.removeEventListener('click', resetType);
     };
@@ -58,9 +84,15 @@ function SearchFormContainer({ isScroll }) {
     <div css={searchForm({ popupType })} ref={refSearchForm}>
       <div name="location" css={searchFormCol} onClick={changePopupType}>
         <h5>위치</h5>
-        <input name="location" type="text" autoComplete="off" placeholder="어디로 여행가세요?" />
+        <input
+          onChange={e => handleChange(e.target.value)}
+          name="location"
+          type="text"
+          autoComplete="off"
+          placeholder="어디로 여행가세요?"
+        />
       </div>
-      <LocationPopup popupState={popupType === 'location'} />
+      <LocationPopup matchLocationList={matchLocationList} popupState={popupType === 'location'} />
       <div css={serachFormDivide}></div>
       <div name="checkIn" css={searchFormCol} onClick={changePopupType}>
         <h5>체크인</h5>

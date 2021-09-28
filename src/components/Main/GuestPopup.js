@@ -5,7 +5,7 @@ import { AiOutlineMinusCircle, AiOutlinePlusCircle } from 'react-icons/ai';
 import { BiPlus, BiMinus } from 'react-icons/bi';
 import { guestPopupContainer } from '../../assets/css/main/popupStyle';
 
-const guestWrap = css`
+const guestWrap = props => css`
   display: flex;
   flex-direction: column;
   justify-content: center;

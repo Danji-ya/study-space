@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Calendar from '../../components/common/Calendar';
 
 function CalendarContainer() {
@@ -6,6 +6,8 @@ function CalendarContainer() {
   const today = new Date();
   const leftDate = new Date(today.getFullYear(), today.getMonth() + moveMonth, 1);
   const nextDate = new Date(leftDate.getFullYear(), leftDate.getMonth() + 1, 1);
+  // const leftDate =  useMemo(() => new Date(today.getFullYear(), today.getMonth() + moveMonth, 1), [moveMonth]);
+  // const nextDate = useMemo(()=>new Date(leftDate.getFullYear(), leftDate.getMonth() + 1, 1) [moveMonth]);
 
   const setMonth = type => {
     if (type === 'left') setMoveMonth(moveMonth - 1);
@@ -28,6 +30,7 @@ function CalendarContainer() {
   };
 
   const getMonthData = date => {
+    console.log('계산중');
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
 
@@ -48,8 +51,10 @@ function CalendarContainer() {
     return { year, month, firstDay, lastDate, arr };
   };
 
-  const leftMonth = getMonthData(leftDate);
-  const rightMonth = getMonthData(nextDate);
+  // const leftMonth = getMonthData(leftDate);
+  // const rightMonth = getMonthData(nextDate);
+  const leftMonth = useMemo(() => getMonthData(leftDate), [moveMonth]);
+  const rightMonth = useMemo(() => getMonthData(nextDate), [moveMonth]);
 
   return <Calendar leftMonth={leftMonth} rightMonth={rightMonth} setMonth={setMonth} />;
 }

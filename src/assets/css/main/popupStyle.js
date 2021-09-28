@@ -17,13 +17,11 @@ const locationPopupContainer = props => css`
   position: absolute;
   top: 80px;
   left: 0;
-  background: orange;
+  background: white;
+  color: black;
   border-radius: 15px;
   width: 400px;
-  height: 300px;
   box-shadow: 0px 0px 1px 1px rgba(165, 165, 165, 0.5);
-
-  text-align: center;
 `;
 
 const guestPopupContainer = props => css`

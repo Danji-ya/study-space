@@ -21,15 +21,23 @@ const searchForm = props => css`
     font-weight: 700;
     padding: 0 0 5px 0;
   }
-  p,
-  input {
+  p {
     color: gray;
-    font-size: 16px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  ,
+  input {
+    color: black;
+    font-size: 14px;
     letter-spacing: 1px;
     background: transparent;
     :hover {
       cursor: pointer;
     }
+  }
+  input::placeholder {
+    color: gray;
   }
 
   & > div {
