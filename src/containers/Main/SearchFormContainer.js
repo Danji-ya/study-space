@@ -1,53 +1,76 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import {
-  searchForm,
-  searchFormCol,
-  searchFormColLast,
-  searchFormColLastBtn,
-  serachFormDivide,
-} from '../../assets/css/common/searchFormStyle';
-import SearchIcon from '../../components/common/SearchIcon';
-import CalendarPopup from '../../components/Main/CalendarPopup';
-import GuestPopup from '../../components/Main/GuestPopup';
-import LocationPopup from '../../components/Main/LocationPopup';
 import axiosInstance from '../../api-config';
+import SearchForm from '../../components/Main/SearchForm';
 
 function SearchFormContainer({ isScroll }) {
   // 위치 관련
+  const [location, setLocation] = useState();
   const [locationList, setLocationList] = useState([]);
   const [matchLocationList, setMatchLocationList] = useState([]);
 
-  // 팝업 관련
-  const [popupType, setPopupType] = useState(undefined);
   // 인원 관련
   const [guestNum, setGuestNum] = useState({ adult: 0, child: 0, infant: 0 });
+
+  // 팝업 관련
+  const [popupType, setPopupType] = useState(undefined);
   const refSearchForm = useRef();
 
   const handleChange = value => {
     let result = [];
     if (value.length > 0) {
       const regExp = new RegExp(value, 'gi');
-      result = locationList.filter(location => location.match(regExp)).slice(0, 5);
+      result = locationList.filter(loc => loc.match(regExp)).slice(0, 5);
     }
-
+    setLocation(value);
     return setMatchLocationList([...result]);
+  };
+
+  function changeLocation(area) {
+    setLocation(area);
+    // next to popup
+    setPopupType('checkIn');
+  }
+
+  const hasCompanion = () => guestNum.adult > 0;
+
+  const hasChildren = () => guestNum.child > 0 || guestNum.infant > 0;
+
+  const isZero = grouptype => guestNum[grouptype] === 0;
+
+  const checkCompanion = grouptype => {
+    if (hasCompanion()) {
+      setGuestNum(prevState => ({
+        ...prevState,
+        [grouptype]: guestNum[grouptype] + 1,
+      }));
+    } else {
+      setGuestNum(prevState => ({
+        ...prevState,
+        [grouptype]: guestNum[grouptype] + 1,
+        adult: 1,
+      }));
+    }
   };
 
   function changeGuestNum(type, grouptype) {
     if (type === '+') {
-      setGuestNum(prevState => ({
-        ...prevState,
-        [grouptype]: guestNum.grouptype + 1,
-      }));
-
-      console.log(guestNum);
+      if (grouptype === 'child' || grouptype === 'infant') {
+        checkCompanion(grouptype);
+      } else {
+        setGuestNum(prevState => ({
+          ...prevState,
+          [grouptype]: guestNum[grouptype] + 1,
+        }));
+      }
     } else {
+      if (isZero(grouptype)) return;
+      if (grouptype === 'adult' && guestNum.adult === 1 && hasChildren()) return;
+
       setGuestNum(prevState => ({
         ...prevState,
-        [grouptype]: guestNum.grouptype - 1,
+        [grouptype]: guestNum[grouptype] - 1,
       }));
     }
   }
@@ -81,41 +104,17 @@ function SearchFormContainer({ isScroll }) {
   }, []);
 
   return (
-    <div css={searchForm({ popupType })} ref={refSearchForm}>
-      <div name="location" css={searchFormCol} onClick={changePopupType}>
-        <h5>위치</h5>
-        <input
-          onChange={e => handleChange(e.target.value)}
-          name="location"
-          type="text"
-          autoComplete="off"
-          placeholder="어디로 여행가세요?"
-        />
-      </div>
-      <LocationPopup matchLocationList={matchLocationList} popupState={popupType === 'location'} />
-      <div css={serachFormDivide}></div>
-      <div name="checkIn" css={searchFormCol} onClick={changePopupType}>
-        <h5>체크인</h5>
-        <p>날짜 입력</p>
-      </div>
-      <div css={serachFormDivide}></div>
-      <div name="checkOut" css={searchFormCol} onClick={changePopupType}>
-        <h5>체크아웃</h5>
-        <p>날짜 입력</p>
-      </div>
-      <CalendarPopup popupState={popupType === 'checkIn' || popupType === 'checkOut'} />
-      <div css={serachFormDivide}></div>
-      <div name="guest" css={[searchFormCol, searchFormColLast]} onClick={changePopupType}>
-        <div>
-          <h5>인원</h5>
-          <p>게스트 추가</p>
-        </div>
-        <Link css={searchFormColLastBtn} to="/accommodationList">
-          <SearchIcon />
-        </Link>
-      </div>
-      <GuestPopup popupState={popupType === 'guest'} />
-    </div>
+    <SearchForm
+      location={location}
+      guestNum={guestNum}
+      popupType={popupType}
+      changePopupType={changePopupType}
+      changeLocation={changeLocation}
+      changeGuestNum={changeGuestNum}
+      handleChange={handleChange}
+      matchLocationList={matchLocationList}
+      ref={refSearchForm}
+    />
   );
 }
 

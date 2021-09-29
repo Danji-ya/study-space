@@ -30,7 +30,6 @@ function CalendarContainer() {
   };
 
   const getMonthData = date => {
-    console.log('계산중');
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
 

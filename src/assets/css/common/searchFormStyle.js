@@ -26,7 +26,6 @@ const searchForm = props => css`
     font-size: 14px;
     letter-spacing: 1px;
   }
-  ,
   input {
     color: black;
     font-size: 14px;
@@ -101,6 +100,16 @@ const searchFormColLast = props => css`
   padding-right: 12px;
 `;
 
+const guestInputWrap = props => css`
+  width: 125px;
+  overflow: hidden;
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* 라인수 */
+    -webkit-box-orient: vertical;
+  }
+`;
+
 const serachFormDivide = props => css`
   height: 30px;
   width: 1px;
@@ -119,4 +128,11 @@ const searchFormColLastBtn = props => css`
   }
 `;
 
-export { searchForm, searchFormCol, serachFormDivide, searchFormColLast, searchFormColLastBtn };
+export {
+  searchForm,
+  searchFormCol,
+  serachFormDivide,
+  searchFormColLast,
+  searchFormColLastBtn,
+  guestInputWrap,
+};

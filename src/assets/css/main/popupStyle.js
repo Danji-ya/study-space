@@ -20,7 +20,7 @@ const locationPopupContainer = props => css`
   background: white;
   color: black;
   border-radius: 15px;
-  width: 400px;
+  /* width: 400px; */
   box-shadow: 0px 0px 1px 1px rgba(165, 165, 165, 0.5);
 `;
 
