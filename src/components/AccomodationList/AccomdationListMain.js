@@ -4,6 +4,7 @@ import React from 'react';
 import { listContainer } from '../../assets/css/accomodation/listContainerStyle';
 import { images } from '../../constants';
 import PaginationContainer from '../../containers/AccomodationList/PaginationContainer';
+import GoogleMap from './GoogleMap';
 import ListHeader from './ListHeader';
 import ListMain from './ListMain';
 
@@ -40,17 +41,12 @@ function AccomdationListMain({
       <article
         css={css`
           flex: 1;
+          height: 100vh;
+          position: sticky;
+          top: 80px;
         `}
       >
-        <img
-          css={css`
-            height: 100vh;
-            width: 100%;
-            position: sticky;
-            top: 80px;
-          `}
-          src={images.test3.default}
-        ></img>
+        <GoogleMap />
       </article>
     </main>
   );

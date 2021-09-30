@@ -1,5 +1,8 @@
-const test = 'hello my name is Arlo.';
-const test2 = '안녕하세요 저의 이름은 알로입니다.';
+import { useLocation } from 'react-router-dom';
+
+export function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
 export function getTextTotalByte(str, maxByte) {
   let totalByte = 0;

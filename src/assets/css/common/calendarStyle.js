@@ -69,11 +69,13 @@ const dateBtn = props => css`
 
         :hover {
           border: none;
+          cursor: default;
         }
       `
     : css`
         :hover {
           border: 1px solid black;
+          cursor: pointer;
         }
       `};
 

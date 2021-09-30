@@ -10,6 +10,10 @@ const searchForm = props => css`
   height: 70px;
   border-radius: 50px;
   background: ${props.popupType ? 'rgb(235, 235, 235)' : 'white'};
+  ${props.popupType &&
+  css`
+    border: 1px solid rgb(235, 235, 235);
+  `}
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -93,13 +97,6 @@ const searchFormCol = props => css`
   }
 `;
 
-const searchFormColLast = props => css`
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-right: 12px;
-`;
-
 const guestInputWrap = props => css`
   width: 125px;
   overflow: hidden;
@@ -116,7 +113,9 @@ const serachFormDivide = props => css`
   background: #ebebeb;
 `;
 
-const searchFormColLastBtn = props => css`
+const searchFormSumbitBtn = props => css`
+  position: absolute;
+  right: 15px;
   border-radius: 100%;
   padding: 15px;
   background: #ff385c;
@@ -128,11 +127,4 @@ const searchFormColLastBtn = props => css`
   }
 `;
 
-export {
-  searchForm,
-  searchFormCol,
-  serachFormDivide,
-  searchFormColLast,
-  searchFormColLastBtn,
-  guestInputWrap,
-};
+export { searchForm, searchFormCol, serachFormDivide, searchFormSumbitBtn, guestInputWrap };

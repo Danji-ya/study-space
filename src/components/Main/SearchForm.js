@@ -1,13 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React, { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
 import {
   guestInputWrap,
   searchForm,
   searchFormCol,
-  searchFormColLast,
-  searchFormColLastBtn,
+  searchFormSumbitBtn,
   serachFormDivide,
 } from '../../assets/css/common/searchFormStyle';
 import SearchIcon from '../common/SearchIcon';
@@ -18,6 +16,7 @@ import LocationPopup from './LocationPopup';
 const SearchForm = forwardRef(
   (
     {
+      handleSubmit,
       location,
       guestNum,
       popupType,
@@ -61,7 +60,7 @@ const SearchForm = forwardRef(
         </div>
         <CalendarPopup popupState={popupType === 'checkIn' || popupType === 'checkOut'} />
         <div css={serachFormDivide}></div>
-        <div name="guest" css={[searchFormCol, searchFormColLast]} onClick={changePopupType}>
+        <div name="guest" css={searchFormCol} onClick={changePopupType}>
           <div css={guestInputWrap}>
             <h5>인원</h5>
             <p>
@@ -70,9 +69,9 @@ const SearchForm = forwardRef(
                 : '게스트 추가'}
             </p>
           </div>
-          <Link css={searchFormColLastBtn} to="/accommodationList">
-            <SearchIcon />
-          </Link>
+        </div>
+        <div css={searchFormSumbitBtn} onClick={handleSubmit}>
+          <SearchIcon />
         </div>
         <GuestPopup
           popupState={popupType === 'guest'}

@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React, { useEffect, useState, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import axiosInstance from '../../api-config';
 import SearchForm from '../../components/Main/SearchForm';
 
 function SearchFormContainer({ isScroll }) {
+  const history = useHistory();
   // 위치 관련
   const [location, setLocation] = useState();
   const [locationList, setLocationList] = useState([]);
@@ -16,6 +18,15 @@ function SearchFormContainer({ isScroll }) {
   // 팝업 관련
   const [popupType, setPopupType] = useState(undefined);
   const refSearchForm = useRef();
+
+  const handleSubmit = () => {
+    if (!location) return setPopupType('location');
+
+    const { adult, child, infant } = guestNum;
+    const url = `/accommodationList?query=${location}&adults=${adult}&children=${child}&infants=${infant}&source=structured_search_input_header&search_type`;
+
+    return history.push(url);
+  };
 
   const handleChange = value => {
     let result = [];
@@ -105,6 +116,7 @@ function SearchFormContainer({ isScroll }) {
 
   return (
     <SearchForm
+      handleSubmit={handleSubmit}
       location={location}
       guestNum={guestNum}
       popupType={popupType}

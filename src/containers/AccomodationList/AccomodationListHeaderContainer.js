@@ -1,8 +1,10 @@
 /* eslint-disable no-use-before-define */
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/AccomodationList/Header';
+import { useQuery } from '../../utils/utils';
 
 function AccomodationListHeaderContainer() {
+  const query = useQuery();
   const [isSearchFormClick, setIsSearchFormClick] = useState(false);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ function AccomodationListHeaderContainer() {
 
   // 나중에 전역 상태로 관리
   const searchResult = {
-    location: '서울시 종로구',
+    location: query.get('query'),
     checkIn: {
       month: 10,
       day: 15,
@@ -47,9 +49,9 @@ function AccomodationListHeaderContainer() {
       day: 18,
     },
     guest: {
-      guest: 1,
-      child: 0,
-      infant: 0,
+      adult: +query.get('adults'),
+      child: +query.get('children'),
+      infant: +query.get('infans'),
     },
   };
 

@@ -56,8 +56,6 @@ const resultWrap = props => css`
 
   &:hover {
     cursor: pointer;
-    background: rgba(155, 155, 155, 0.1);
-    border-radius: 15px;
   }
 
   &:last-child {
