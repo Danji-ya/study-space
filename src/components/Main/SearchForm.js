@@ -19,6 +19,9 @@ const SearchForm = forwardRef(
       handleSubmit,
       location,
       guestNum,
+      checkInDay,
+      checkOutDay,
+      changeCheckInOutDay,
       popupType,
       changePopupType,
       changeLocation,
@@ -29,6 +32,9 @@ const SearchForm = forwardRef(
     ref,
   ) => {
     const headCount = guestNum.adult + guestNum.child;
+    const checkInFormat = checkInDay && `${checkInDay.getMonth() + 1}월 ${checkInDay.getDate()}일`;
+    const checkOutFormat =
+      checkOutDay && `${checkOutDay.getMonth() + 1}월 ${checkOutDay.getDate()}일`;
 
     return (
       <div css={searchForm({ popupType })} ref={ref}>
@@ -51,14 +57,19 @@ const SearchForm = forwardRef(
         <div css={serachFormDivide}></div>
         <div name="checkIn" css={searchFormCol} onClick={changePopupType}>
           <h5>체크인</h5>
-          <p>날짜 입력</p>
+          <p>{checkInFormat ? `${checkInFormat}` : `날짜 입력`}</p>
         </div>
         <div css={serachFormDivide}></div>
         <div name="checkOut" css={searchFormCol} onClick={changePopupType}>
           <h5>체크아웃</h5>
-          <p>날짜 입력</p>
+          <p>{checkOutFormat ? `${checkOutFormat}` : `날짜 입력`}</p>
         </div>
-        <CalendarPopup popupState={popupType === 'checkIn' || popupType === 'checkOut'} />
+        <CalendarPopup
+          popupState={popupType === 'checkIn' || popupType === 'checkOut'}
+          checkInDay={checkInDay}
+          checkOutDay={checkOutDay}
+          changeCheckInOutDay={changeCheckInOutDay}
+        />
         <div css={serachFormDivide}></div>
         <div name="guest" css={searchFormCol} onClick={changePopupType}>
           <div css={guestInputWrap}>

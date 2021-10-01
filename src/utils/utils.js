@@ -34,3 +34,5 @@ export function textByteOverCut(text, maxByte = 20, lastText = '...') {
 
   return changeText;
 }
+
+export const padding = value => `00${value}`.slice(-2);

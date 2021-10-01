@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import axiosInstance from '../../api-config';
 import SearchForm from '../../components/Main/SearchForm';
+import { padding } from '../../utils/utils';
 
 function SearchFormContainer({ isScroll }) {
   const history = useHistory();
@@ -15,6 +16,10 @@ function SearchFormContainer({ isScroll }) {
   // 인원 관련
   const [guestNum, setGuestNum] = useState({ adult: 0, child: 0, infant: 0 });
 
+  // 체크인, 체크아웃 관련
+  const [checkInDay, setCheckInDay] = useState();
+  const [checkOutDay, setCheckOutDay] = useState();
+
   // 팝업 관련
   const [popupType, setPopupType] = useState(undefined);
   const refSearchForm = useRef();
@@ -23,7 +28,14 @@ function SearchFormContainer({ isScroll }) {
     if (!location) return setPopupType('location');
 
     const { adult, child, infant } = guestNum;
-    const url = `/accommodationList?query=${location}&adults=${adult}&children=${child}&infants=${infant}&source=structured_search_input_header&search_type`;
+    const checkInFormat = `${checkInDay.getFullYear()}-${padding(
+      checkInDay.getMonth() + 1,
+    )}-${padding(checkInDay.getDate())}`;
+    const checkOutFormat = `${checkOutDay.getFullYear()}-${padding(
+      checkOutDay.getMonth() + 1,
+    )}-${padding(checkOutDay.getDate())}`;
+
+    const url = `/accommodationList?&date_picker_type=calendar&checkin=${checkInFormat}&checkout=${checkOutFormat}&adults=${adult}&children=${child}&infants=${infant}&query=${location}&source=structured_search_input_header&search_type`;
 
     return history.push(url);
   };
@@ -86,6 +98,18 @@ function SearchFormContainer({ isScroll }) {
     }
   }
 
+  function changeCheckInOutDay(type, timeStamp) {
+    if (type === 'checkIn') {
+      setCheckInDay(timeStamp);
+      // next to popup
+      setPopupType('checkOut');
+    } else {
+      setCheckOutDay(timeStamp);
+      // next to popup
+      setPopupType('guest');
+    }
+  }
+
   function changePopupType(e) {
     const type = e.currentTarget.getAttribute('name');
     setPopupType(type);
@@ -119,9 +143,12 @@ function SearchFormContainer({ isScroll }) {
       handleSubmit={handleSubmit}
       location={location}
       guestNum={guestNum}
+      checkInDay={checkInDay}
+      checkOutDay={checkOutDay}
       popupType={popupType}
       changePopupType={changePopupType}
       changeLocation={changeLocation}
+      changeCheckInOutDay={changeCheckInOutDay}
       changeGuestNum={changeGuestNum}
       handleChange={handleChange}
       matchLocationList={matchLocationList}

@@ -1,13 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import Calendar from '../../components/common/Calendar';
+import { padding } from '../../utils/utils';
 
-function CalendarContainer() {
+function CalendarContainer({ checkInDay, checkOutDay, changeCheckInOutDay }) {
   const [moveMonth, setMoveMonth] = useState(0);
   const today = new Date();
   const leftDate = new Date(today.getFullYear(), today.getMonth() + moveMonth, 1);
   const nextDate = new Date(leftDate.getFullYear(), leftDate.getMonth() + 1, 1);
-  // const leftDate =  useMemo(() => new Date(today.getFullYear(), today.getMonth() + moveMonth, 1), [moveMonth]);
-  // const nextDate = useMemo(()=>new Date(leftDate.getFullYear(), leftDate.getMonth() + 1, 1) [moveMonth]);
 
   const setMonth = type => {
     if (type === 'left') setMoveMonth(moveMonth - 1);
@@ -18,8 +17,6 @@ function CalendarContainer() {
   const getLastDate = (year, month) => new Date(year, month, 0).getDate();
 
   const isBeforeDay = (year, month, day) => {
-    const padding = value => `00${value}`.slice(-2);
-
     const currentDay = new Date(
       `${today.getFullYear()}-${padding(today.getMonth() + 1)}-${padding(today.getDate())}`,
     );
@@ -27,6 +24,12 @@ function CalendarContainer() {
     const checkDay = new Date(`${year}-${padding(month)}-${padding(day)}`);
 
     return currentDay > checkDay;
+  };
+
+  const isPickedDay = (pickedDay, year, month, day) => {
+    const checkDay = new Date(`${year}-${padding(month)}-${padding(day)}`);
+    // console.log(checkDay, pickedDay);
+    return checkDay.getTime() === pickedDay.getTime();
   };
 
   const getMonthData = date => {
@@ -38,24 +41,54 @@ function CalendarContainer() {
 
     const arr = Array.from(new Array(lastDate), (x, i) => {
       const day = i + 1;
-      // 추후에 체크인, 체크아웃관련 로직은 이 안에다
+      // 추후에 숙소 상세 페이지에서는 이미 예약되어있는 날짜도 표시해줘야한다.
 
       return {
         day,
         beforeDay: isBeforeDay(year, month, day),
+        checkInDay: checkInDay && isPickedDay(checkInDay, year, month, day),
+        checkOutDay: checkOutDay && isPickedDay(checkOutDay, year, month, day),
       };
     });
-    arr.unshift(...new Array(firstDay));
+    arr.unshift(...new Array(firstDay).fill(0).map((v, i) => ({})));
 
     return { year, month, firstDay, lastDate, arr };
   };
 
-  // const leftMonth = getMonthData(leftDate);
-  // const rightMonth = getMonthData(nextDate);
-  const leftMonth = useMemo(() => getMonthData(leftDate), [moveMonth]);
-  const rightMonth = useMemo(() => getMonthData(nextDate), [moveMonth]);
+  const leftMonth = useMemo(() => getMonthData(leftDate), [moveMonth, checkInDay, checkOutDay]);
+  const rightMonth = useMemo(() => getMonthData(nextDate), [moveMonth, checkInDay, checkOutDay]);
 
-  return <Calendar leftMonth={leftMonth} rightMonth={rightMonth} setMonth={setMonth} />;
+  const handleDatePick = useCallback(
+    (target, beforeDay) => {
+      const pickedDate = target.dataset.dateformat.split('-');
+      const timeStamp = new Date(
+        `${pickedDate[0]}-${padding(pickedDate[1])}-${padding(pickedDate[2])}`,
+      );
+      const day = pickedDate[2];
+
+      if (beforeDay) return; // 이전 날짜
+      if (day === 'undefined') return; // 공백인 칸
+      // 나중에 예약된 날짜이면 패스
+
+      if (!checkInDay || timeStamp < checkInDay) {
+        console.log('체크인 날짜 설정 중');
+        changeCheckInOutDay('checkIn', timeStamp);
+      } else {
+        console.log('체크아웃 날짜 설정 중');
+        changeCheckInOutDay('checkOut', timeStamp);
+      }
+    },
+    [checkInDay, checkOutDay],
+  );
+
+  return (
+    <Calendar
+      leftMonth={leftMonth}
+      rightMonth={rightMonth}
+      setMonth={setMonth}
+      handleDatePick={handleDatePick}
+    />
+  );
 }
 
-export default CalendarContainer;
+export default React.memo(CalendarContainer);

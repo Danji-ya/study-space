@@ -5,6 +5,7 @@ import reset from './assets/css/reset';
 import AccomodationList from './pages/AccomodationList';
 import Detail from './pages/Detail';
 import Main from './pages/Main';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
         <Route path="/detail/:id">
           <Detail />
         </Route>
-        {/* <Route path="*">
+        <Route path="*">
           <NotFound />
-        </Route> */}
+        </Route>
       </Switch>
     </Router>
   );

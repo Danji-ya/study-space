@@ -4,7 +4,7 @@ import React from 'react';
 import { calendarContainer, moveBtn } from '../../assets/css/common/calendarStyle';
 import SingleCalendar from './SingleCalendar';
 
-function Calendar({ leftMonth, rightMonth, setMonth }) {
+function Calendar({ leftMonth, rightMonth, setMonth, handleDatePick }) {
   return (
     <div css={calendarContainer}>
       <a
@@ -18,8 +18,8 @@ function Calendar({ leftMonth, rightMonth, setMonth }) {
       >
         &#10094;
       </a>
-      <SingleCalendar monthData={leftMonth} />
-      <SingleCalendar monthData={rightMonth} />
+      <SingleCalendar monthData={leftMonth} handleDatePick={handleDatePick} />
+      <SingleCalendar monthData={rightMonth} handleDatePick={handleDatePick} />
       <a
         css={[
           moveBtn,

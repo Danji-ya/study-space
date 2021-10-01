@@ -41,12 +41,12 @@ function AccomodationListHeaderContainer() {
   const searchResult = {
     location: query.get('query'),
     checkIn: {
-      month: 10,
-      day: 15,
+      month: query.get('checkin').split('-')[1],
+      day: query.get('checkin').split('-')[2],
     },
     checkOut: {
-      month: 10,
-      day: 18,
+      month: query.get('checkout').split('-')[1],
+      day: query.get('checkout').split('-')[2],
     },
     guest: {
       adult: +query.get('adults'),

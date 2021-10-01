@@ -9,7 +9,7 @@ import {
   title,
 } from '../../assets/css/common/calendarStyle';
 
-function SingleCalendar({ monthData }) {
+function SingleCalendar({ monthData, handleDatePick }) {
   return (
     <div css={calendarWrap}>
       <strong css={title}>
@@ -28,8 +28,13 @@ function SingleCalendar({ monthData }) {
       <div css={dateWrap}>
         {monthData.arr.map((date, i) => {
           return (
-            <div css={dateBtn({ date })} key={`${monthData.year} + ${i}`}>
-              {date?.day}
+            <div
+              data-dateformat={`${monthData.year}-${monthData.month}-${date.day}`}
+              css={dateBtn({ date })}
+              key={`${monthData.year} + ${i}`}
+              onClick={e => handleDatePick(e.target, date.beforeDay)}
+            >
+              {date.day}
             </div>
           );
         })}

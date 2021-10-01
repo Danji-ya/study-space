@@ -63,7 +63,7 @@ const dateBtn = props => css`
   font-weight: 500;
   border-radius: 50%;
 
-  ${props.date?.beforeDay || !props.date?.day
+  ${props.date.beforeDay || !props.date.day
     ? css`
         color: rgba(72, 72, 72, 0.5);
 
@@ -77,10 +77,14 @@ const dateBtn = props => css`
           border: 1px solid black;
           cursor: pointer;
         }
-      `};
+      `}
 
-  //   오늘 날짜
-  //  날짜 사이간에 효과
+  //   체크인 체크아웃 효과
+  ${(props.date.checkInDay || props.date.checkOutDay) &&
+  css`
+    background: black;
+    color: white;
+  `} //  날짜 사이간에 효과
 `;
 
 const moveBtn = props => css`
