@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 
 const headerNav = props => css`
   display: flex;
@@ -109,8 +109,10 @@ const headerCol = props => css`
 `;
 
 const headerForm = props => css`
+  position: relative;
+
   color: ${props.isScroll ? 'black' : 'white'};
-  animation-duration: 0.2s;
+  animation-duration: 0.4s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   animation-name: ${!props.isScroll || props.isHeaderClick ? 'slideDown' : 'slideUp'};
@@ -157,26 +159,24 @@ const headerForm = props => css`
   @keyframes slideUp {
     from {
       transform: scale(1, 1) translateY(0px);
-      opacity: 0.5;
+      opacity: 0.2;
     }
     to {
       transform: scale(0.3, 0.75) translateY(-80px);
       opacity: 0;
-      visibility: hidden;
     }
   }
 `;
 
 const headerContainer = props => css`
+  z-index: 999;
   position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 150px;
-  z-index: 100;
-  background: ${props.isScroll ? 'white' : 'none'};
-
+  background: ${props.isScroll ? 'white' : 'transparent'};
   box-shadow: ${props.isScroll && '0px 2px 4px rgba(0,0,0,0.3)'};
   height: 100px;
 `;

@@ -51,14 +51,14 @@ const searchForm = props => css`
       }
     `}
 
-    ${props.popupType === 'checkIn' &&
+    ${props.popupType === 'checkin' &&
     css`
       &:nth-of-type(4) {
         background: white;
       }
     `}
 
-    ${props.popupType === 'checkOut' &&
+    ${props.popupType === 'checkout' &&
     css`
       &:nth-of-type(6) {
         background: white;

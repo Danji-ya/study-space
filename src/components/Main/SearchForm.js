@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React, { forwardRef } from 'react';
+import { useSelector } from 'react-redux';
 import {
   guestInputWrap,
   searchForm,
@@ -16,32 +17,29 @@ import LocationPopup from './LocationPopup';
 const SearchForm = forwardRef(
   (
     {
+      searchFormData,
       handleSubmit,
-      location,
-      guestNum,
-      checkInDay,
-      checkOutDay,
       changeCheckInOutDay,
       popupType,
       changePopupType,
       changeLocation,
       changeGuestNum,
-      handleChange,
+      handleInputChange,
       matchLocationList,
     },
     ref,
   ) => {
+    const { location, checkin, checkout, guestNum } = searchFormData;
     const headCount = guestNum.adult + guestNum.child;
-    const checkInFormat = checkInDay && `${checkInDay.getMonth() + 1}월 ${checkInDay.getDate()}일`;
-    const checkOutFormat =
-      checkOutDay && `${checkOutDay.getMonth() + 1}월 ${checkOutDay.getDate()}일`;
+    const checkInFormat = checkin && `${checkin.getMonth() + 1}월 ${checkin.getDate()}일`;
+    const checkOutFormat = checkout && `${checkout.getMonth() + 1}월 ${checkout.getDate()}일`;
 
     return (
       <div css={searchForm({ popupType })} ref={ref}>
         <div name="location" css={searchFormCol} onClick={changePopupType}>
           <h5>위치</h5>
           <input
-            onChange={e => handleChange(e.target.value)}
+            onChange={e => handleInputChange(e.target.value)}
             name="location"
             type="text"
             autoComplete="off"
@@ -55,19 +53,17 @@ const SearchForm = forwardRef(
           changeLocation={changeLocation}
         />
         <div css={serachFormDivide}></div>
-        <div name="checkIn" css={searchFormCol} onClick={changePopupType}>
+        <div name="checkin" css={searchFormCol} onClick={changePopupType}>
           <h5>체크인</h5>
           <p>{checkInFormat ? `${checkInFormat}` : `날짜 입력`}</p>
         </div>
         <div css={serachFormDivide}></div>
-        <div name="checkOut" css={searchFormCol} onClick={changePopupType}>
+        <div name="checkout" css={searchFormCol} onClick={changePopupType}>
           <h5>체크아웃</h5>
           <p>{checkOutFormat ? `${checkOutFormat}` : `날짜 입력`}</p>
         </div>
         <CalendarPopup
-          popupState={popupType === 'checkIn' || popupType === 'checkOut'}
-          checkInDay={checkInDay}
-          checkOutDay={checkOutDay}
+          popupState={popupType === 'checkin' || popupType === 'checkout'}
           changeCheckInOutDay={changeCheckInOutDay}
         />
         <div css={serachFormDivide}></div>

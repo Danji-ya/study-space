@@ -2,37 +2,19 @@
 import { css } from '@emotion/react';
 import React from 'react';
 import { subtitle, title } from '../../assets/css/accomodation/listContainerHeaderStyle';
-import { useQuery } from '../../utils/utils';
 
-function SummaryHeader({ totalListLength }) {
-  const query = useQuery();
-
-  // 나중에 전역 상태로 관리
-  const searchResult = {
-    location: query.get('query'),
-    checkIn: {
-      month: query.get('checkin').split('-')[1],
-      day: query.get('checkin').split('-')[2],
-    },
-    checkOut: {
-      month: query.get('checkout').split('-')[1],
-      day: query.get('checkout').split('-')[2],
-    },
-    guest: {
-      adult: +query.get('adults'),
-      child: +query.get('children'),
-      infant: +query.get('infans'),
-    },
-  };
-
-  const headCount = searchResult.guest.adult + searchResult.guest.child;
+function SummaryHeader({ totalListLength, searchResult }) {
+  console.log(searchResult);
+  const headCount = searchResult.guestNum.adult + searchResult.guestNum.child;
 
   return (
     <div>
       <p css={subtitle}>
         {totalListLength}개의 숙소<span> · </span>
-        {searchResult.checkIn.month &&
-          `${searchResult.checkIn.month}월 ${searchResult.checkIn.day}일 - ${searchResult.checkOut.month}월 ${searchResult.checkOut.day}일`}
+        {searchResult.checkin &&
+          `${searchResult.checkin.getMonth() + 1}월 ${searchResult.checkin.getDate()}일 - ${
+            searchResult.checkout.getMonth() + 1
+          }월 ${searchResult.checkout.getDate()}일`}
         <span> · </span>
         {headCount > 0 && `게스트 ${headCount}명`}
       </p>

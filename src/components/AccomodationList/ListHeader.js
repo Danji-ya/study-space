@@ -1,11 +1,11 @@
 import React from 'react';
 import FilterBtnCotainer from '../../containers/AccomodationList/FilterBtnCotainer';
-import SummaryHeader from './SummaryHeader';
+import SummaryHeaderContainer from '../../containers/AccomodationList/SummaryHeaderContainer';
 
 function ListHeader({ totalAccomodationList }) {
   return (
     <section>
-      <SummaryHeader totalListLength={totalAccomodationList.length} />
+      <SummaryHeaderContainer totalListLength={totalAccomodationList.length} />
       <FilterBtnCotainer />
     </section>
   );

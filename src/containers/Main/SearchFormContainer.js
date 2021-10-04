@@ -1,24 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import React, { useEffect, useState, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axiosInstance from '../../api-config';
 import SearchForm from '../../components/Main/SearchForm';
+import { setCheckin, setCheckout, setGuestNum, setLocation } from '../../modules/searchForm';
 import { padding } from '../../utils/utils';
 
 function SearchFormContainer({ isScroll }) {
   const history = useHistory();
-  // 위치 관련
-  const [location, setLocation] = useState();
+  const dispatch = useDispatch();
+  const { location, checkin, checkout, guestNum } = useSelector(state => state.searchForm);
+
+  // 위치 검색 데이터 관련 나중에는 api로 대체
   const [locationList, setLocationList] = useState([]);
   const [matchLocationList, setMatchLocationList] = useState([]);
-
-  // 인원 관련
-  const [guestNum, setGuestNum] = useState({ adult: 0, child: 0, infant: 0 });
-
-  // 체크인, 체크아웃 관련
-  const [checkInDay, setCheckInDay] = useState();
-  const [checkOutDay, setCheckOutDay] = useState();
 
   // 팝업 관련
   const [popupType, setPopupType] = useState(undefined);
@@ -28,32 +25,35 @@ function SearchFormContainer({ isScroll }) {
     if (!location) return setPopupType('location');
 
     const { adult, child, infant } = guestNum;
-    const checkInFormat = `${checkInDay.getFullYear()}-${padding(
-      checkInDay.getMonth() + 1,
-    )}-${padding(checkInDay.getDate())}`;
-    const checkOutFormat = `${checkOutDay.getFullYear()}-${padding(
-      checkOutDay.getMonth() + 1,
-    )}-${padding(checkOutDay.getDate())}`;
+    const checkinFormat =
+      checkin &&
+      `${checkin.getFullYear()}-${padding(checkin.getMonth() + 1)}-${padding(checkin.getDate())}`;
+    const checkoutFormat =
+      checkout &&
+      `${checkout.getFullYear()}-${padding(checkout.getMonth() + 1)}-${padding(
+        checkout.getDate(),
+      )}`;
 
-    const url = `/accommodationList?&date_picker_type=calendar&checkin=${checkInFormat}&checkout=${checkOutFormat}&adults=${adult}&children=${child}&infants=${infant}&query=${location}&source=structured_search_input_header&search_type`;
+    const url = `/accommodationList?&date_picker_type=calendar&checkin=${checkinFormat}&checkout=${checkoutFormat}&adults=${adult}&children=${child}&infants=${infant}&query=${location}&source=structured_search_input_header&search_type`;
 
     return history.push(url);
   };
 
-  const handleChange = value => {
+  const handleInputChange = value => {
     let result = [];
     if (value.length > 0) {
       const regExp = new RegExp(value, 'gi');
       result = locationList.filter(loc => loc.match(regExp)).slice(0, 5);
     }
-    setLocation(value);
+    dispatch(setLocation(value));
+
     return setMatchLocationList([...result]);
   };
 
-  function changeLocation(area) {
-    setLocation(area);
+  function changeLocation(region) {
+    dispatch(setLocation(region));
     // next to popup
-    setPopupType('checkIn');
+    setPopupType('checkin');
   }
 
   const hasCompanion = () => guestNum.adult > 0;
@@ -64,16 +64,11 @@ function SearchFormContainer({ isScroll }) {
 
   const checkCompanion = grouptype => {
     if (hasCompanion()) {
-      setGuestNum(prevState => ({
-        ...prevState,
-        [grouptype]: guestNum[grouptype] + 1,
-      }));
+      const value = { ...guestNum, [grouptype]: guestNum[grouptype] + 1 };
+      dispatch(setGuestNum(value));
     } else {
-      setGuestNum(prevState => ({
-        ...prevState,
-        [grouptype]: guestNum[grouptype] + 1,
-        adult: 1,
-      }));
+      const value = { ...guestNum, [grouptype]: guestNum[grouptype] + 1, adult: 1 };
+      dispatch(setGuestNum(value));
     }
   };
 
@@ -81,30 +76,27 @@ function SearchFormContainer({ isScroll }) {
     if (type === '+') {
       if (grouptype === 'child' || grouptype === 'infant') {
         checkCompanion(grouptype);
-      } else {
-        setGuestNum(prevState => ({
-          ...prevState,
-          [grouptype]: guestNum[grouptype] + 1,
-        }));
+        return;
       }
-    } else {
+
+      const value = { ...guestNum, [grouptype]: guestNum[grouptype] + 1 };
+      dispatch(setGuestNum(value));
+    } else if (type === '-') {
       if (isZero(grouptype)) return;
       if (grouptype === 'adult' && guestNum.adult === 1 && hasChildren()) return;
 
-      setGuestNum(prevState => ({
-        ...prevState,
-        [grouptype]: guestNum[grouptype] - 1,
-      }));
+      const value = { ...guestNum, [grouptype]: guestNum[grouptype] - 1 };
+      dispatch(setGuestNum(value));
     }
   }
 
   function changeCheckInOutDay(type, timeStamp) {
-    if (type === 'checkIn') {
-      setCheckInDay(timeStamp);
+    if (type === 'checkin') {
+      dispatch(setCheckin(timeStamp));
       // next to popup
-      setPopupType('checkOut');
+      setPopupType('checkout');
     } else {
-      setCheckOutDay(timeStamp);
+      dispatch(setCheckout(timeStamp));
       // next to popup
       setPopupType('guest');
     }
@@ -140,17 +132,14 @@ function SearchFormContainer({ isScroll }) {
 
   return (
     <SearchForm
+      searchFormData={{ location, checkin, checkout, guestNum }}
       handleSubmit={handleSubmit}
-      location={location}
-      guestNum={guestNum}
-      checkInDay={checkInDay}
-      checkOutDay={checkOutDay}
       popupType={popupType}
       changePopupType={changePopupType}
       changeLocation={changeLocation}
       changeCheckInOutDay={changeCheckInOutDay}
       changeGuestNum={changeGuestNum}
-      handleChange={handleChange}
+      handleInputChange={handleInputChange}
       matchLocationList={matchLocationList}
       ref={refSearchForm}
     />

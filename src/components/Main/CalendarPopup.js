@@ -4,14 +4,10 @@ import React from 'react';
 import { calendarPopupContainer } from '../../assets/css/main/popupStyle';
 import CalendarContainer from '../../containers/Main/CalendarContainer';
 
-function CalendarPopup({ popupState, checkInDay, checkOutDay, changeCheckInOutDay }) {
+function CalendarPopup({ popupState, changeCheckInOutDay }) {
   return (
     <div css={calendarPopupContainer({ popupState })}>
-      <CalendarContainer
-        checkInDay={checkInDay}
-        checkOutDay={checkOutDay}
-        changeCheckInOutDay={changeCheckInOutDay}
-      />
+      <CalendarContainer changeCheckInOutDay={changeCheckInOutDay} />
     </div>
   );
 }

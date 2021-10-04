@@ -1,8 +1,10 @@
 import React, { useState, useMemo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 import Calendar from '../../components/common/Calendar';
 import { padding } from '../../utils/utils';
 
-function CalendarContainer({ checkInDay, checkOutDay, changeCheckInOutDay }) {
+function CalendarContainer({ changeCheckInOutDay }) {
+  const { checkin, checkout } = useSelector(state => state.searchForm);
   const [moveMonth, setMoveMonth] = useState(0);
   const today = new Date();
   const leftDate = new Date(today.getFullYear(), today.getMonth() + moveMonth, 1);
@@ -46,8 +48,8 @@ function CalendarContainer({ checkInDay, checkOutDay, changeCheckInOutDay }) {
       return {
         day,
         beforeDay: isBeforeDay(year, month, day),
-        checkInDay: checkInDay && isPickedDay(checkInDay, year, month, day),
-        checkOutDay: checkOutDay && isPickedDay(checkOutDay, year, month, day),
+        checkInDay: checkin && isPickedDay(checkin, year, month, day),
+        checkOutDay: checkout && isPickedDay(checkout, year, month, day),
       };
     });
     arr.unshift(...new Array(firstDay).fill(0).map((v, i) => ({})));
@@ -55,8 +57,8 @@ function CalendarContainer({ checkInDay, checkOutDay, changeCheckInOutDay }) {
     return { year, month, firstDay, lastDate, arr };
   };
 
-  const leftMonth = useMemo(() => getMonthData(leftDate), [moveMonth, checkInDay, checkOutDay]);
-  const rightMonth = useMemo(() => getMonthData(nextDate), [moveMonth, checkInDay, checkOutDay]);
+  const leftMonth = useMemo(() => getMonthData(leftDate), [moveMonth, checkin, checkout]);
+  const rightMonth = useMemo(() => getMonthData(nextDate), [moveMonth, checkin, checkout]);
 
   const handleDatePick = useCallback(
     (target, beforeDay) => {
@@ -70,15 +72,15 @@ function CalendarContainer({ checkInDay, checkOutDay, changeCheckInOutDay }) {
       if (day === 'undefined') return; // 공백인 칸
       // 나중에 예약된 날짜이면 패스
 
-      if (!checkInDay || timeStamp < checkInDay) {
+      if (!checkin || timeStamp < checkin) {
         console.log('체크인 날짜 설정 중');
-        changeCheckInOutDay('checkIn', timeStamp);
+        changeCheckInOutDay('checkin', timeStamp);
       } else {
         console.log('체크아웃 날짜 설정 중');
-        changeCheckInOutDay('checkOut', timeStamp);
+        changeCheckInOutDay('checkout', timeStamp);
       }
     },
-    [checkInDay, checkOutDay],
+    [checkin, checkout],
   );
 
   return (
