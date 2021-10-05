@@ -4,7 +4,6 @@ import React from 'react';
 import { subtitle, title } from '../../assets/css/accomodation/listContainerHeaderStyle';
 
 function SummaryHeader({ totalListLength, searchResult }) {
-  console.log(searchResult);
   const headCount = searchResult.guestNum.adult + searchResult.guestNum.child;
 
   return (

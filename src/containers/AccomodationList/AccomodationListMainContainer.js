@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import axiosInstance from '../../api-config';
+import { useDispatch, useSelector } from 'react-redux';
 import AccomdationListMain from '../../components/AccomodationList/AccomdationListMain';
+import { getAccomodationList } from '../../modules/accomodation';
 
 function AccomdationListMainContainer() {
-  // 페이지네이션, 숙소 리스트 & 지도 관리
+  const dispatch = useDispatch();
+  const { accomodationList } = useSelector(state => state.accomodation);
+  const { location } = useSelector(state => state.searchForm);
 
-  // 필터에 따른 값 변화
-  // Filtered List 관련 함수
-  const [accomodationList, setAccomodationList] = useState([]);
+  // Filtered List 관련 state
   const [search, setSearch] = useState('');
   const [filteredAccomodationList, setFilteredAccomodationList] = useState([]);
 
@@ -16,16 +17,7 @@ function AccomdationListMainContainer() {
   const [listPerPage, setPerPage] = useState(5);
 
   useEffect(() => {
-    async function getData() {
-      try {
-        const response = await axiosInstance.get('dummy/data.json');
-        setAccomodationList(prev => [...prev, ...response.data.accomodationList]);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
-    getData();
+    dispatch(getAccomodationList(location));
   }, []);
 
   useEffect(() => {
