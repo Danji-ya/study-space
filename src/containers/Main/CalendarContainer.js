@@ -1,12 +1,24 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
+import { shallowEqual, useSelector } from 'react-redux';
 import Calendar from '../../components/common/Calendar';
 import { padding } from '../../utils/utils';
 
 function CalendarContainer({ changeCheckInOutDay }) {
-  const { checkin, checkout } = useSelector(state => state.searchForm);
+  const [hoverDay, setHoverDay] = useState();
+
+  const { checkin, checkout } = useSelector(
+    state => ({
+      checkin: state.searchForm.checkin,
+      checkout: state.searchForm.checkout,
+    }),
+    shallowEqual,
+  );
   const [moveMonth, setMoveMonth] = useState(0);
   const today = new Date();
+  const currentDay = new Date(
+    `${today.getFullYear()}-${padding(today.getMonth() + 1)}-${padding(today.getDate())}`,
+  );
+
   const leftDate = new Date(today.getFullYear(), today.getMonth() + moveMonth, 1);
   const nextDate = new Date(leftDate.getFullYear(), leftDate.getMonth() + 1, 1);
 
@@ -18,20 +30,33 @@ function CalendarContainer({ changeCheckInOutDay }) {
   const getFirstDay = (year, month) => new Date(year, month - 1, 1).getDay();
   const getLastDate = (year, month) => new Date(year, month, 0).getDate();
 
-  const isBeforeDay = (year, month, day) => {
-    const currentDay = new Date(
-      `${today.getFullYear()}-${padding(today.getMonth() + 1)}-${padding(today.getDate())}`,
-    );
+  const isBeforeDay = checkDay => currentDay > checkDay;
 
-    const checkDay = new Date(`${year}-${padding(month)}-${padding(day)}`);
+  const isPickedDay = (pickedDay, checkDay) => checkDay.getTime() === pickedDay.getTime();
 
-    return currentDay > checkDay;
+  const isHoverDay = (hoveredDay, checkDay) => checkDay.getTime() === hoveredDay.getTime();
+
+  const leaveHoverDay = e => {
+    // console.log(e);
+    setHoverDay('');
+  };
+  const handleHoverDay = target => {
+    const [year, month, day] = target.dataset.dateformat.split('-');
+    const checkDay = new Date(`${year}-${month}-${day}`);
+
+    if (!day || checkDay < currentDay) return;
+    if (!checkin || checkout) return;
+
+    setHoverDay(checkDay);
   };
 
-  const isPickedDay = (pickedDay, year, month, day) => {
-    const checkDay = new Date(`${year}-${padding(month)}-${padding(day)}`);
-    // console.log(checkDay, pickedDay);
-    return checkDay.getTime() === pickedDay.getTime();
+  const isBetweenDay = checkDay => {
+    if (!checkin) return false;
+    if (checkin && checkout) {
+      return checkDay > checkin && checkDay < checkout;
+    }
+
+    return checkDay > checkin && checkDay < hoverDay;
   };
 
   const getMonthData = date => {
@@ -43,13 +68,16 @@ function CalendarContainer({ changeCheckInOutDay }) {
 
     const arr = Array.from(new Array(lastDate), (x, i) => {
       const day = i + 1;
+      const timeStamp = new Date(`${year}-${padding(month)}-${padding(day)}`);
       // 추후에 숙소 상세 페이지에서는 이미 예약되어있는 날짜도 표시해줘야한다.
 
       return {
         day,
-        beforeDay: isBeforeDay(year, month, day),
-        checkInDay: checkin && isPickedDay(checkin, year, month, day),
-        checkOutDay: checkout && isPickedDay(checkout, year, month, day),
+        beforeDay: isBeforeDay(timeStamp),
+        checkInDay: checkin && isPickedDay(checkin, timeStamp),
+        checkOutDay: checkout && isPickedDay(checkout, timeStamp),
+        hoveredDay: hoverDay && isHoverDay(hoverDay, timeStamp),
+        betweenDay: isBetweenDay(timeStamp),
       };
     });
     arr.unshift(...new Array(firstDay).fill(0).map((v, i) => ({})));
@@ -57,19 +85,19 @@ function CalendarContainer({ changeCheckInOutDay }) {
     return { year, month, firstDay, lastDate, arr };
   };
 
-  const leftMonth = useMemo(() => getMonthData(leftDate), [moveMonth, checkin, checkout]);
-  const rightMonth = useMemo(() => getMonthData(nextDate), [moveMonth, checkin, checkout]);
+  const leftMonth = useMemo(() => getMonthData(leftDate), [moveMonth, checkin, checkout, hoverDay]);
+  const rightMonth = useMemo(
+    () => getMonthData(nextDate),
+    [moveMonth, checkin, checkout, hoverDay],
+  );
 
   const handleDatePick = useCallback(
     (target, beforeDay) => {
-      const pickedDate = target.dataset.dateformat.split('-');
-      const timeStamp = new Date(
-        `${pickedDate[0]}-${padding(pickedDate[1])}-${padding(pickedDate[2])}`,
-      );
-      const day = pickedDate[2];
+      const [year, month, day] = target.dataset.dateformat.split('-');
+      const timeStamp = new Date(`${year}-${month}-${day}`);
 
       if (beforeDay) return; // 이전 날짜
-      if (day === 'undefined') return; // 공백인 칸
+      if (!day) return; // 공백인 칸
       // 나중에 예약된 날짜이면 패스
 
       if (!checkin || timeStamp < checkin) {
@@ -85,10 +113,13 @@ function CalendarContainer({ changeCheckInOutDay }) {
 
   return (
     <Calendar
+      checkin={checkin}
       leftMonth={leftMonth}
       rightMonth={rightMonth}
       setMonth={setMonth}
       handleDatePick={handleDatePick}
+      handleHoverDay={handleHoverDay}
+      leaveHoverDay={leaveHoverDay}
     />
   );
 }

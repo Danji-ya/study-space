@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axiosInstance from '../../api-config';
@@ -90,17 +90,15 @@ function SearchFormContainer({ isScroll }) {
     }
   }
 
-  function changeCheckInOutDay(type, timeStamp) {
+  const changeCheckInOutDay = useCallback((type, timeStamp) => {
     if (type === 'checkin') {
       dispatch(setCheckin(timeStamp));
       // next to popup
       setPopupType('checkout');
     } else {
       dispatch(setCheckout(timeStamp));
-      // next to popup
-      setPopupType('guest');
     }
-  }
+  }, []);
 
   function changePopupType(e) {
     const type = e.currentTarget.getAttribute('name');

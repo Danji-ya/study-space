@@ -4,12 +4,14 @@ import React from 'react';
 import {
   calendarWrap,
   dateBtn,
+  dateBtnWrap,
   dateWrap,
   header,
   title,
 } from '../../assets/css/common/calendarStyle';
+import { padding } from '../../utils/utils';
 
-function SingleCalendar({ monthData, handleDatePick }) {
+function SingleCalendar({ checkin, monthData, handleDatePick, handleHoverDay, leaveHoverDay }) {
   return (
     <div css={calendarWrap}>
       <strong css={title}>
@@ -25,16 +27,19 @@ function SingleCalendar({ monthData, handleDatePick }) {
         <div>토</div>
       </div>
 
-      <div css={dateWrap}>
+      <div css={dateWrap} onMouseLeave={e => leaveHoverDay(e)}>
         {monthData.arr.map((date, i) => {
           return (
             <div
-              data-dateformat={`${monthData.year}-${monthData.month}-${date.day}`}
-              css={dateBtn({ date })}
+              data-dateformat={`${monthData.year}-${padding(monthData.month)}-${
+                date.day ? padding(date.day) : ''
+              }`}
               key={`${monthData.year} + ${i}`}
-              onClick={e => handleDatePick(e.target, date.beforeDay)}
+              css={dateBtnWrap({ date, checkin })}
+              onClick={e => handleDatePick(e.currentTarget, date.beforeDay)}
+              onMouseEnter={e => handleHoverDay(e.currentTarget)}
             >
-              {date.day}
+              <p css={dateBtn({ date, checkin })}>{date.day}</p>
             </div>
           );
         })}

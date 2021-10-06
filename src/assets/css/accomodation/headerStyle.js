@@ -2,15 +2,22 @@
 import { css } from '@emotion/react';
 
 const headerContainer = props => css`
-  z-index: 1;
+  z-index: 999;
   background: white;
   display: flex;
-  align-items: flex-start;
   position: fixed;
   width: 100%;
-  height: ${props.isSearchFormClick ? `180px` : `80px`};
-  padding: 20px 25px 0 25px;
+  height: 80px;
+  padding: 0 25px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+
+  ${props.isSearchFormClick &&
+  css`
+    height: 180px;
+    > div {
+      height: 80px;
+    }
+  `}
 `;
 
 // simpleForm
@@ -42,18 +49,22 @@ const simpleSearchFormContainer = props => css`
     height: 24px;
     align-self: center;
   }
+
+  @media (max-width: 950px) {
+    left: 70px;
+    transform: translate(0%, -50%);
+  }
 `;
 
 const resultWrap = props => css`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   border: none;
   background: transparent;
-  padding: 8px 20px;
-
+  padding: 8px 8px;
   &:hover {
     cursor: pointer;
   }

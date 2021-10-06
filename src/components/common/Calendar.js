@@ -4,7 +4,15 @@ import React from 'react';
 import { calendarContainer, moveBtn } from '../../assets/css/common/calendarStyle';
 import SingleCalendar from './SingleCalendar';
 
-function Calendar({ leftMonth, rightMonth, setMonth, handleDatePick }) {
+function Calendar({
+  checkin,
+  leftMonth,
+  rightMonth,
+  setMonth,
+  handleDatePick,
+  handleHoverDay,
+  leaveHoverDay,
+}) {
   return (
     <div css={calendarContainer}>
       <a
@@ -18,8 +26,20 @@ function Calendar({ leftMonth, rightMonth, setMonth, handleDatePick }) {
       >
         &#10094;
       </a>
-      <SingleCalendar monthData={leftMonth} handleDatePick={handleDatePick} />
-      <SingleCalendar monthData={rightMonth} handleDatePick={handleDatePick} />
+      <SingleCalendar
+        checkin={checkin}
+        monthData={leftMonth}
+        handleDatePick={handleDatePick}
+        handleHoverDay={handleHoverDay}
+        leaveHoverDay={leaveHoverDay}
+      />
+      <SingleCalendar
+        checkin={checkin}
+        monthData={rightMonth}
+        handleDatePick={handleDatePick}
+        handleHoverDay={handleHoverDay}
+        leaveHoverDay={leaveHoverDay}
+      />
       <a
         css={[
           moveBtn,

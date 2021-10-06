@@ -44,6 +44,10 @@ function AccomdationListMain({
           height: 100vh;
           position: sticky;
           top: 80px;
+
+          @media (max-width: 1128px) {
+            display: none;
+          }
         `}
       >
         <GoogleMap />

@@ -26,13 +26,7 @@ function SimpleSearchForm({ searchResult, isSearchFormClick, handleSearchForm })
       </button>
       <span></span>
       <button name="guest" css={resultWrap}>
-        <p>
-          {headCount
-            ? `게스트 ${headCount}명${
-                searchResult.guestNum.infant > 0 ? `, 유아 ${searchResult.guestNum.infant}명` : ''
-              }`
-            : '게스트 추가'}
-        </p>
+        <p>{headCount ? `게스트 ${headCount}명` : '게스트 추가'}</p>
         <div css={searchBtnWrap}>
           <SearchIcon />
         </div>

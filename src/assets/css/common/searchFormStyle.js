@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 
 const searchForm = props => css`
   position: absolute;
-  top: 60px;
+  top: 80px;
   left: 50%;
   transform: translateX(-50%);
   width: 800px;
@@ -19,17 +19,6 @@ const searchForm = props => css`
   justify-content: space-between;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
-  h5 {
-    color: black;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 0 0 5px 0;
-  }
-  p {
-    color: gray;
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
   input {
     color: black;
     font-size: 14px;
@@ -83,6 +72,19 @@ const searchFormCol = props => css`
   border-radius: 50px;
   position: relative;
   flex: 1;
+
+  p {
+    color: gray;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  h5 {
+    color: black;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 0 5px 0;
+  }
 
   padding-left: 24px;
   input {

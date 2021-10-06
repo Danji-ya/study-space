@@ -12,4 +12,4 @@ function CalendarPopup({ popupState, changeCheckInOutDay }) {
   );
 }
 
-export default CalendarPopup;
+export default React.memo(CalendarPopup);

@@ -51,6 +51,55 @@ const header = props => css`
 const dateWrap = props => css`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  /* row-gap: 2px; */
+`;
+
+const dateBtnWrap = props => css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ${props.date.beforeDay || !props.date.day
+    ? css`
+        :hover {
+          cursor: default;
+        }
+      `
+    : css`
+        :hover {
+          cursor: pointer;
+        }
+      `}
+
+  ${props.date.checkInDay &&
+  css`
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    background: rgba(165, 165, 165, 0.1);
+  `}
+
+  ${props.date.checkOutDay &&
+  css`
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: rgba(165, 165, 165, 0.1);
+  `}
+
+  // 체크인 되어있을 때,
+  ${props.checkin &&
+  props.date.hoveredDay &&
+  css`
+    :hover {
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+      background: rgba(165, 165, 165, 0.1);
+    }
+  `}
+
+  ${props.date.betweenDay &&
+  css`
+    background: rgba(165, 165, 165, 0.1);
+  `}
 `;
 
 const dateBtn = props => css`
@@ -79,12 +128,21 @@ const dateBtn = props => css`
         }
       `}
 
-  //   체크인 체크아웃 효과
   ${(props.date.checkInDay || props.date.checkOutDay) &&
   css`
     background: black;
     color: white;
-  `} //  날짜 사이간에 효과
+  `}
+
+  // 체크인 되어있을 때,
+  ${props.checkin &&
+  props.date.hoveredDay &&
+  css`
+    :hover {
+      background: black;
+      color: white;
+    }
+  `}
 `;
 
 const moveBtn = props => css`
@@ -104,4 +162,4 @@ const moveBtn = props => css`
   }
 `;
 
-export { calendarContainer, calendarWrap, title, header, dateWrap, dateBtn, moveBtn };
+export { calendarContainer, calendarWrap, title, header, dateWrap, dateBtnWrap, dateBtn, moveBtn };

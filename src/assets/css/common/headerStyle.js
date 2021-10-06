@@ -98,6 +98,10 @@ const airbnbIcon = props => css`
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 1127px) {
+    width: 30px;
+  }
 `;
 
 const headerCol = props => css`
@@ -110,6 +114,8 @@ const headerCol = props => css`
 
 const headerForm = props => css`
   position: relative;
+  display: flex;
+  align-items: center;
 
   color: ${props.isScroll ? 'black' : 'white'};
   animation-duration: 0.4s;
