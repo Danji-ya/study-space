@@ -2,11 +2,11 @@
 import { css } from '@emotion/react';
 import React from 'react';
 import { listContainer } from '../../assets/css/accomodation/listContainerStyle';
-import { images } from '../../constants';
 import PaginationContainer from '../../containers/AccomodationList/PaginationContainer';
 import GoogleMap from './GoogleMap';
 import ListHeader from './ListHeader';
 import ListMain from './ListMain';
+import MapButton from './MapButton';
 
 const mainContainer = props => `
 padding-top: 80px;
@@ -23,12 +23,14 @@ function AccomdationListMain({
   idxOfFirstList,
   changePage,
   currentPage,
+  checkin,
+  checkout,
 }) {
   return (
     <main css={mainContainer}>
       <article css={listContainer}>
         <ListHeader totalAccomodationList={totalAccomodationList} />
-        <ListMain accomodationList={accomodationList} />
+        <ListMain accomodationList={accomodationList} checkin={checkin} checkout={checkout} />
         <PaginationContainer
           accomodationList={accomodationList}
           idxOfFirstList={idxOfFirstList}
@@ -52,6 +54,7 @@ function AccomdationListMain({
       >
         <GoogleMap />
       </article>
+      <MapButton />
     </main>
   );
 }

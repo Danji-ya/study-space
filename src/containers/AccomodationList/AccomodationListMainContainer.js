@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+
 import AccomdationListMain from '../../components/AccomodationList/AccomdationListMain';
 import { getAccomodationList } from '../../modules/accomodation';
 
@@ -7,6 +8,13 @@ function AccomdationListMainContainer() {
   const dispatch = useDispatch();
   const { accomodationList } = useSelector(state => state.accomodation);
   const { location } = useSelector(state => state.searchForm);
+  const { checkin, checkout } = useSelector(
+    state => ({
+      checkin: state.searchForm.checkin,
+      checkout: state.searchForm.checkout,
+    }),
+    shallowEqual,
+  );
 
   // Filtered List 관련 state
   const [search, setSearch] = useState('');
@@ -45,6 +53,8 @@ function AccomdationListMainContainer() {
       listPerPage={listPerPage}
       changePage={changePage}
       currentPage={currentPage}
+      checkin={checkin}
+      checkout={checkout}
     />
   );
 }

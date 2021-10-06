@@ -11,6 +11,7 @@ function SummaryHeader({ totalListLength, searchResult }) {
       <p css={subtitle}>
         {totalListLength}개의 숙소<span> · </span>
         {searchResult.checkin &&
+          searchResult.checkout &&
           `${searchResult.checkin.getMonth() + 1}월 ${searchResult.checkin.getDate()}일 - ${
             searchResult.checkout.getMonth() + 1
           }월 ${searchResult.checkout.getDate()}일`}

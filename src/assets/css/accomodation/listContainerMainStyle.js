@@ -16,17 +16,15 @@ const listMainItemContainer = props => css`
 
 const sideTextContainerLink = props => css`
   margin-left: 16px;
-  flex: 1;
   overflow: hidden;
+  flex: 1;
 `;
 
 const sideTextContainer = props => css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  /* white-space: nowrap;
-  overflow: hidden; */
+  height: 100%;
 `;
 
 const sideTextTop = props => css``;

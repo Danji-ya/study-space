@@ -20,9 +20,10 @@ import {
   totalPrice,
 } from '../../assets/css/accomodation/listContainerMainStyle';
 import CarouselContainer from '../../containers/AccomodationList/CarouselContainer';
+import { getDateDiff } from '../../utils/utils';
 import Review from '../common/Review';
 
-function ListMainItem({ item }) {
+function ListMainItem({ item, checkin, checkout }) {
   return (
     <div css={listMainPaddingContainer}>
       <div css={listMainItemContainer}>
@@ -52,7 +53,11 @@ function ListMainItem({ item }) {
                   <strong>₩{(item.price * 1).toLocaleString()}</strong> / 1박
                 </div>
                 <div css={totalPrice}>
-                  <span>{`총액 ₩${(item.price * 2).toLocaleString()}`}</span>
+                  <span>
+                    {checkin &&
+                      checkout &&
+                      `총액 ₩${(item.price * getDateDiff(checkin, checkout)).toLocaleString()}`}
+                  </span>
                 </div>
               </div>
             </div>

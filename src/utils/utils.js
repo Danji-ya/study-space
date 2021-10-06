@@ -4,6 +4,9 @@ export function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
+export const getDateDiff = (startDate, endDate) =>
+  (endDate.getTime() - startDate.getTime()) / 1000 / 60 / 60 / 24;
+
 export function getTextTotalByte(str, maxByte) {
   let totalByte = 0;
   let maxLen = 0;
