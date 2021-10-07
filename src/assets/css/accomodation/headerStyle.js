@@ -17,6 +17,10 @@ const headerContainer = props => css`
     > div {
       height: 80px;
     }
+
+    @media (max-width: 950px) {
+      height: 250px;
+    }
   `}
 `;
 

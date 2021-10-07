@@ -22,9 +22,6 @@ const headerNav = props => css`
     background: transparent;
     cursor: pointer;
     padding: 10px;
-    :not(:last-child) {
-      margin: 0 5px;
-    }
   }
 
   button:hover {
@@ -41,6 +38,9 @@ const headerNav = props => css`
     button {
       border-radius: 15px;
     }
+    button:nth-of-type(2) {
+      margin-right: 5px;
+    }
   }
 
   div:nth-of-type(2) {
@@ -56,6 +56,10 @@ const headerNav = props => css`
       }
     }
   }
+`;
+
+const headerNavText = props => css`
+  width: 75px;
 `;
 
 const searchIconStyle = props => css`
@@ -106,7 +110,7 @@ const airbnbIcon = props => css`
 
 const headerCol = props => css`
   color: ${props.isScroll ? 'black' : 'white'};
-  flex: 1 1 33%;
+  flex: 1 1 33.3%;
   display: flex;
   align-items: center;
   position: relative;
@@ -132,10 +136,12 @@ const headerForm = props => css`
     display: flex;
     justify-content: center;
 
-    li {
+    > li {
+      flex-shrink: 0;
+
       font-size: 14px;
       font-weight: bold;
-      padding: 15px 20px;
+      padding: 0 1.5vw;
 
       &:hover {
         opacity: 0.5;
@@ -144,7 +150,7 @@ const headerForm = props => css`
 
       span,
       a {
-        padding: 10px 0;
+        padding: 1vh 0;
       }
     }
 
@@ -172,6 +178,10 @@ const headerForm = props => css`
       opacity: 0;
     }
   }
+
+  @media (max-width: 950px) {
+    margin-top: 80px;
+  }
 `;
 
 const headerContainer = props => css`
@@ -181,10 +191,14 @@ const headerContainer = props => css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 150px;
+  padding: 20px 10vw;
   background: ${props.isScroll ? 'white' : 'transparent'};
   box-shadow: ${props.isScroll && '0px 2px 4px rgba(0,0,0,0.3)'};
   height: 100px;
+
+  @media (max-width: 950px) {
+    padding: 20px 3vw;
+  }
 `;
 
 export {
@@ -197,4 +211,5 @@ export {
   headerContainer,
   globeIcon,
   headerNav,
+  headerNavText,
 };

@@ -7,6 +7,7 @@ import {
   headerNav,
   listIcon,
   userIconWrap,
+  headerNavText,
 } from '../../assets/css/common/headerStyle';
 
 function HeaderNav({ isScroll }) {
@@ -14,7 +15,7 @@ function HeaderNav({ isScroll }) {
     <div css={[headerCol, headerNav({ isScroll })]}>
       <div>
         <button>
-          <a>호스트 되기</a>
+          <a css={headerNavText}>호스트 되기</a>
         </button>
         <button>
           <svg viewBox="0 0 16 16" css={globeIcon({ isScroll })}>
