@@ -51,7 +51,7 @@ const header = props => css`
 const dateWrap = props => css`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  /* row-gap: 2px; */
+  row-gap: 2px;
 `;
 
 const dateBtnWrap = props => css`
@@ -93,6 +93,11 @@ const dateBtnWrap = props => css`
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
       background: rgba(165, 165, 165, 0.1);
+
+      & > p {
+        background: black;
+        color: white;
+      }
     }
   `}
 
@@ -132,17 +137,15 @@ const dateBtn = props => css`
   css`
     background: black;
     color: white;
-  `}
-
-  // 체크인 되어있을 때,
-  ${props.checkin &&
+  `} // 체크인 되어있을 때,
+  /* ${props.checkin &&
   props.date.hoveredDay &&
   css`
     :hover {
       background: black;
       color: white;
     }
-  `}
+  `} */
 `;
 
 const moveBtn = props => css`

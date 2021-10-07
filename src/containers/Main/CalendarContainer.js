@@ -6,6 +6,7 @@ import { padding } from '../../utils/utils';
 function CalendarContainer({ changeCheckInOutDay }) {
   const [hoverDay, setHoverDay] = useState();
 
+  console.log('CalendarContainer rerender');
   const { checkin, checkout } = useSelector(
     state => ({
       checkin: state.searchForm.checkin,
@@ -44,10 +45,11 @@ function CalendarContainer({ changeCheckInOutDay }) {
     const [year, month, day] = target.dataset.dateformat.split('-');
     const checkDay = new Date(`${year}-${month}-${day}`);
 
-    if (!day || checkDay < currentDay) return;
-    if (!checkin || checkout) return;
+    if (!day || checkDay < currentDay) return leaveHoverDay();
+    if (!checkin || checkout) return leaveHoverDay();
+    if (checkin > checkDay) return leaveHoverDay();
 
-    setHoverDay(checkDay);
+    return setHoverDay(checkDay);
   };
 
   const isBetweenDay = checkDay => {
