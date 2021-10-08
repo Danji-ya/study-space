@@ -4,7 +4,10 @@ import { css } from '@emotion/react';
 const title = props => css`
   font-size: 32px;
   font-weight: 800;
-  line-height: 36px;
+
+  @media (max-width: 743px) {
+    font-size: 26px;
+  }
 `;
 
 const subtitle = props => css`
@@ -12,6 +15,10 @@ const subtitle = props => css`
   font-size: 14px;
   line-height: 18px;
   padding-bottom: 8px;
+
+  @media (max-width: 743px) {
+    padding-top: 3vh;
+  }
 `;
 
 const filterBtnContainer = props => css`
@@ -25,7 +32,7 @@ const filterBtnWrap = props => css`
     border-radius: 15px;
     background: white;
     border: 1px solid rgb(176, 176, 176);
-    padding: 8px 16px;
+    padding: 6px 16px;
 
     &:hover {
       border-color: black;

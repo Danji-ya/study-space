@@ -1,15 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 
-const listContainer = props => css`
-  padding: 0 24px;
-  width: 840px;
-  min-width: 50px;
+const listMapContainer = props => css`
+  flex: 1;
+  height: 100vh;
+  position: sticky;
+  top: 80px;
 
   @media (max-width: 1128px) {
-    width: 1128px;
+    display: none;
   }
 `;
 
 // eslint-disable-next-line import/prefer-default-export
-export { listContainer };
+export { listMapContainer };

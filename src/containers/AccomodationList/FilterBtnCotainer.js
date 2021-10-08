@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FilterBtns from '../../components/AccomodationList/FilterBtns';
+import { Desktop, Mobile } from '../../components/common/MediaQuery';
 
 function FilterBtnCotainer() {
   const [btnList, setBtnList] = useState([

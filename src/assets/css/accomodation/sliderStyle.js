@@ -2,12 +2,12 @@
 import { css } from '@emotion/react';
 
 const sliderContainer = props => css`
-  flex: 0 0 auto;
-  width: 300px;
+  flex: 0 1 300px;
   height: 200px;
   border-radius: 15px;
   overflow: hidden;
   position: relative;
+  background: orange;
 
   &:hover {
     cursor: pointer;
@@ -15,6 +15,11 @@ const sliderContainer = props => css`
     a {
       opacity: 1;
     }
+  }
+
+  @media (max-width: 743px) {
+    height: 60vw;
+    max-height: 410px;
   }
 `;
 

@@ -24,6 +24,11 @@ const buttonWrap = props => css`
     align-items: center;
     justify-content: space-around;
   }
+
+  @media (max-width: 743px) {
+    padding: 7px;
+    bottom: 10vh;
+  }
 `;
 
 const buttonText = props => css`

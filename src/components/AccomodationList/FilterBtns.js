@@ -5,6 +5,7 @@ import {
   filterBtnContainer,
   filterBtnWrap,
 } from '../../assets/css/accomodation/listContainerHeaderStyle';
+import { Desktop, Mobile } from '../common/MediaQuery';
 
 const FilterBtnItem = ({ item }) => {
   return (
@@ -18,11 +19,22 @@ const FilterBtnItem = ({ item }) => {
 
 function FilterBtns({ btnList }) {
   return (
-    <ul css={filterBtnContainer}>
-      {btnList.map((btn, idx) => (
-        <FilterBtnItem key={idx} item={btn} />
-      ))}
-    </ul>
+    <>
+      <Desktop>
+        <ul css={filterBtnContainer}>
+          {btnList.map((btn, idx) => (
+            <FilterBtnItem key={idx} item={btn} />
+          ))}
+        </ul>
+      </Desktop>
+      <Mobile>
+        <ul css={filterBtnContainer}>
+          {['필터'].map((btn, idx) => (
+            <FilterBtnItem key={idx} item={btn} />
+          ))}
+        </ul>
+      </Mobile>
+    </>
   );
 }
 

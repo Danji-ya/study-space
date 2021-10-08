@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Header from '../../components/AccomodationList/Header';
-import { useQuery } from '../../utils/utils';
+import MobileHeader from '../../components/AccomodationList/Mobile/MobileHeader';
+import { Desktop, Mobile } from '../../components/common/MediaQuery';
 
 function AccomodationListHeaderContainer() {
-  const query = useQuery();
   const { location, checkin, checkout, guestNum } = useSelector(state => state.searchForm);
   const [isSearchFormClick, setIsSearchFormClick] = useState(false);
 
