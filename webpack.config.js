@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.css$/, // css 확장자로 끝나는 모든 파일을 의미
-      use: ["css-loader"], // css-loader 로더 적용
+      use: ["style-loader","css-loader"], // style-loader 및 css-loader 로더 적용
     }],
   }
 }
