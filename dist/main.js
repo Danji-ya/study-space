@@ -1,7 +1,7 @@
 /*!
  * 
- *         Build Data: 11/5/2021, 5:16:13 PM
- *         Commit Version: 82b5ff3
+ *         Build Data: 11/5/2021, 5:36:08 PM
+ *         Commit Version: 1b90be4
  *
  *         Author: Danji-ya
  *
@@ -135,7 +135,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _nyancat_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nyancat.jpg */ \"./src/nyancat.jpg\");\n\r\n\r\n\r\n\r\nconsole.log(_math_js__WEBPACK_IMPORTED_MODULE_0__.sum(1, 2));\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    document.body.innerHTML = `<img src=\"${_nyancat_jpg__WEBPACK_IMPORTED_MODULE_2__}\" />`;\r\n});\n\n//# sourceURL=webpack://sample/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math.js */ \"./src/math.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _nyancat_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./nyancat.jpg */ \"./src/nyancat.jpg\");\n\r\n\r\n\r\n\r\n_math_js__WEBPACK_IMPORTED_MODULE_0__.sum(1, 2);\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    document.body.innerHTML = `<img src=\"${_nyancat_jpg__WEBPACK_IMPORTED_MODULE_2__}\" />`;\r\n});\r\n\r\n\r\n// console.log(TWO);\r\n// console.log(VERSION);\r\n// console.log(api.domain);\r\nconsole.log(\"development\");\n\n//# sourceURL=webpack://sample/./src/app.js?");
 
 /***/ }),
 
