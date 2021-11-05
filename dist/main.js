@@ -1,3 +1,12 @@
+/*!
+ * 
+ *         Build Data: 11/5/2021, 5:16:13 PM
+ *         Commit Version: 82b5ff3
+ *
+ *         Author: Danji-ya
+ *
+ *
+ */
 /*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
