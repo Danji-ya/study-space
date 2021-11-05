@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const childProcess = require("child_process");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 module.exports = {
@@ -39,10 +40,20 @@ module.exports = {
         Author: ${childProcess.execSync('git config user.name')}
       `
     }),
-    // new webpack.DefinePlugin({
-    //   TWO: '1+1',
-    //   VERSION: JSON.stringify('v.1.2.3'),
-    //   'api.domain': JSON.stringify('http://test.domain.com'),
-    // })
+    new webpack.DefinePlugin({
+      TWO: '1+1',
+      VERSION: JSON.stringify('v.1.2.3'),
+      'api.domain': JSON.stringify('http://test.domain.com'),
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html', // 읽어 올 템플릿 경로 지정
+      templateParameters: {
+        env: process.env.NODE_ENV === 'development' ? '(개발용)' : '',
+      },
+      minify: process.env.NODE_ENV === 'production' ? {
+        collapseWhitespace: true, // 빈칸 제거
+        removeComments: true, // 주석 제거
+      } : false,
+    })
   ]
 }
