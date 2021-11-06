@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const childProcess = require("child_process");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = {
@@ -19,7 +20,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/, // css 확장자로 끝나는 모든 파일을 의미
-        use: ["style-loader","css-loader"], // style-loader 및 css-loader 적용
+        use: [
+          process.env.NODE_ENV === "production"
+            ? MiniCssExtractPlugin.loader
+            : "style-loader",
+          "css-loader",
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
@@ -57,5 +63,8 @@ module.exports = {
       } : false,
     }),
     new CleanWebpackPlugin(), // dist 폴더 cleaner
+    ...(process.env.NODE_ENV === "production"
+      ? [new MiniCssExtractPlugin({ filename: `[name].css` })]
+      : []),
   ]
 }
