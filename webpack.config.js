@@ -19,12 +19,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/, // css 확장자로 끝나는 모든 파일을 의미
+        test: /\.(s[ac]ss|css)$/, // sass(scss), css 확장자로 끝나는 모든 파일을 의미
         use: [
           process.env.NODE_ENV === "production"
             ? MiniCssExtractPlugin.loader
             : "style-loader",
           "css-loader",
+          "sass-loader"
         ],
       },
       {
