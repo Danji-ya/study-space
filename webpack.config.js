@@ -4,6 +4,7 @@ const childProcess = require("child_process");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const apiMocker = require("connect-api-mocker");
 
 const mode = process.env.NODE_ENV || "development";
 
@@ -17,6 +18,20 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve("./dist"),
     assetModuleFilename: "[name][ext]?[hash]"
+  },
+  devServer: {
+    port: 9000,
+    client: {
+      overlay: true,
+    },
+
+    onBeforeSetupMiddleware: function (devServer) {
+      if (!devServer) {
+        throw new Error('webpack-dev-server is not defined');
+      }
+
+      devServer.app.use(apiMocker('api', 'mocks/api'));
+    },
   },
   module: {
     rules: [
