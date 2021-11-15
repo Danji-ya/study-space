@@ -21,10 +21,10 @@ module.exports = {
   },
   devServer: {
     port: 9000,
+    hot: true,
     client: {
       overlay: true,
     },
-
     onBeforeSetupMiddleware: function (devServer) {
       if (!devServer) {
         throw new Error('webpack-dev-server is not defined');
