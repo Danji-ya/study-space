@@ -1,34 +1,36 @@
 class Stack {
     constructor() {
-        this.arr = [];
+        this._arr = [];
+        this._top = -1;
     }
 
     push(item) {
-        this.arr.push(item);
+        this._arr[++this._top] = item;
     }
 
     pop() {
-        if (!this.isEmpty()) this.arr.pop();
+        if (this._top < 0) return;
+
+        const popElement = this._arr[this._top];
+        this._arr = this._arr.slice(0, this._top--);
     }
 
     getSize() {
-        return this.arr.length;
+        return this._top + 1;
     }
 
     isEmpty() {
-        return this.getSize() === 0 ? 1 : 0;
+        return this._top === -1 ? 1 : 0;
     }
 
     getTop() {
-        return this.isEmpty() ? -1 : this.arr[this.arr.length - 1];
+        return this.isEmpty() ? -1 : this._arr[this._top];
     }
-
 }
 
 function solution(data) {
-    let answer = '';
     const myStack = new Stack();
-
+    let answer = '';
 
     for (let i = 0; i < data.length; i += 1) {
         const mode = data[i][0];
