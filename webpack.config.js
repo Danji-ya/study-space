@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const apiMocker = require("connect-api-mocker");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const mode = process.env.NODE_ENV || "development";
 
@@ -15,6 +16,7 @@ module.exports = {
   mode,
   entry: {
     main: "./app.js",
+    list: "./list.js"
   },
   output: {
     filename: "[name].js",
@@ -36,6 +38,9 @@ module.exports = {
     },
   },
   optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
     minimizer: mode === "production" ? [
       new CssMinimizerPlugin(),
       new TerserPlugin({
@@ -46,6 +51,9 @@ module.exports = {
         }
       })
     ] : [],
+  },
+  externals: {
+    axios: "axios",
   },
   module: {
     rules: [
@@ -103,5 +111,13 @@ module.exports = {
     ...(process.env.NODE_ENV === "production"
       ? [new MiniCssExtractPlugin({ filename: `[name].css` })]
       : []),
+    new CopyPlugin({ // 라이브러리 복사
+      patterns: [
+        { 
+          from: "./node_modules/axios/dist/axios.min.js",
+          to: "./axios.min.js", // 목적지 파일에 들어간다
+        },
+      ],
+    }),
   ]
 }
