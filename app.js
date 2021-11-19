@@ -35,3 +35,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+console.log('console.log');
+

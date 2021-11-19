@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const apiMocker = require("connect-api-mocker");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const mode = process.env.NODE_ENV || "development";
 
@@ -35,7 +36,16 @@ module.exports = {
     },
   },
   optimization: {
-    minimizer: mode === "production" ? [new CssMinimizerPlugin()] : [],
+    minimizer: mode === "production" ? [
+      new CssMinimizerPlugin(),
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true // 로그 제거
+          }
+        }
+      })
+    ] : [],
   },
   module: {
     rules: [
