@@ -1,0 +1,32 @@
+# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: test-CI
+# 이름. 이후에 CI가 동작하는 과정에서 이름으로 뜸.
+on: # 어떤 경우에 아래 동작을 시행할 것인가?
+  push: # 코드를 push 할 때랑
+    branches: [ main ]
+  pull_request: # Merge Request가 날라올 때 쓴다
+    branches: [ main ]
+
+jobs: # 실제 돌아갈 동작
+  build:
+
+    runs-on: ubuntu-latest # 우분투 최신 버전으로 아래 명령어들을 돌린다.
+
+    strategy: # 매개변수 이름을 지울 때 주로 씀..
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps: # 돌아가는 동작들은 여기서 수행.
+    # -는 각각의 동작을 의미
+    - uses: actions/checkout@v2 # 플러그인 사용.
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
