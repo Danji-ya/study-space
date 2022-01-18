@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          실패를 위한 리액트
+          Learn React
         </a>
       </header>
     </div>
