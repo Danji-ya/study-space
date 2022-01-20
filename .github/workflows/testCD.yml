@@ -1,0 +1,39 @@
+name: test-CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+  
+    steps:
+    # 가장 먼저, 저장소에 있는 파일을 가져오기
+    # Node 다운
+    # 의존성 다운
+    # 테스트를 돌려서 확인
+    # 이제 배포
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run test
+        run: npm test
+      - name: Deploy to Heroku
+        uses: AkhileshNS/heroku-deploy@v3.12.12
+        with:
+          # This will be used for authentication. You can find it in your heroku homepage account settings
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          # Email that you use with heroku
+          heroku_email: "erangerang15@gmail.com"
+          # The appname to use for deploying/updating
+          heroku_app_name: "elice-elice-cd"
+          
+        
+        
