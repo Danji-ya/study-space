@@ -31,7 +31,7 @@ jobs: # 실제 돌아갈 동작
   
   test:
     runs-on: ubuntu-latest
-
+    needs: build
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
