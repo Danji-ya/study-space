@@ -11,7 +11,6 @@ on: # 어떤 경우에 아래 동작을 시행할 것인가?
 
 jobs: # 실제 돌아갈 동작
   build:
-
     runs-on: ubuntu-latest # 우분투 최신 버전으로 아래 명령어들을 돌린다.
 
     strategy: # 매개변수 이름을 지울 때 주로 씀..
@@ -29,4 +28,13 @@ jobs: # 실제 돌아갈 동작
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+  
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    
+    steps:
     - run: npm test
