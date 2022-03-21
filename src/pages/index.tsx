@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { PostProps } from '@type/post';
 import Navigation from '../components/Navigation';
 import Post from '../components/Post';
-import { PostProps } from '../@types';
 
 export type PostsProps = {
   posts?: PostProps[];
