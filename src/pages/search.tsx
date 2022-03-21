@@ -1,7 +1,10 @@
-import Head from "next/head";
-import Navigation from "../components/Navigation";
+import Head from 'next/head';
+import { useState } from 'react';
+import Navigation from '../components/Navigation';
 
-const Search = () => {
+function Search() {
+  const [test, setTest] = useState(null);
+
   return (
     <div>
       <Head>

@@ -1,9 +1,9 @@
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 
-const Post = () => {
+function Post() {
   const router = useRouter();
   const { id } = router.query;
-  
+
   return (
     <div>
       <p>Post: {id}</p>

@@ -1,8 +1,14 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from 'next/document';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const originalRenderPage = ctx.renderPage
+    const originalRenderPage = ctx.renderPage;
 
     // Run the React rendering logic synchronously
     ctx.renderPage = () =>
@@ -11,27 +17,27 @@ class MyDocument extends Document {
         enhanceApp: (App) => App,
         // Useful for wrapping in a per-page basis
         enhanceComponent: (Component) => Component,
-      })
+      });
 
     // Run the parent `getInitialProps`, it now includes the custom `renderPage`
-    const initialProps = await Document.getInitialProps(ctx)
+    const initialProps = await Document.getInitialProps(ctx);
 
-    return initialProps
+    return initialProps;
   }
 
   render() {
     return (
       <Html>
         <Head>
-          <meta name="author" content="Danji-ya" /> 
+          <meta name="author" content="Danji-ya" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

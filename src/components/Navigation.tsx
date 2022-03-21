@@ -1,16 +1,16 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-const Navigation = () => {
+function Navigation() {
   return (
     <header>
       <ul>
         <li>
-          <Link href='/'>
+          <Link href="/">
             <a>Main</a>
           </Link>
         </li>
         <li>
-          <Link href='/search'>
+          <Link href="/search">
             <a>Search</a>
           </Link>
         </li>
