@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { PostProps } from '@type/post';
+import { JSONPLACEHOLDER_URL } from 'src/constants/api';
 import Navigation from '../components/Navigation';
 import Post from '../components/Post';
 
@@ -37,7 +38,7 @@ function Home({ posts }: PostsProps) {
 export default Home;
 
 export async function getStaticProps() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const res = await fetch(`${JSONPLACEHOLDER_URL}/posts`);
   const allPostsData = await res.json();
 
   return {

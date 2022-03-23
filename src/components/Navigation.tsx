@@ -15,12 +15,12 @@ function Navigation() {
           </Link>
         </li>
         <li>
-          <Link href="/post/first">
+          <Link href="/post/1">
             <a>First Post</a>
           </Link>
         </li>
         <li>
-          <Link href="/post/second">
+          <Link href="/post/2">
             <a>Second Post</a>
           </Link>
         </li>
