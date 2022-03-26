@@ -1,5 +1,6 @@
 import { PostProps } from '@type/post';
 import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
 import Post from 'src/components/Post';
 import { JSONPLACEHOLDER_URL, STATUS_CODES } from 'src/constants/api';
 
@@ -8,6 +9,16 @@ interface Props {
 }
 
 function PostDetail({ postData }: Props) {
+  // const { isFallback } = useRouter();
+
+  // console.log(isFallback);
+
+  // // If the page is not yet generated, this will be displayed
+  // // initially until getStaticProps() finishes running
+  // if (isFallback) {
+  //   return <div>Loading...</div>;
+  // }
+
   const { userId, title, body } = postData;
 
   return (
@@ -52,7 +63,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 

@@ -6,4 +6,6 @@ export const STATUS_CODES = {
   BAD_GATEWAY: 502,
 };
 
-export const JSONPLACEHOLDER_URL = 'https://jsonplaceholder.typicode.com';
+// export const JSONPLACEHOLDER_URL = 'https://jsonplaceholder.typicode.com';
+
+export const JSONPLACEHOLDER_URL = 'http://localhost:4000';
