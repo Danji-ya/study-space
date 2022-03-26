@@ -19,23 +19,50 @@ function PostDetail({ postData }: Props) {
 
 export default PostDetail;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { id } = context.query;
-  const res = await fetch(`${JSONPLACEHOLDER_URL}/posts/${id}`);
-  const postData = await res.json();
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const { id } = context.query;
+//   const res = await fetch(`${JSONPLACEHOLDER_URL}/posts/${id}`);
+//   const postData = await res.json();
 
-  if (res.status === STATUS_CODES.NOT_FOUND) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: '/',
-      },
-    };
-  }
+//   if (res.status === STATUS_CODES.NOT_FOUND) {
+//     return {
+//       redirect: {
+//         permanent: false,
+//         destination: '/',
+//       },
+//     };
+//   }
+
+//   return {
+//     props: {
+//       postData,
+//     },
+//   };
+// };
+
+export async function getStaticPaths() {
+  const res = await fetch(`${JSONPLACEHOLDER_URL}/posts`);
+  const allPostsData = await res.json();
+
+  const paths = allPostsData.map((post: PostProps) => ({
+    params: {
+      id: post.id.toString(),
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }: any) {
+  const res = await fetch(`${JSONPLACEHOLDER_URL}/posts/${params.id}`);
+  const postData = await res.json();
 
   return {
     props: {
       postData,
     },
   };
-};
+}
