@@ -1,10 +1,19 @@
+import { css } from '@emotion/react';
 import { PostProps } from '@type/post';
 import styles from './Post.module.css';
 
-function Post({ userId, title, body }: Partial<PostProps>) {
+function Post({ title, body }: Partial<PostProps>) {
   return (
     <li className={styles.list}>
-      <h3>{title}</h3>
+      <h3
+        css={css`
+          font-size: 1rem;
+          font-weight: 600;
+          color: red;
+        `}
+      >
+        {title}
+      </h3>
       <p>{body}</p>
     </li>
   );

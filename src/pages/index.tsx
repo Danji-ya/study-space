@@ -18,11 +18,11 @@ function Home({ posts }: PostsProps) {
       </Head>
       <Navigation />
       <main>
-        <p>hello world</p>
+        {/* <p>hello world</p> */}
         {/* <img src='/images/cat.jpg' alt='cat' width={144} height={144} /> */}
-        <Image src="/images/cat.jpg" alt="cat" width={144} height={144} />
+        {/* <Image src="/images/cat.jpg" alt="cat" width={144} height={144} /> */}
         <section>
-          <h2>Blog</h2>
+          <h2>글 목록</h2>
           <ul>
             {posts &&
               posts.map(({ id, userId, title, body }) => (

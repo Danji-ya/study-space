@@ -11,8 +11,6 @@ interface Props {
 function PostDetail({ postData }: Props) {
   // const { isFallback } = useRouter();
 
-  // console.log(isFallback);
-
   // // If the page is not yet generated, this will be displayed
   // // initially until getStaticProps() finishes running
   // if (isFallback) {
