@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import styled from '@emotion/styled';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 const Header = styled.div`
   display: flex;
