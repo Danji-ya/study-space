@@ -1,0 +1,15 @@
+@import "./reset.css";
+@import "./header.css";
+@import "./main.css";
+@import "./footer.css";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 200vh;
+    font-family: 'Airbnb Cereal App', sans-serif;
+}
+
+

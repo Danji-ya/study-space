@@ -1,0 +1,340 @@
+:root {
+    --gp-fixed-sidebar: 840px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+    position: relative;
+}
+
+.accommodation-list-wrap {
+    color: black;
+    padding: 0 24px;
+    min-width: 0;
+    max-width: var(--gp-fixed-sidebar);
+}
+
+.search-result-subtitle {
+    padding-top: 50px;
+    font-size: 14px;
+    line-height: 18px;
+    padding-bottom: 8px;
+}
+
+.search-result-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 36px;
+
+}
+
+.option-btns {
+    display: flex;
+    padding-top: 20px;
+}
+
+.option-btns li {
+    padding-right: 10px;
+}
+
+.option-btns li button {
+    border-radius: 20px;
+    background: white;
+    border: 1px solid rgb(176, 176, 176);
+    padding: 8px 16px;
+}
+
+.option-btns li button:hover {
+    border-color: black;
+    cursor: pointer;
+}
+
+/* list- item */
+
+.list-item-cotainer {
+    padding: 25px 0;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.list-item {
+    display: flex;
+}
+
+.list-item:hover{
+    cursor: pointer;
+}
+
+.list-item .img-slider-container {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.list-item .img-slider-container .img-slider-row {
+    display: flex;
+    /* 나중에 컴포넌트로 만들면서 이미지 갯수에 따라 지정 */
+    width: 300%;
+    height: 100%;
+    margin-left: 0%;
+    transition: margin 0.5s;
+}
+
+.list-item .img-slider-container .img-slider-col {
+    width: 100%;
+    height: 100%;
+}
+
+.list-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.list-item .img-slider-container:hover a {
+    opacity: 1;
+}
+
+.list-item .img-slider-container .prev, .list-item .img-slider-container .next {
+    position: absolute;
+    background: white;
+    opacity: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+}
+
+.list-item .img-slider-container .prev {
+    top: 50%;
+    left: 8px;
+    visibility: hidden;
+}
+
+.list-item .img-slider-container .next {
+    top: 50%;
+    right: 8px;
+}
+
+.list-item .dot-wrap {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    text-align: center;
+}
+
+.list-item .dot-wrap .dot {
+    cursor: pointer;
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    background: #bbb;
+    border-radius: 6px;
+    margin: 0 2px;
+
+    transition: background 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    transform: scale(0.788);
+}
+
+.list-item .dot-wrap .dot.active {
+    background: white;
+    transform: scale(1);
+}
+
+.list-item .text-wrap {
+    flex: 1;  
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-left {
+    min-width: 0;
+}
+
+.title-left p {
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(113, 113, 113);
+}
+    
+.title-left h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.title-right button {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border-style: none;
+}
+
+.subtitle {
+    font-size: 14px;
+    line-height: 18px;
+    color: #717171;
+}
+
+.list-item .text-wrap .divide {
+    width: 30px;
+    height: 1px;
+    margin: 10px 0;
+    background: rgb(176, 176, 176);
+}
+
+.list-item .text-wrap .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.bottom .grade {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.bottom .grade i {
+    color: red;
+    padding-right: 3px;
+}
+
+.bottom .grade span {
+    color: #717171;
+    font-weight: normal;
+    padding: 0 3px;
+}
+
+.bottom .price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 5px 0;
+}
+
+.bottom .price .each-price {
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.bottom .price .each-price span  {
+    padding-left: 3px;
+}
+
+.bottom .price .total-price {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: underline;
+    line-height: 18px;
+}
+
+.bottom .price .total-price span:first-child {
+    padding-right: 3px;
+}
+
+.bottom .price .total-price i {
+    text-decoration: underline;
+}
+
+.accommodation-list-wrap .pages {
+    margin: 32px;
+    /* background: red; */
+}
+
+
+.pages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.pages .help-text {
+    padding-top: 30px;
+    
+    font-weight: 400;
+    color: rgb(113, 113, 113);
+}
+
+.pages .pagination-wrap .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-wrap .page-list {
+    padding: 20px;
+    display: flex;
+}
+
+.pagination-wrap .page {
+
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    padding: 10px;
+    margin: 0 6px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-wrap .page.active {
+    background: black;
+    color: white;
+}
+
+.pagination-wrap .inactive:hover {
+    background: #ebebeb;
+    cursor: pointer;
+}
+
+.pagination-wrap a {
+    cursor: pointer;
+}
+
+.accommodation-map-wrap {
+    position: fixed;
+    right: 0;
+    top: 80px;
+    width: calc(100% - var(--gp-fixed-sidebar));
+    height: calc(100vh - 80px);
+    background: red;
+
+    /* height: 500px;
+    width: 500px;
+    background: red; */
+}
+
+.accommodation-map-wrap .map{
+    width: 100%;
+    height: 100%;
+}
