@@ -1,4 +1,4 @@
-class Content {
+class Home {
   constructor(root, props){
     this.root = root;
     this.props = props;
@@ -7,10 +7,10 @@ class Content {
 
   render() {
     this.root.innerHTML = `
-      <h3>${this.props.name}</h3>
-      <p>${this.props.name} page</p>
+      <h1>Home</h1>
+      <p>Home page</p>
     `;
   }
 }
 
-export default Content;
+export default Home;
