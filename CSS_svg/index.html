@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div style="
+      width: 200px; 
+      height: 200px;
+      border: 2px solid blue;
+  ">
+    <!-- viewBox의 속성값은 px단위가 아닌 svg viewport의 좌표평면 기준단위가 된다.  -->
+    <!-- <svg width="200" height="200" viewBox="-200 -200 400 400">
+      <circle r="100" fill="green" />
+    </svg> -->
+    <svg viewBox="0 0 200 200">
+      <circle r="100" fill="green" />
+    </svg>
+</div>
+  
+</body>
+</html>
