@@ -27,7 +27,8 @@ Object.defineProperty(countObj, Symbol.iterator, {
       next: function() {
         if(from <= to) return iteratorProtocol(false, from++);
         else return iteratorProtocol(true);
-      }
+      },
+      [Symbol.iterator]() {return this}
     }
   }
 })
