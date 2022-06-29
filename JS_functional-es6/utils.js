@@ -27,9 +27,14 @@ const reduce = curry((f, acc, iter) => {
   }
   return acc;
 });
+const go = (...args) => reduce((a, f) => f(a), args);
+const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
 
 module.exports = {
+  curry,
   map,
   filter,
-  reduce
+  reduce,
+  go,
+  pipe,
 }
