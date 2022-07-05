@@ -30,6 +30,44 @@ const reduce = curry((f, acc, iter) => {
 const go = (...args) => reduce((a, f) => f(a), args);
 const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
 
+
+const range = (l) => {
+  let i = -1;
+  const res = [];
+  while(++i < l){
+    res.push(i);
+  }
+  return res;
+}
+
+const take = curry((l, iter) => {
+  let res = [];
+  for(const a of iter) {
+    res.push(a);
+    if(res.length === l) return res;
+  }
+  return res;
+});
+
+// L object
+const L = {};
+L.range = function *(l) {
+  let i = -1;
+  while(++i < l) {
+    yield i;
+  }
+}
+L.map = curry(function *(f, iter) {
+  for(const a of iter) {
+    yield f(a);
+  }
+});
+L.filter = curry(function *(f, iter) {
+  for(const a of iter) {
+    if(f(a)) yield a;
+  }
+});
+
 module.exports = {
   curry,
   map,
@@ -37,4 +75,7 @@ module.exports = {
   reduce,
   go,
   pipe,
+  range,
+  take,
+  L
 }
