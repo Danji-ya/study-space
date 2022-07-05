@@ -4,7 +4,10 @@ const curry = f =>
 const map = curry((f, iter) => {
   let res = [];
 
-  for(const a of iter) {
+  iter = iter[Symbol.iterator]();
+  let cur;
+  while(!(cur = iter.next()).done) {
+    const a = cur.value;
     res.push(f(a));
   }
   return res;
@@ -12,7 +15,10 @@ const map = curry((f, iter) => {
 const filter = curry((f, iter) => {
 
   let res = [];
-  for(const a of iter) {
+  iter = iter[Symbol.iterator]();
+  let cur;
+  while(!(cur = iter.next()).done) {
+    const a = cur.value;
     if(f(a)) res.push(a);
   }
   return res;
@@ -21,8 +27,12 @@ const reduce = curry((f, acc, iter) => {
   if(!iter) { // 두번째 인자로 초깃값이 없다면 iter의 첫번째 값을 초기값으로
     iter = acc[Symbol.iterator]();
     acc = iter.next().value;
+  } else {
+    iter = iter[Symbol.iterator]();
   }
-  for(const a of iter) {
+  let cur;
+  while(!(cur = iter.next()).done) {
+    const a = cur.value;
     acc = f(acc, a);
   }
   return acc;
@@ -42,7 +52,10 @@ const range = (l) => {
 
 const take = curry((l, iter) => {
   let res = [];
-  for(const a of iter) {
+    iter = iter[Symbol.iterator]();
+  let cur;
+  while(!(cur = iter.next()).done) {
+    const a = cur.value;
     res.push(a);
     if(res.length === l) return res;
   }
@@ -58,12 +71,18 @@ L.range = function *(l) {
   }
 }
 L.map = curry(function *(f, iter) {
-  for(const a of iter) {
+    iter = iter[Symbol.iterator]();
+  let cur;
+  while(!(cur = iter.next()).done) {
+    const a = cur.value;
     yield f(a);
   }
 });
 L.filter = curry(function *(f, iter) {
-  for(const a of iter) {
+    iter = iter[Symbol.iterator]();
+  let cur;
+  while(!(cur = iter.next()).done) {
+    const a = cur.value;
     if(f(a)) yield a;
   }
 });
