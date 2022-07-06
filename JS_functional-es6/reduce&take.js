@@ -117,7 +117,7 @@ go(
 );
 
 const flatten = pipe(L.flatten, take(Infinity));
-console.log(flatten([[1, 2], 3, 4, [5, 6, 7, [8, 9]]]));
+console.log(flatten([[1, 2], 3, 4, [5, 6, 7]]));
 
 // ---------- flatMap ------------
 const arr = [[1, 2], [3, 4], [5, 6, 7]];
@@ -132,6 +132,9 @@ go(
   take(Infinity),
   console.log
 )
+
+const flatMap = curry(pipe(L.map, flatten));
+console.log(flatMap(map(a => a+1), arr));
 
 // ----------- 2차원 배열 다루기 -----------
 const twoDArr = [
