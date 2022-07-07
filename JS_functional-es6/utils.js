@@ -23,19 +23,38 @@ const curry = f =>
 //   }
 //   return res;
 // });
+// const reduce = curry((f, acc, iter) => {
+//   if(!iter) { // 두번째 인자로 초깃값이 없다면 iter의 첫번째 값을 초기값으로
+//     iter = acc[Symbol.iterator]();
+//     acc = iter.next().value;
+//   } else {
+//     iter = iter[Symbol.iterator]();
+//   }
+//   let cur;
+//   while(!(cur = iter.next()).done) {
+//     const a = cur.value;
+//     acc = f(acc, a);
+//   }
+//   return acc;
+// });
+// 비동기처리도 가능한 reduce
+const go1 = (a, f) => a instanceof Promise ? a.then(f) : f(a);
 const reduce = curry((f, acc, iter) => {
-  if(!iter) { // 두번째 인자로 초깃값이 없다면 iter의 첫번째 값을 초기값으로
+  if (!iter) {
     iter = acc[Symbol.iterator]();
     acc = iter.next().value;
   } else {
     iter = iter[Symbol.iterator]();
   }
-  let cur;
-  while(!(cur = iter.next()).done) {
-    const a = cur.value;
-    acc = f(acc, a);
-  }
-  return acc;
+  return go1(acc, function recur(acc) {
+    let cur;
+    while (!(cur = iter.next()).done) {
+      const a = cur.value;
+      acc = f(acc, a);
+      if (acc instanceof Promise) return acc.then(recur);
+    }
+    return acc;
+  });
 });
 const go = (...args) => reduce((a, f) => f(a), args);
 const pipe = (f, ...fs) => (...as) => go(f(...as), ...fs);
@@ -109,6 +128,13 @@ const flatten = pipe(L.flatten, take(Infinity));
 L.flatMap = curry(pipe(L.map, L.flatten));
 const flatMap = curry(pipe(L.map, flatten));
 
+
+const find = (f, iter) => go(
+  iter,
+  L.filter(f),
+  take(1),
+  ([a]) => a);
+
 module.exports = {
   curry,
   map,
@@ -120,5 +146,6 @@ module.exports = {
   take,
   L,
   flatten,
-  flatMap
+  flatMap,
+  find
 }
