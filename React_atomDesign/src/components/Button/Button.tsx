@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 import { Color, Size, SizeDetail } from './types';
 
@@ -48,12 +49,11 @@ const ButtonStyle = styled.button<ButtonProps>`
   ${(props) => props.color && COLORS[props.color]};
 `;
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size: Size;
   color?: Color;
   isLoading?: boolean;
   disabled?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   children: React.ReactNode;
 }
 
@@ -62,13 +62,11 @@ export default function Button({
   color = 'primary',
   isLoading = false,
   disabled = false,
-  onClick,
   children,
   ...restProps
 }: ButtonProps) {
   return (
     <ButtonStyle
-      onClick={onClick}
       size={size}
       color={color}
       disabled={disabled || isLoading}
