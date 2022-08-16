@@ -1,78 +1,29 @@
-import { ButtonHTMLAttributes } from 'react';
-import styled, { css } from 'styled-components';
-import { Color, Size, SizeDetail } from './types';
+import { forwardRef } from 'react';
+import { styling } from '../../utils';
+import { BUTTON_BASE_STYLE, COLORS, SIZES } from './constants';
+import { ButtonProps } from './types';
 
-const SIZES: Record<Size, Record<SizeDetail, string>> = {
-  sm: {
-    minWidth: '100px',
-    height: '100px',
-    width: '100px',
-    padding: '10px',
-  },
-  md: {
-    minWidth: '200px',
-    height: '200px',
-    width: '200px',
-    padding: '20px',
-  },
-  lg: {
-    minWidth: '300px',
-    height: '300px',
-    width: '300px',
-    padding: '30px',
-  },
-};
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const {
+    size,
+    color = 'primary',
+    isLoading = false,
+    disabled = false,
+    children,
+    ...rest
+  } = props;
 
-const COLORS = {
-  primary: css`
-    color: #fff;
-    background-color: #3f3cfe;
+  const Component = styling('button', {
+    ...BUTTON_BASE_STYLE,
+    ...SIZES[size],
+    ...COLORS[color],
+  });
 
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
-  `,
-  secondary: css`
-    color: #000;
-    background-color: #bcbaba;
-
-    &:hover,
-    &:focus {
-      opacity: 0.8;
-    }
-  `,
-};
-
-const ButtonStyle = styled.button<ButtonProps>`
-  ${(props) => SIZES[props.size]};
-  ${(props) => props.color && COLORS[props.color]};
-`;
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  size: Size;
-  color?: Color;
-  isLoading?: boolean;
-  disabled?: boolean;
-  children: React.ReactNode;
-}
-
-export default function Button({
-  size,
-  color = 'primary',
-  isLoading = false,
-  disabled = false,
-  children,
-  ...restProps
-}: ButtonProps) {
   return (
-    <ButtonStyle
-      size={size}
-      color={color}
-      disabled={disabled || isLoading}
-      {...restProps}
-    >
+    <Component ref={ref} disabled={disabled || isLoading} {...rest}>
       {isLoading ? <span>loading...</span> : children}
-    </ButtonStyle>
+    </Component>
   );
-}
+});
+
+export default Button;

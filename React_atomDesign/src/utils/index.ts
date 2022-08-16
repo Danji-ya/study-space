@@ -1,1 +1,2 @@
-export * from './obj';
+export * from './object';
+export * from './cssObject';
