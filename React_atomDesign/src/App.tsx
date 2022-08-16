@@ -4,11 +4,12 @@ function App() {
   return (
     <>
       <header>
-        <h1>Buttons</h1>
+        <h1>Danjiya</h1>
       </header>
 
       <main>
         <section>
+          <h2>Button</h2>
           <Button size="sm" onClick={(event) => console.log(event.target)}>
             <span>서브</span>
           </Button>
