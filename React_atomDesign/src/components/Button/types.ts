@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-type Color = 'primary' | 'secondary';
-type Size = 'sm' | 'md' | 'lg';
-type SizeDetail = 'minWidth' | 'height' | 'width' | 'padding';
+export type Color = 'primary' | 'secondary';
+export type Size = 'sm' | 'md' | 'lg';
+export type SizeDetail = 'minWidth' | 'height' | 'width' | 'padding';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size: Size;
@@ -10,6 +10,11 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   disabled?: boolean;
   children: React.ReactNode;
+  leftIcon?: React.ReactElement;
+  rightIcon?: React.ReactElement;
 }
 
-export type { Color, Size, SizeDetail };
+export type ButtonContentProps = Pick<
+  ButtonProps,
+  'leftIcon' | 'rightIcon' | 'children'
+>;

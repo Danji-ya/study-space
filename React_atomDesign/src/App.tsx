@@ -1,3 +1,4 @@
+import { AiFillApple } from 'react-icons/ai';
 import Button from './components/Button';
 
 function App() {
@@ -10,15 +11,18 @@ function App() {
       <main>
         <section>
           <h2>Button</h2>
+
           <Button size="sm" onClick={(event) => console.log(event.target)}>
-            <span>서브</span>
+            서브
           </Button>
           <Button
-            size="md"
+            size="sm"
             color="secondary"
+            leftIcon={<AiFillApple />}
+            rightIcon={<AiFillApple />}
             onClick={(event) => console.log(event.target)}
           >
-            <span>메인</span>
+            icons
           </Button>
         </section>
       </main>
