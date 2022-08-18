@@ -18,6 +18,13 @@ export const BUTTON_BASE_STYLE = {
   },
 };
 
+export const BUTTON_ICON_WRAPPER_STYLE = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexShrink: 0,
+};
+
 export const SIZES: Record<Size, Record<SizeDetail, string>> = {
   sm: {
     minWidth: '80px',
@@ -27,13 +34,13 @@ export const SIZES: Record<Size, Record<SizeDetail, string>> = {
   },
   md: {
     minWidth: '150px',
-    height: '60px',
+    height: '45px',
     width: '150px',
     padding: '7px',
   },
   lg: {
     minWidth: '200px',
-    height: '80px',
+    height: '55px',
     width: '200px',
     padding: '10px',
   },

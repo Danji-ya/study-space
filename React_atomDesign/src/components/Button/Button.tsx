@@ -1,9 +1,13 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { forwardRef } from 'react';
-import styled from 'styled-components';
 import { styling } from '../../utils';
-import { BUTTON_BASE_STYLE, COLORS, SIZES } from './constants';
-import { ButtonContentProps, ButtonProps } from './types';
+import {
+  BUTTON_BASE_STYLE,
+  BUTTON_ICON_WRAPPER_STYLE,
+  COLORS,
+  SIZES,
+} from './constants';
+import { ButtonContentProps, ButtonProps, IconWrapperProps } from './types';
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
@@ -37,21 +41,20 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   );
 });
 
-const IconWrapper = styled.span`
-  display: inline-flex;
-  align-items: 'center';
-  justify-content: 'center';
-  flex-shrink: 0; // defense icon shrink
-`;
-
 function ButtonContent({ leftIcon, rightIcon, children }: ButtonContentProps) {
   return (
     <>
-      {leftIcon && <IconWrapper>{leftIcon}</IconWrapper>}
+      {leftIcon && <IconWrapper icon={leftIcon} />}
       {children}
-      {rightIcon && <IconWrapper>{rightIcon}</IconWrapper>}
+      {rightIcon && <IconWrapper icon={rightIcon} />}
     </>
   );
+}
+
+function IconWrapper({ icon }: IconWrapperProps) {
+  const Component = styling('span', BUTTON_ICON_WRAPPER_STYLE);
+
+  return <Component>{icon}</Component>;
 }
 
 export default Button;
