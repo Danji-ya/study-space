@@ -10,15 +10,18 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   disabled?: boolean;
   children: React.ReactNode;
+  iconSpacing: string;
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
 }
 
 export interface IconWrapperProps {
   icon: React.ReactElement;
+  marginRight?: string;
+  marginLeft?: string;
 }
 
 export type ButtonContentProps = Pick<
   ButtonProps,
-  'leftIcon' | 'rightIcon' | 'children'
+  'leftIcon' | 'rightIcon' | 'iconSpacing' | 'children'
 >;

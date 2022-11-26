@@ -14,6 +14,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     color = 'primary',
     leftIcon,
     rightIcon,
+    iconSpacing = '0.25rem',
     isLoading = false,
     disabled = false,
     children,
@@ -27,7 +28,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     COLORS[color],
   );
 
-  const contentProps = { leftIcon, rightIcon, children };
+  const contentProps = { leftIcon, rightIcon, iconSpacing, children };
 
   return (
     <Component ref={ref} disabled={disabled || isLoading} {...rest}>
@@ -40,18 +41,23 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   );
 });
 
-function ButtonContent({ leftIcon, rightIcon, children }: ButtonContentProps) {
+function ButtonContent({
+  leftIcon,
+  rightIcon,
+  iconSpacing,
+  children,
+}: ButtonContentProps) {
   return (
     <>
-      {leftIcon && <IconWrapper icon={leftIcon} />}
+      {leftIcon && <IconWrapper marginRight={iconSpacing} icon={leftIcon} />}
       {children}
-      {rightIcon && <IconWrapper icon={rightIcon} />}
+      {rightIcon && <IconWrapper marginLeft={iconSpacing} icon={rightIcon} />}
     </>
   );
 }
 
-function IconWrapper({ icon }: IconWrapperProps) {
-  const Component = styling('span', BUTTON_ICON_WRAPPER_STYLE);
+function IconWrapper({ icon, ...rest }: IconWrapperProps) {
+  const Component = styling('span', BUTTON_ICON_WRAPPER_STYLE, rest);
 
   return <Component>{icon}</Component>;
 }
