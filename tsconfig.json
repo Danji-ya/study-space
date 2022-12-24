@@ -6,6 +6,7 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "allowJs": true,
+    "jsx": "react",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strict": true,

@@ -45,6 +45,7 @@ function getRollupConfig(input, output, format) {
       babel({ // rollup에서 babel 을 사용 할 수 있게 해주는 플러그인
         presets: [
           '@babel/preset-env',
+          '@babel/preset-react',
           '@babel/preset-typescript',
         ],
         plugins: [
