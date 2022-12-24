@@ -1,1 +1,9 @@
+# third party
 node_modules/
+
+# build files 
+dist
+
+# etc
+*.log
+*.DS_Store
