@@ -73,21 +73,13 @@ const ToastWrapper = styled.div<{
 
 const Body = styled.div`
   width: 100%;
-  padding: 0 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  svg path {
-    fill: white;
-    :hover {
-      cursor: pointer;
-    }
-  }
 `;
 
 const Contents = styled.div`
   flex: 1;
-  padding-right: 5px;
+  padding: 0 5px;
 `;
 
 const Title = styled.h3`
@@ -111,16 +103,34 @@ const Progress = styled.div<{
 `;
 
 const CloseBtn = styled.button`
-  background: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 8px;
+
+  background: none;
+  border: none;
+
   &:hover {
     cursor: pointer;
-    path {
-      fill: #757575;
-    }
+    opacity: 0.5;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 1.5px;
+    background-color: white;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
   }
 `;
 
