@@ -7,8 +7,7 @@
   "scripts": {
     "build": "lerna run build",
     "build:toast": "lerna run build --scope @danji/toast --include-filtered-dependencies --stream",
-    "test": "lerna run test",
-    "release": "lerna publish from-package"
+    "test": "lerna run test"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.19.6",
