@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "build": "lerna run build",
-    "build:toast": "lerna run build --scope @danji/toast --include-filtered-dependencies --stream",
+    "build:toast": "lerna run build --scope @danji-ya/toast --include-filtered-dependencies --stream",
     "test": "lerna run test",
     "release": "lerna publish from-package --yes"
   },
