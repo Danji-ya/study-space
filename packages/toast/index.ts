@@ -1,9 +1,7 @@
-import Toast from "./src/components/Toast";
-import ToastContainer from "./src/components/ToastContainer";
+import ToastProvider from "./src/components/ToastProvider";
 import useToast from "./src/hooks/useToast";
 
 export {
-  Toast,
-  ToastContainer,
+  ToastProvider,
   useToast
 }

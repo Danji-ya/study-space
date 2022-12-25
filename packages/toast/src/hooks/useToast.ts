@@ -1,16 +1,12 @@
-import { useSetRecoilState } from "recoil";
-import { toastState } from "../store/toastState";
-import { IToast } from "../types/toast";
-import { uuidv4 } from "../utils/common";
+import { useContext } from "react";
+import { toastContext } from "../components/ToastProvider/ToastProvider";
 
 function useToast() {
-  const setToasts = useSetRecoilState(toastState);
+  const ctx = useContext(toastContext);
 
-  const createToast = (toast: IToast) => {
-    setToasts((prevToasts) => [...prevToasts, { id: uuidv4(), ...toast }]);
-  };
+  if (ctx === null || ctx === undefined) throw new Error('useToast error');
 
-  return createToast;
+  return ctx;
 }
 
 export default useToast;
