@@ -13,7 +13,7 @@ interface Props {
 
 function Toast({
   id,
-  title,
+  title = '',
   message,
   duration = 5000,
   type = 'success',
@@ -35,9 +35,7 @@ function Toast({
           <Styled.Title>{title}</Styled.Title>
           <Styled.Message>{message}</Styled.Message>
         </Styled.Contents>
-        <Styled.CloseBtn onClick={handleClick} aria-label="close">
-          <span> X </span>
-        </Styled.CloseBtn>
+        <Styled.CloseBtn onClick={handleClick} aria-label="close" />
       </Styled.Body>
       <Styled.Progress
         duration={duration}

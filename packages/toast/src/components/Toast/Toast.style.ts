@@ -1,6 +1,9 @@
 import styled, { css, keyframes } from 'styled-components';
 
 const toastProgress = keyframes`
+  from {
+    width: 100%;
+  }
   to {
     width: 0;
   }
@@ -15,11 +18,9 @@ const toastContainer = keyframes`
   }
   90% {
     opacity: 0.9;
-    transform: scale(1);
   }
   100% {
     opacity: 0;
-    transform: scale(0.9);
   }
 `;
 
@@ -67,27 +68,19 @@ const ToastWrapper = styled.div<{
     return style[type];
   }}
   ${({ duration }) => css`
-    animation: ${toastContainer} ease-in-out ${duration / 1000}s;
+    animation: ${toastContainer} linear ${duration / 1000}s forwards;
   `};
 `;
 
 const Body = styled.div`
   width: 100%;
-  padding: 0 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  svg path {
-    fill: white;
-    :hover {
-      cursor: pointer;
-    }
-  }
 `;
 
 const Contents = styled.div`
   flex: 1;
-  padding-right: 5px;
+  padding: 0 5px;
 `;
 
 const Title = styled.h3`
@@ -106,21 +99,39 @@ const Progress = styled.div<{
   height: 4px;
   background-color: white;
   ${({ duration }) => css`
-    animation: ${toastProgress} linear ${duration / 1000}s;
+    animation: ${toastProgress} linear ${duration / 1000}s forwards;
   `};
 `;
 
 const CloseBtn = styled.button`
-  background: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 8px;
+
+  background: none;
+  border: none;
+
   &:hover {
     cursor: pointer;
-    path {
-      fill: #757575;
-    }
+    opacity: 0.5;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 1.5px;
+    background-color: white;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
   }
 `;
 
