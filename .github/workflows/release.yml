@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      - name: Build Packages
+            run: yarn build
+
       - name: Publish
         run: |
           lerna publish from-package --yes
