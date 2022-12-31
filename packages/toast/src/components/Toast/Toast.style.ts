@@ -1,6 +1,9 @@
 import styled, { css, keyframes } from 'styled-components';
 
 const toastProgress = keyframes`
+  from {
+    width: 100%;
+  }
   to {
     width: 0;
   }
@@ -15,11 +18,9 @@ const toastContainer = keyframes`
   }
   90% {
     opacity: 0.9;
-    transform: scale(1);
   }
   100% {
     opacity: 0;
-    transform: scale(0.9);
   }
 `;
 
@@ -67,7 +68,7 @@ const ToastWrapper = styled.div<{
     return style[type];
   }}
   ${({ duration }) => css`
-    animation: ${toastContainer} ease-in-out ${duration / 1000}s;
+    animation: ${toastContainer} linear ${duration / 1000}s forwards;
   `};
 `;
 
@@ -98,7 +99,7 @@ const Progress = styled.div<{
   height: 4px;
   background-color: white;
   ${({ duration }) => css`
-    animation: ${toastProgress} linear ${duration / 1000}s;
+    animation: ${toastProgress} linear ${duration / 1000}s forwards;
   `};
 `;
 
