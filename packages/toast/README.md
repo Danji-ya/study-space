@@ -2,7 +2,7 @@ Table of Contents
 --
 - [Getting Started](#getting-started)
 - [How to use](#how-to-use)
-
+- [Demo](#demo)
 
 ### Getting Started
 Use your preferred package manager:
@@ -38,3 +38,16 @@ const MyButton = () => {
     );
 }
 ```
+
+
+**3:**  The toast object has the following properties:
+
+| Name         | Type            | Default   | Description                                                                                                                                                               |
+|------------  |---------------  |---------  |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------  |
+| title        | String          | ""      | Title of the toast                                                                                                                                                 |
+| message(*)      | String          | null      | Message of the toast                                                                                                                                              |
+| type        | String          | "success"      | Type of the toast. Available: **success**, **error** and **info**                                                                                    |
+| duration     | Number          | "5000"        | Duration of the toast  |
+
+### Demo
+![image](https://user-images.githubusercontent.com/53927959/210123603-ada050c1-e801-498c-8cc4-6b77362ec73f.png)
