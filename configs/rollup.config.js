@@ -2,6 +2,7 @@ import fs from 'fs';
 import readPkgUp from 'read-pkg-up';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import commonjs from '@rollup/plugin-commonjs';
+import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
@@ -55,6 +56,16 @@ function getRollupConfig(input, output, format) {
         babelHelpers: 'runtime',
         exclude: excludePath,
         extensions,
+      }),
+      postcss({
+        extensions: ['.scss', '.css'],
+        modules: {
+          generateScopedName: "[name]__[local]___[hash:base64:5]",
+		      hashPrefix: "prefix",
+          exportGlobals: true,
+        },
+        autoModules: false,
+        minimize: true,
       }),
       terser({
         maxWorkers: 4

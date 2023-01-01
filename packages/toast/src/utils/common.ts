@@ -1,3 +1,5 @@
+import globalColors from '../../../../constants/color.scss';
+
 export const uuidv4 = () => {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
     const r = (Math.random() * 16) | 0;
@@ -6,4 +8,4 @@ export const uuidv4 = () => {
   });
 };
 
-export const newUtil = () => 'hello';
+export const colors = globalColors;
