@@ -61,7 +61,8 @@ function getRollupConfig(input, output, format) {
         extensions,
       }),
       commonjs({
-        include: path.join(__dirname, 'node_modules/**'),
+        ignoreGlobal: true,
+        include: /\/node_modules\//,
       }),
       babel({ // rollup에서 babel 을 사용 할 수 있게 해주는 플러그인
         presets: [
