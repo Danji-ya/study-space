@@ -1,13 +1,9 @@
 import React from 'react';
+import { IToastState } from '../../types/toast';
 
 import Styled from './Toast.style';
 
-interface Props {
-  id: string;
-  title: string;
-  message: string;
-  duration?: number;
-  type?: 'success' | 'error' | 'info';
+interface Props extends IToastState {
   hideToast: (id: string) => void;
 }
 
