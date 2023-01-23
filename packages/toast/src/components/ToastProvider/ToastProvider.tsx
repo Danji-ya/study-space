@@ -1,11 +1,10 @@
 import React, { createContext, useCallback, useState } from 'react';
+import CreateToastPortal from '../CreateToastPortal';
+import Toast from '../Toast';
 import { IToast, IToastState } from '../../types/toast'; 
 import { uuidv4 } from '../../utils/common';
 
-import CreateToastPortal from '../CreateToastPortal';
-import Toast from '../Toast';
-
-import Styled from './ToastProvider.style';
+import styles from './ToastProvider.module.scss';
 
 interface Props {
   children: React.ReactNode;
@@ -29,11 +28,11 @@ function ToastProvider({ children }: Props) {
   return (
     <toastContext.Provider value={createToast}>
       <CreateToastPortal>
-        <Styled.Container>
+        <div className={styles.toastContainer}>
           {toasts.map((toast: IToastState) => (
             <Toast key={toast.id} hideToast={hideToast} {...toast} />
           ))}
-        </Styled.Container>
+        </div>
       </CreateToastPortal>
       {children}
     </toastContext.Provider>

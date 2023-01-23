@@ -1,5 +1,5 @@
 export interface IToast {
-  title: string;
+  title?: string;
   message: string;
   duration?: number;
   type?: 'success' | 'error' | 'info';
