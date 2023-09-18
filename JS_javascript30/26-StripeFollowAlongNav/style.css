@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    background:
+      linear-gradient(45deg, hsla(340, 100%, 55%, 1) 0%, hsla(340, 100%, 55%, 0) 70%),
+      linear-gradient(135deg, hsla(225, 95%, 50%, 1) 10%, hsla(225, 95%, 50%, 0) 80%),
+      linear-gradient(225deg, hsla(140, 90%, 50%, 1) 10%, hsla(140, 90%, 50%, 0) 80%),
+      linear-gradient(315deg, hsla(35, 95%, 55%, 1) 100%, hsla(35, 95%, 55%, 0) 70%);
+}
+
+h2 {
+    margin-top: 0;
+    padding-top: .8em;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+ul, li, img, p{
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: relative;
+    perspective: 600px;
+}
+
+nav > ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cool > li {
+    display: flex;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.cool > li > div {
+    position: relative;
+}
+
+.cool > li > div > a {
+    color: yellow;
+    text-decoration: none;
+    font-size: 20px;
+    background: rgba(0,0,0,0.2);
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: absolute;
+    padding: 20px;
+    top: 0px;
+    left: 50%;
+    border-radius: 2px;
+    transition: all 5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translate(-50%, 80px);
+    will-change: opacity;
+
+    background: white;
+    opacity: 0;
+    display: none;
+}
+
+
+.dropdown::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background: white;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -100;
+}
+
+
+/* trigger */
+.trigger-enter .dropdown {
+    display: block;
+}
+
+.trigger-enter-active .dropdown {
+    opacity: 1;
+}
+
+
+
+.bio {
+    min-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.7;
+}
+
+.bio img {
+    margin-right: 20px;
+}
+
+.courses {
+    min-width: 300px;
+}
+
+.courses li {
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: #ffc600;
+}
+
+a.button {
+    background: black;
+    display: block;
+    padding: 10px;
+    color: white;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+/* Matches Twitter, TWITTER, twitter, tWitter, TWiTTeR... */
+.button[href*=twitter] { background: #019FE9; }
+.button[href*=facebook] { background: #3B5998; }
+.button[href*=courses] { background: #ffc600; }

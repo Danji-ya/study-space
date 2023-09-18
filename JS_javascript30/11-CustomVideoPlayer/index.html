@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" >
+    <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <div class="player">
+        <video class="viewer" src="./652333414.mp4"></video>
+
+        <div class="player-controls">
+            <div class="progress">
+                <div class="progress-filled">
+                    <div class="progress-button"></div>
+                </div>
+                
+            </div>
+            <button class="player-button">►</button>
+            <div class="player-button volume">     
+                <i class="fas fa-volume-up"></i>
+                <input type="range" name="volume" class="player-slider" min="0" max="1" step="0.05" value="1">
+            </div>
+            <button class="player-button fullscreen">
+                <i class="fas fa-expand"></i> 
+            </button>
+        </div>
+    </div>
+</body>
+</html>

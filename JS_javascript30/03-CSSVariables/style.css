@@ -1,0 +1,34 @@
+:root {
+    --grayscale: 50%;
+    --blur: 10px;
+    --color: yellow; 
+}
+
+.image img {
+    padding: 10px;
+
+    filter: grayscale(var(--grayscale)) blur(var(--blur));
+    background-color: var(--color);
+}
+
+.hl {
+    color: var(--color);
+}
+
+
+body {
+    text-align: center;
+    background: #193549;
+    color: white;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: 100;
+    font-size: 50px;
+}
+
+.controls {
+    margin-bottom: 50px;
+}
+
+input {
+    width: 100px;
+}

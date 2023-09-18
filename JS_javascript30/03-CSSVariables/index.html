@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+    <div class="controls">
+        <label for="Grayscale">Grayscale:</label>
+        <input name="grayscale" type="range" min="0" max="100" value="50" data-sizing="%">
+
+        <label for="Blur">Blur:</label>
+        <input name="blur" type="range" min="0" max="25" value="10" data-sizing="px">
+
+        <label for="base">Base Color:</label>
+        <input name="color" type="color" value="#FFFF00">
+    </div>
+    <div class="image">
+        <img src="https://images.unsplash.com/photo-1601230202587-1b3f0286c1b7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjQzfHxjYXR8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

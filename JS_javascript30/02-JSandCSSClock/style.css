@@ -1,0 +1,75 @@
+html {
+    background:  #018DED url(https://images.unsplash.com/photo-1530053969600-caed2596d242?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80);
+    background-size: cover;
+    font-family: 'Share Tech Mono', monospace;
+    text-align: center;
+    font-size: 10px;
+}
+
+body {
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.clock {
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    border: 15px solid white;
+    margin: 0 auto;
+    position: relative;
+    box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+
+    left: calc(50% - var(--width) / 2);
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--color);
+
+    transform-origin: bottom center;
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+    --width: 5px;
+    --height: 150px;
+    --color: black;
+}
+.min-hand {
+    --width: 5px;
+    --height: 150px;
+    --color: black;
+}
+.second-hand {
+    --width: 3px;
+    --height: 140px;
+    --color: red;
+}
+
+.digital-clock {
+    margin-top: 50px;
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgb(46, 92, 218), 0 0 20px rgba(10, 175, 230, 0);
+}
+
+.date {
+    font-size: 24px;
+}
+
+.time {
+    font-size: 50px;
+}

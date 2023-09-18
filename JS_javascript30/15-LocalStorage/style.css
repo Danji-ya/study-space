@@ -1,0 +1,105 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+body {
+    background-image: url("./oh-la-la.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+svg {
+    fill: white;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 50%;
+    width: 200px;
+    margin-bottom: 50px;
+}
+
+.wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 15px;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 700;
+}
+
+.plates {
+    padding: 0;
+    list-style: none;
+}
+  
+.plates li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    font-weight: 100;
+    display: flex;
+    justify-content: space-between;
+}
+
+.plates input {
+    display: none;
+}
+
+.plates input + label::before {
+    content: "⬜️";
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.plates input:checked + label::before {
+    content: "✔️";
+}
+
+.plates span {
+    width: 250px;
+    font-size: 20px;
+}
+
+.plates span:hover {
+    background: rgba(179, 215, 255, 0.52);
+}
+
+.plates span:focus {
+    outline: 0;
+    border: 2px solid #007bff;
+    background: rgba(179, 207, 255, 0.52);
+}
+
+.add-items {
+    display: flex;
+    justify-content: center;
+}
+  
+.add-items input {
+    margin-right: 15px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.add-items input:focus {
+    border: none;
+    outline: 1px solid rgb(76, 157, 248);
+}
+
+button {
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: 2px solid #007bff;
+    margin: 0 .5rem;
+}
+
