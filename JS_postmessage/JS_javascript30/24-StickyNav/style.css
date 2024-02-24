@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #eeeeee;
+}
+
+header {
+    height: 30vh;
+    background: url(https://source.unsplash.com/GKN6rpDr0EI/960x640) bottom center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    font-size: 5vw;
+    text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+}
+
+nav {
+    background: black;
+    top: 0;
+    width: 100%;
+    transition: all 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li.logo {
+    max-width: 0;
+    background: white;
+    font-weight: 600;
+    font-size: 30px;
+    transition: all .5s;
+}
+
+li.logo a {
+    color: black;
+}
+
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    
+    transition: all 0.2s;
+}
+
+.site-wrap {
+    max-width: 700px;
+    margin: 70px auto;
+    padding: 40px;
+    text-align: justify;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.05);
+    transform: scale(0.98);
+    transition: transform 0.5s;
+}
+
+
+/* sticky */
+.sticky li.logo {
+    max-width: 800px;
+}
+
+.sticky nav {
+    position: fixed;
+}

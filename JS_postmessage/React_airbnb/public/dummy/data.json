@@ -1,0 +1,452 @@
+{
+  "cities": [
+    "서울 강남구",
+    "서귀포시,제주특별자치도",
+    "서울 종로구",
+    "서울 마포구",
+    "서울 중구",
+    "서울 특별시",
+    "서울 은평구",
+    "혜화동,종로구,서울",
+    "부암동,종로구,서울",
+    "종로,서울",
+    "서울,대한민국",
+    "서울 북촌로",
+    "서울 성북구"
+  ],
+  "nearTripList": [
+    {
+      "img": "https://a0.muscache.com/im/pictures/71e23854-a3c7-491c-b715-6e86233a293f.jpg?im_q=medq&im_w=240",
+      "title": "서울",
+      "subtitle": "차로 15분 거리"
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/be4d3ba5-08d7-4afe-95a7-f2da6453886a.jpg?im_q=medq&im_w=240",
+      "title": "부산",
+      "subtitle": "차로 5.5시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/7253e011-7c22-48fd-b75d-d0da35372397.jpg?im_q=medq&im_w=240",
+      "title": "양양군",
+      "subtitle": "차로 2.5시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/52e8083e-2de2-446d-a860-534eab250541.jpg?im_q=medq&im_w=240",
+      "title": "속초시",
+      "subtitle": "차로 3시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/20e74de0-0eb8-4fca-afb8-b111875acdf5.jpg?im_q=medq&im_w=240",
+      "title": "제주도(Jeju)",
+      "subtitle": "차로 7시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/20356d40-a45f-4680-a9d0-5bb0a3836e4d.jpg?im_q=medq&im_w=240",
+      "title": "대구",
+      "subtitle": "차로 4시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/e639b7ab-aee3-48ee-9743-216684a51319.jpg?im_q=medq&im_w=240",
+      "title": "완주군",
+      "subtitle": "차로 3시간 거리"
+    },  
+    {
+      "img": "https://a0.muscache.com/im/pictures/ca3737ef-0faf-46ba-b055-b4a2d99e2cea.jpg?im_q=medq&im_w=240",
+      "title": "전주시",
+      "subtitle": "차로 3시간 거리"
+    }
+  ],
+  "anywhereTripList": [
+    {
+      "img": "https://a0.muscache.com/im/pictures/2f13349d-879d-43c6-83e3-8e5679291d53.jpg?im_w=480",
+      "subtitle": "자연생활을 만낄할 수 있는 숙소"
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/36f53e61-db8d-403c-9122-5b761c0e4264.jpg?im_w=480",
+      "subtitle": "독특한 공간"
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/7d82ca14-56e5-4465-8218-dcfa7d69b6ac.jpg?im_w=480",
+      "subtitle": "집 전체"
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/10a638e1-6aff-4313-8033-1275cec83987.jpg?im_w=480",
+      "subtitle": "반려동물 동반가능"
+    }
+  ],
+  "specialTripList": [
+    {
+      "img": "https://a0.muscache.com/im/pictures/ad109d56-2421-40cd-98e6-e114160dc85b.jpg?im_w=480",
+      "title": "체험",
+      "subtitle": "가까운 곳에서 즐길 수 있는 잊지 못할 체험을 찾아보세요."
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/0ce799cb-7553-4369-be9e-d0011e0ef636.jpg?im_w=480",
+      "title": "온라인 체험",
+      "subtitle": "호스트와 실시간으로 소통하면서 액티비티를 즐겨보세요."
+    },
+    {
+      "img": "https://a0.muscache.com/im/pictures/f51f70fb-93b7-4974-86e8-1195b64f1353.jpg?im_w=480",
+      "title": "올림픽.패럴림픽 출전 선수",
+      "subtitle": "운동선수가 호스팅하는 온라인 액티비티를 즐겨보세요.",
+      "recommand": "true"
+    }
+  ],
+  "accomodationList": [
+    {
+      "id": 112,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6edce0dc-bafb-4361-b532-0a80d7639d4f.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 113,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/1a029e7f-0b14-47fe-b67a-afac0cfed6fd.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "종로의 공동 주택 전체",
+      "subtitle": "[OPEN SALE ] Dongmyo Sub. 1 min 'Seoul Tower View'",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.96",
+      "reviewTotal": "76",
+      "price": "92627",
+      "isDibs": false
+    },
+    {
+      "id": 114,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6e553de2-83df-4699-9016-08e08fe9d424.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "인사동의 호텔 객실",
+      "subtitle": "14시 여유로운 무료체크아웃의 센터마크 호텔 더블룸",
+      "feature":"최대 인원 2명 · 침실 1개 · 침대 1개 · 욕실 1개",
+      "option": "에어컨 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.53",
+      "reviewTotal": "40",
+      "price": "70000",
+      "isDibs": true
+    },
+    {
+      "id": 115,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/77369907-8adb-4534-92e1-ee61e23a143a.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 116,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 117,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6e553de2-83df-4699-9016-08e08fe9d424.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "인사동의 호텔 객실",
+      "subtitle": "14시 여유로운 무료체크아웃의 센터마크 호텔 더블룸",
+      "feature":"최대 인원 2명 · 침실 1개 · 침대 1개 · 욕실 1개",
+      "option": "에어컨 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.53",
+      "reviewTotal": "40",
+      "price": "70000",
+      "isDibs": true
+    },
+    {
+      "id": 118,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6edce0dc-bafb-4361-b532-0a80d7639d4f.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 119,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/77369907-8adb-4534-92e1-ee61e23a143a.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 120,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/1a029e7f-0b14-47fe-b67a-afac0cfed6fd.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "종로의 공동 주택 전체",
+      "subtitle": "[OPEN SALE ] Dongmyo Sub. 1 min 'Seoul Tower View'",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.96",
+      "reviewTotal": "76",
+      "price": "92627",
+      "isDibs": false
+    },
+    {
+      "id": 121,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6e553de2-83df-4699-9016-08e08fe9d424.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "인사동의 호텔 객실",
+      "subtitle": "14시 여유로운 무료체크아웃의 센터마크 호텔 더블룸",
+      "feature":"최대 인원 2명 · 침실 1개 · 침대 1개 · 욕실 1개",
+      "option": "에어컨 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.53",
+      "reviewTotal": "40",
+      "price": "70000",
+      "isDibs": true
+    },
+    {
+      "id": 122,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 123,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6edce0dc-bafb-4361-b532-0a80d7639d4f.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 124,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/1a029e7f-0b14-47fe-b67a-afac0cfed6fd.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "종로의 공동 주택 전체",
+      "subtitle": "[OPEN SALE ] Dongmyo Sub. 1 min 'Seoul Tower View'",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.96",
+      "reviewTotal": "76",
+      "price": "92627",
+      "isDibs": false
+    },
+    {
+      "id": 125,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6e553de2-83df-4699-9016-08e08fe9d424.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "인사동의 호텔 객실",
+      "subtitle": "14시 여유로운 무료체크아웃의 센터마크 호텔 더블룸",
+      "feature":"최대 인원 2명 · 침실 1개 · 침대 1개 · 욕실 1개",
+      "option": "에어컨 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.53",
+      "reviewTotal": "40",
+      "price": "70000",
+      "isDibs": true
+    },
+    {
+      "id": 126,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/77369907-8adb-4534-92e1-ee61e23a143a.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 127,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 128,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6edce0dc-bafb-4361-b532-0a80d7639d4f.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 129,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/1a029e7f-0b14-47fe-b67a-afac0cfed6fd.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "종로의 공동 주택 전체",
+      "subtitle": "[OPEN SALE ] Dongmyo Sub. 1 min 'Seoul Tower View'",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.96",
+      "reviewTotal": "76",
+      "price": "92627",
+      "isDibs": false
+    },
+    {
+      "id": 130,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/6e553de2-83df-4699-9016-08e08fe9d424.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "인사동의 호텔 객실",
+      "subtitle": "14시 여유로운 무료체크아웃의 센터마크 호텔 더블룸",
+      "feature":"최대 인원 2명 · 침실 1개 · 침대 1개 · 욕실 1개",
+      "option": "에어컨 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.53",
+      "reviewTotal": "40",
+      "price": "70000",
+      "isDibs": true
+    },
+    {
+      "id": 131,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/77369907-8adb-4534-92e1-ee61e23a143a.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "용산의 주거용 공간 전체",
+      "subtitle": "⭐️N타워전망⭐️단독주택+수영장[유료]⛱16명 OK🎉So Seoulish Stay【써울스테이】",
+      "feature":"최대 인원 8명 · 침실 4개 · 침대 11개 · 욕실 2개",
+      "option": "에어컨 · 주방 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.5",
+      "reviewTotal": "166",
+      "price": "260090",
+      "isDibs": false
+    },
+    {
+      "id": 132,
+      "imgList": [
+        "https://a0.muscache.com/im/pictures/miso/Hosting-47362148/original/6030b6d4-1d97-4ffb-b290-20fc702a56a7.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/6e553de2-83df-4699-9016-08e08fe9d424.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/185f0dab-1a87-489d-95ff-bb50270f3682.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/ae903604-2f87-4471-92d0-3ff9da6c724b.jpg?im_w=480"
+      ],
+      "location": {"lat": "37.6430288", "long": "126.9060613"},
+      "title": "인사동의 호텔 객실",
+      "subtitle": "14시 여유로운 무료체크아웃의 센터마크 호텔 더블룸",
+      "feature":"최대 인원 2명 · 침실 1개 · 침대 1개 · 욕실 1개",
+      "option": "에어컨 · 무선 인터넷 · 세탁기",
+      "reviewAve": "4.53",
+      "reviewTotal": "40",
+      "price": "70000",
+      "isDibs": true
+    }
+  ]
+}
+
+

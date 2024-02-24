@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Performance</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background: blue;
+    }
+
+    .box:nth-of-type(2n) {
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <button class="fire1">margin 시작!</button>
+  <button class="fire2">transform 시작!</button>
+  <div class="margin box"></div>
+  <div class="transform box"></div>
+  <script>
+    const MAX_LINE = 1000;
+    const box1 = document.querySelector('.margin');
+    const box2 = document.querySelector('.transform');
+    const btn1 = document.querySelector('.fire1');
+    const btn2 = document.querySelector('.fire2');
+    const marginController = marginBox();
+    const transformController = transformBox();
+  
+    function marginBox() {  
+      let oldPosition = 0;
+
+      return function moveBox() {
+        let newPosition = oldPosition + 5;   
+        if(MAX_LINE < newPosition) return;
+        
+        box1.style.marginLeft = `${newPosition}px`; 
+        oldPosition = newPosition;
+        requestAnimationFrame(marginController);
+      }
+    }
+
+    function transformBox() {
+      let oldPosition = 0;
+
+      return function moveBox() {
+        let newPosition = oldPosition + 5;   
+        if(MAX_LINE < newPosition) return;
+
+        box2.style.transform = `translateX(${newPosition}px)`;   
+        oldPosition = newPosition;
+        requestAnimationFrame(transformController);
+      }
+    }
+
+    btn1.addEventListener('click', () => requestAnimationFrame(marginController));
+    btn2.addEventListener('click', () => requestAnimationFrame(transformController));
+  </script>
+</body>
+</html>

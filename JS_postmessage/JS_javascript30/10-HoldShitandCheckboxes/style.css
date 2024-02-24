@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box
+}
+
+html {
+    font-family: sans-serif;
+    background: #ffc600;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+
+    width: 450px;
+    height: 700px; 
+    margin: 50px auto;
+    padding: 0 1rem;
+    border-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    background: white;
+}
+
+.item {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+input[type="checkbox"] {
+    margin: 20px;
+}
+
+input:checked + p {
+    color: #007bff;
+    text-decoration: line-through;
+}

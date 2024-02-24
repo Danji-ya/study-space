@@ -1,0 +1,20 @@
+.digital-clock {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-width: 300px;
+    background: rgb(31, 29, 29);
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgb(46, 92, 218), 0 0 20px rgba(10, 175, 230, 0);
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.time {
+    font-size: 50px;
+    margin: 0;
+    padding-bottom: 10px;
+}

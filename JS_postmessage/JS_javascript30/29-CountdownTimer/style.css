@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    background:  #018DED url(https://images.unsplash.com/photo-1589763472885-46dd5b282f52?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODR8fGJsdWV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+}
+
+.display__time-left {
+    font-weight: 100;
+    font-size: 15rem;
+    margin: 0;
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgb(46, 92, 218), 0 0 20px rgba(10, 175, 230, 0);
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.timer__controls {
+    display: flex;
+}
+
+.timer__controls > * {
+    flex: 1;
+}
+
+.timer__controls form {
+    display: flex;
+}
+
+.timer__controls input {
+    border: 0;
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+.timer__button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.1);
+    border-bottom: 3px solid rgba(0,0,0,0.2);
+    border-right: 1px solid rgba(0,0,0,0.2);
+    padding: 1rem;
+    font-family: 'Inconsolata', monospace;
+}
+
+.timer__button:hover,
+.timer__button:focus {
+    background: rgba(0,0,0,0.2);
+    outline: 0;
+}
+
+.display__end-time {
+    font-size: 4rem;
+    color: #daf6ff;
+    text-shadow: 0 0 20px rgb(46, 92, 218), 0 0 20px rgba(10, 175, 230, 0);
+}
