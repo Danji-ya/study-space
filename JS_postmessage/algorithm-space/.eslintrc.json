@@ -1,6 +1,0 @@
-{
-    "extends": ["eslint:recommended", "airbnb-base", "plugin:prettier/recommended"],
-    "rules": { 
-        "no-unused-vars": "warn" 
-    }
-}
