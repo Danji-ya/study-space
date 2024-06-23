@@ -5,6 +5,8 @@ import {
   Tokens,
 } from '@pandacss/dev';
 
+import { recipes } from './recipe';
+
 export const colors: Tokens['colors'] = {
   orange: {
     // DEFAULT: { value: '{colors.orange.500}' },
@@ -52,17 +54,21 @@ const preset = definePreset({
   theme: {
     tokens,
     semanticTokens,
+    recipes,
   },
-  //   staticCss: {
-  //     css: [
-  //       {
-  //         // the values you want to generate for the CSS property. When set to *, all values defined in the tokens will be included.
-  //         properties: {
-  //           background: ['*'],
-  //         },
-  //       },
-  //     ],
+  // staticCss: {
+  //   recipes: {
+  //     button: ['*'],
   //   },
+  //   css: [
+  //     {
+  //       // the values you want to generate for the CSS property. When set to *, all values defined in the tokens will be included.
+  //       properties: {
+  //         background: ['*'],
+  //       },
+  //     },
+  //   ],
+  // },
 });
 
 export default preset;
