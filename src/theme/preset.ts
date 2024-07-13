@@ -84,6 +84,10 @@ const preset = definePreset({
       className: 'color',
       values: 'colors', // connect values to the colors tokens
     },
+    animation: {
+      className: 'anim',
+      values: 'animations',
+    },
   },
   conditions: {
     dark: ':root[data-theme="dark"] &',
