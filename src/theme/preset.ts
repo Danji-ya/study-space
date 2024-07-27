@@ -1,5 +1,6 @@
 import { definePreset } from '@pandacss/dev';
 
+import { breakpoints } from './breakpoints';
 import { utilities } from './utils';
 import { keyframes } from './keyframes';
 import { tokens } from './tokens';
@@ -12,6 +13,7 @@ const preset = definePreset({
     dark: ':root[data-theme="dark"] &',
   },
   theme: {
+    breakpoints,
     tokens,
     semanticTokens,
     recipes,
