@@ -19,19 +19,19 @@ const preset = definePreset({
     recipes,
     keyframes,
   },
-  // staticCss: {
-  //   recipes: {
-  //     button: ['*'],
-  //   },
-  //   css: [
-  //     {
-  //       // the values you want to generate for the CSS property. When set to *, all values defined in the tokens will be included.
-  //       properties: {
-  //         background: ['*'],
-  //       },
-  //     },
-  //   ],
-  // },
+  staticCss: {
+    recipes: {
+      button: ['*'],
+    },
+    css: [
+      {
+        // the values you want to generate for the CSS property. When set to *, all values defined in the tokens will be included.
+        properties: {
+          background: ['*'],
+        },
+      },
+    ],
+  },
 });
 
 export default preset;
