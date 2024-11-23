@@ -1,0 +1,38 @@
+# goorm ide
+goorm.manifest
+
+# npm
+node_modules/
+!package-lock.json
+
+# next
+.next
+
+# app
+reports
+logs
+temp_uploads
+server.log
+
+# sonar
+.scannerwork/
+
+# test
+globalConfig.json
+junit.xml
+.eslintcache
+
+
+# vim
+*.swp
+
+# app
+data/temp
+.cache
+dist
+
+# husky
+.husky
+
+# vscode
+.vscode
