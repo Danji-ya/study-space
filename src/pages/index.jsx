@@ -1,7 +1,9 @@
+import Editor from "../components/Editor";
+
 export default function Page() {
   return (
     <main>
-      <div>Editor Test</div>
+      <Editor />
     </main>
   );
 }
